@@ -1,5 +1,4 @@
 # WP-2026: Independent Policy Research Series
-### Center for Competitive Statecraft and Strategic Policy
 
 **Author:** Collin George  
 **Contact:** collin.george@protonmail.com  
