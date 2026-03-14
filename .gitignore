@@ -1,0 +1,8 @@
+# Files not for publication
+WP-2026-INFRA-01-v5-4-CONTROLLED.docx
+WP-2026_Editorial_Directive.docx
+BW Assessment Verbiage Guide.docx
+
+# Root-level originals (published versions are in subfolders)
+/*.docx
+/*.pdf
