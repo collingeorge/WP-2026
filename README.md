@@ -30,7 +30,7 @@ Four original contributions anchor the series:
 
 **The Siege Doctrine** (SIEGE-01 / UNIFIED-01) — a seven-chokepoint financial isolation framework demonstrating that coordinated simultaneous denial across all viable financial channels creates cumulative cost escalation rendering large-scale criminal operations economically impossible, with a unified integration memorandum applying the framework across narcotics, proliferation, and terrorist financing domains simultaneously.
 
-For full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail see: [`00-authority-index/WP-2026-Authority-Index.docx`](00-authority-index/WP-2026-Authority-Index.docx)
+For full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail see: [`00-authority-index/WP-2026-Authority-Index.pdf`](00-authority-index/WP-2026-Authority-Index.pdf)
 
 ---
 
@@ -47,7 +47,7 @@ Read the **Methodology Stack** first. Strategic Architecture papers assume famil
 ---
 
 #### 1. ATTRIBUTION-01 — The Nexus Protocol
-📄 [`01-methodology/WP-2026-ATTRIBUTION-01 - THE NEXUS PROTOCOL.docx`](01-methodology/WP-2026-ATTRIBUTION-01%20-%20THE%20NEXUS%20PROTOCOL.docx)
+📄 [`01-methodology/WP-2026-ATTRIBUTION-01 - THE NEXUS PROTOCOL.pdf`](01-methodology/WP-2026-ATTRIBUTION-01%20-%20THE%20NEXUS%20PROTOCOL.pdf)
 
 The foundation document for the entire series. Establishes a four-level state nexus attribution framework — Presence, Linkage, Support, Direct Tasking — with explicit disconfirmation criteria, five corroboration principles, and institutional calibration across State, OFAC, DOJ, IC, and Commerce/BIS. Defines six attribution failure modes including advocacy capture and produces model findings language at each level with mandatory "what would change this judgment" requirements. All attribution-level judgments across the series draw on this framework.
 
@@ -56,7 +56,7 @@ The foundation document for the entire series. Establishes a four-level state ne
 ---
 
 #### 2. CSE-01 / NEXUS-01 — PRC Commercial State Nexus Protocol
-📄 [`01-methodology/WP-2026-NEXUS-01 - THE PRC STATE NEXUS PROTOCOL.docx`](01-methodology/WP-2026-NEXUS-01%20-%20THE%20PRC%20STATE%20NEXUS%20PROTOCOL.docx)
+📄 [`01-methodology/WP-2026-NEXUS-01 - THE PRC STATE NEXUS PROTOCOL.pdf`](01-methodology/WP-2026-NEXUS-01%20-%20THE%20PRC%20STATE%20NEXUS%20PROTOCOL.pdf)
 
 Extends ATTRIBUTION-01 by inserting Enablement as a fifth rung between Support and Direct Tasking. Adds beneficial ownership analysis, VIE architecture treatment, and institutional calibration for the OFAC 50 Percent Rule, FinCEN CDD, and the CFIUS effective-control test. Defines four Support/Enablement boundary tests — directionality of benefit, structural necessity, substitutability, and concealment function — and documents seven failure modes including threshold laundering and toleration-as-tasking.
 
@@ -69,7 +69,7 @@ Extends ATTRIBUTION-01 by inserting Enablement as a fifth rung between Support a
 ---
 
 #### 3. PERSIST-01 — Litigation-Resilient Architecture for U.S. Competitive Statecraft Against the PRC
-📄 [`02-strategic-architecture/WP-2026-PERSIST-01.docx`](02-strategic-architecture/WP-2026-PERSIST-01.docx)
+📄 [`02-strategic-architecture/WP-2026-PERSIST-01.pdf`](02-strategic-architecture/WP-2026-PERSIST-01.pdf)
 
 The capstone strategic architecture. Five-pillar framework — Economic Constraint, Information Disruption, Military Readiness Uncertainty, Deterrence Architecture, Allied and Domestic Resilience — with six authority rails, tiered escalation ladder (Tier 0–3), four-tier standards of proof, neutral designation-selection rule with prohibited-factor list, guardrail index with automatic pause mechanics, prescriptive substitution guide, and model memoranda. Section 10 explicitly acknowledges allied fracture, blowback, substitution, escalation, legitimacy, and legal record risks.
 
@@ -78,7 +78,7 @@ The capstone strategic architecture. Five-pillar framework — Economic Constrai
 ---
 
 #### 4. TARIFF-01 / ANCHOR — Litigation-Resilient Architecture for Evidence-Gated Tariff and Trade Enforcement
-📄 [`02-strategic-architecture/WP-2026-TARIFF-01.docx`](02-strategic-architecture/WP-2026-TARIFF-01.docx)
+📄 [`02-strategic-architecture/WP-2026-TARIFF-01.pdf`](02-strategic-architecture/WP-2026-TARIFF-01.pdf)
 
 The most legally precise paper in the series. Seven-rail tariff enforcement architecture (§301, §232, IEEPA, §122 bridge, AD-CVD, WTO/FTA, Customs Administration) with bright-line predicate definitions, an explicit exclusions list naming trade deficits and FX movements as insufficient predicates, and a five-indicator economic shock guardrail. Appendix C provides a 70%/30%/24-month strategic dependency threshold. The instrument sequencing rule prevents tariff tools from substituting for what export controls and sanctions are designed to do.
 
@@ -87,7 +87,7 @@ The most legally precise paper in the series. Seven-rail tariff enforcement arch
 ---
 
 #### 5. CONTAIN-01 — Long-Term Sanctions Containment in Multipolar Environments
-📄 [`02-strategic-architecture/WP-2026-CONTAIN-01.docx`](02-strategic-architecture/WP-2026-CONTAIN-01.docx)
+📄 [`02-strategic-architecture/WP-2026-CONTAIN-01.pdf`](02-strategic-architecture/WP-2026-CONTAIN-01.pdf)
 
 The most strategically honest paper in the series — explicitly rejects regime collapse and coercive breakthrough as realistic success criteria. Four-component framework: Integrated Systemic Attrition Doctrine (ISAD) targeting +25–45% transaction cost inflation over 12–24 months; Sustainable Pressure and Alternatives Denial (SPAD) targeting reliability inputs rather than settlement rails; Dollar Enforcement Effectiveness Index (DEEI) with automatic non-discretionary downshift protocol; and a 90-day operational observability cycle. Failure indicators defined with the same precision as success indicators.
 
@@ -96,7 +96,7 @@ The most strategically honest paper in the series — explicitly rejects regime 
 ---
 
 #### 6. MAXPRESS-01 — Coordinated Maximum Pressure Campaigns: An Illustrated Execution Framework
-📄 [`02-strategic-architecture/WP-2026-MAXPRESS-01-v4-edit.docx`](02-strategic-architecture/WP-2026-MAXPRESS-01-v4-edit.docx)
+📄 [`02-strategic-architecture/WP-2026-MAXPRESS-01-v4-edit.pdf`](02-strategic-architecture/WP-2026-MAXPRESS-01-v4-edit.pdf)
 
 Companion to CONTAIN-01. Translates strategic architecture into practitioner-ready execution grounded in 2025–2026 enforcement practice. Addresses five structural gaps from prior maximum pressure campaigns: designation latency, sequential enforcement, episodic secondary sanctions, absent observability protocol, and coalition endurance deficit. Features pre-staging rolling 90-day readiness packages, simultaneous BIS/OFAC action as default, Lloyd's/P&I Club maritime reliability degradation mechanism, and target-specific parameters for Iran/IRGC, Russia/shadow fleet, PRC networks, Cuba/GAESA, and Venezuela.
 
@@ -105,7 +105,7 @@ Companion to CONTAIN-01. Translates strategic architecture into practitioner-rea
 ---
 
 #### 7. Maximum Pressure Immigration Architecture — Border Enforcement and Financial Isolation Integration
-📄 [`02-strategic-architecture/Maximum Pressure Immigration Architecture v6 FINAL.docx`](02-strategic-architecture/Maximum%20Pressure%20Immigration%20Architecture%20v6%20FINAL.docx)
+📄 [`02-strategic-architecture/Maximum Pressure Immigration Architecture v6 FINAL.pdf`](02-strategic-architecture/Maximum%20Pressure%20Immigration%20Architecture%20v6%20FINAL.pdf)
 
 Applies the maximum pressure enforcement architecture to immigration-linked transnational criminal networks. Integrates border enforcement mechanisms with financial isolation tools to address the intersection of illegal migration infrastructure and organized criminal financing. Complements the PERSIST/MAXPRESS-01 strategic framework at the border enforcement layer.
 
@@ -118,8 +118,8 @@ Applies the maximum pressure enforcement architecture to immigration-linked tran
 ---
 
 #### 8. SHIELD-01 — Sanctions Enforcement Architecture for PRC-Facilitated Networks
-📄 [`03-applied-enforcement/WP-2026-SHIELD-01 V7 PUBLISH.docx`](03-applied-enforcement/WP-2026-SHIELD-01%20V7%20PUBLISH.docx)  
-📄 [`03-applied-enforcement/WP-2026-SHIELD-01-EB V7 FINAL2.docx`](03-applied-enforcement/WP-2026-SHIELD-01-EB%20V7%20FINAL2.docx)
+📄 [`03-applied-enforcement/WP-2026-SHIELD-01 V7 PUBLISH.pdf`](03-applied-enforcement/WP-2026-SHIELD-01%20V7%20PUBLISH.pdf)  
+📄 [`03-applied-enforcement/WP-2026-SHIELD-01-EB V7 FINAL2.pdf`](03-applied-enforcement/WP-2026-SHIELD-01-EB%20V7%20FINAL2.pdf)
 
 Applies the five-rung Commercial State Nexus Ladder to sanctions enforcement against PRC-shielded partner-state networks (Iran, Venezuela, Cuba, DPRK). Produces seven Key Judgments with explicit confidence levels, a ten-instrument authority-to-action matrix, a five-phase sequencing architecture, and the Coalition Conflict Resolution Protocol (CCRP) as an original policy contribution. The CCRP resolves the live contradiction between technology-denial coordination and simultaneous trade friction with the same allied partners: technology-denial takes precedence in coalition-sensitive domains, with a 30-day mandatory USTR/BIS/State review window before tariff escalation.
 
@@ -128,7 +128,7 @@ Applies the five-rung Commercial State Nexus Ladder to sanctions enforcement aga
 ---
 
 #### 9. WP-2026-SENI-01 — Strategic Enforcement Node Index (SENI)
-📄 [`03-applied-enforcement/WP-2026-SENI-01.docx`](03-applied-enforcement/WP-2026-SENI-01.docx)
+📄 [`03-applied-enforcement/WP-2026-SENI-01.pdf`](03-applied-enforcement/WP-2026-SENI-01.pdf)
 
 A 316-node global sanctions enforcement targeting register across 38 sections — the most comprehensive open-source enforcement targeting document in the WP-2026 series.
 
@@ -138,14 +138,14 @@ A 316-node global sanctions enforcement targeting register across 38 sections �
 
 **Key authorities:** EO 14024/EO 14114, EO 13382, EO 13694 (90 FR 24723, June 11 2025), CAATSA §226/231/232, IEEPA §1702, GENIUS Act Pub. L. 119-27 (139 Stat. 419, July 18 2025), Kingpin Act, 18 U.S.C. §2339B, 31 U.S.C. §5318A, EU Reg. 833/2014 (19th package), EO 14014, EO 13224, EO 13722/13687, FATF R.15/R.16, IMO A.1192(33).
 
-**Version:** v21 | March 2026 | Supersedes russia_china_master_index_v4.docx
+**Version:** v21 | March 2026 | Supersedes russia_china_master_index_v4
 
 **Reads into:** SHIELD-01, PERSIST-01, MAXPRESS-01, CONTAIN-01.
 
 ---
 
 #### 10. INFRA-01 — Infrastructure Enforcement and Dissemination Framework
-📄 [`03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.docx`](03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.docx)
+📄 [`03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf`](03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf)
 
 Infrastructure enforcement framework addressing physical and digital supply chain interdiction points. Complements the SENI at the technical layer.
 
@@ -156,7 +156,7 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 ---
 
 #### 11. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
-📄 [`04-threat-analysis/WP-2026-IRAN NUCLEAR ASSESSMENT.docx`](04-threat-analysis/WP-2026-IRAN%20NUCLEAR%20ASSESSMENT.docx)
+📄 [`04-threat-analysis/WP-2026-IRAN NUCLEAR ASSESSMENT.pdf`](04-threat-analysis/WP-2026-IRAN%20NUCLEAR%20ASSESSMENT.pdf)
 
 Post-strike (Operation Midnight Hammer, June 2025) open-source assessment of Iran's nuclear status. Applies five-category analytic labeling: OBSERVED / ASSESSMENT / ALTERNATIVE EXPLANATION / KEY UNKNOWN / IMPLICATION. Covers pre-strike baseline (~408–440 kg U-235 at 60%, 18,000+ centrifuges), Fordow penetration effects, three-model stockpile location analysis, Pickaxe Mountain assessment (~33.707°N, 51.718°E, 260–330 feet depth), conditional breakout timeline (5–10 days worst case per DIA), and NCRI allegation calibration correctly held at Tier 3. Biological annex separated and held below Key Judgment threshold.
 
@@ -165,15 +165,15 @@ Post-strike (Operation Midnight Hammer, June 2025) open-source assessment of Ira
 ---
 
 #### 12. Iran WMD Assessment
-📄 [`04-threat-analysis/WP-2026- IRAN WMD ASSESSMENT.docx`](04-threat-analysis/WP-2026-%20IRAN%20WMD%20ASSESSMENT.docx)
+📄 [`04-threat-analysis/WP-2026- IRAN WMD ASSESSMENT.pdf`](04-threat-analysis/WP-2026-%20IRAN%20WMD%20ASSESSMENT.pdf)
 
 Companion WMD assessment covering the broader Iranian weapons program including chemical and biological dimensions beyond the nuclear-focused assessment.
 
 ---
 
 #### 13. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
-📄 [`04-threat-analysis/BW Assessment SUBMISSION FINAL.docx`](04-threat-analysis/BW%20Assessment%20SUBMISSION%20FINAL.docx)  
-📄 [`04-threat-analysis/BW Assessment Executive Derivative.docx`](04-threat-analysis/BW%20Assessment%20Executive%20Derivative.docx)
+📄 [`04-threat-analysis/BW Assessment SUBMISSION FINAL.pdf`](04-threat-analysis/BW%20Assessment%20SUBMISSION%20FINAL.pdf)  
+📄 [`04-threat-analysis/BW Assessment Executive Derivative.pdf`](04-threat-analysis/BW%20Assessment%20Executive%20Derivative.pdf)
 
 Unclassified defensive assessment of state BW-related risk for China, Russia, Iran, and DPRK. Two-axis confidence framework (confidence level plus evidence type) applied consistently. Source hierarchy explicitly enforced: ODNI ATA, State Department compliance reports, HHS/ASPR, CDC, UNODA, WHO, UNSCR 1540. Verification gap framed as structural rather than episodic. Executive Derivative provides condensed decision-support version.
 
@@ -182,7 +182,7 @@ Unclassified defensive assessment of state BW-related risk for China, Russia, Ir
 ---
 
 #### 14. HORMUZ — Strait of Hormuz Regional Posture Assessment
-📄 [`04-threat-analysis/WP-2026-HORMUZ.docx`](04-threat-analysis/WP-2026-HORMUZ.docx)
+📄 [`04-threat-analysis/WP-2026-HORMUZ.pdf`](04-threat-analysis/WP-2026-HORMUZ.pdf)
 
 Active crisis context (IRGC declared closure March 2, 2026). Three-posture analysis with reinforced distributed posture analytically favored. Stakes: ~20M bpd, all Qatari LNG, 5,000+ pre-positioned Iranian naval mines. Original strategic insight: threat of Kharg Island seizure is more durable leverage than actual seizure, given civilian protection obligations under Hague Regulations Arts. 42–56 and occupation obligation escalation. China exposure: 90%+ Iranian crude dependency, full substitution achievable 6–12 months, economic retaliation assessed more likely than naval intervention. Legal framework: UNCLOS Art. 38, Hague Convention VIII.
 
@@ -242,14 +242,14 @@ Counter-narcotics framework applying the FEND Off Fentanyl Act, §5318A, and §5
 ---
 
 #### ISR Decision Support Annex
-📄 [`06-isr-annexes/ISR Decision Support Annex.docx`](06-isr-annexes/ISR%20Decision%20Support%20Annex.docx)
+📄 [`06-isr-annexes/ISR Decision Support Annex.pdf`](06-isr-annexes/ISR%20Decision%20Support%20Annex.pdf)
 
 ISR decision support framework providing analytical scaffolding for collection prioritization and assessment.
 
 ---
 
 #### ISR WMD Intelligence Briefing
-📄 [`06-isr-annexes/ISR WMD Intelligence Briefing.docx`](06-isr-annexes/ISR%20WMD%20Intelligence%20Briefing.docx)
+📄 [`06-isr-annexes/ISR WMD Intelligence Briefing.pdf`](06-isr-annexes/ISR%20WMD%20Intelligence%20Briefing.pdf)
 
 WMD-focused intelligence briefing providing decision-support analysis for the threat characterization papers.
 
