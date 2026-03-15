@@ -16,6 +16,16 @@ This repository serves as the primary timestamped publication record for the WP-
 
 ---
 
+## Interactive Intelligence Map
+
+**[→ Launch SENI v4 — Strategic Enforcement Node Index: Global Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)**
+
+Georeferenced companion to WP-2026-SENI-01. 341 nodes across 20 threat networks — Russia-China strategic infrastructure, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, and IRGC-QF external operations network. Satellite imagery via Esri World Imagery (Maxar/Earthstar Geographics). OSINT basis only — no classified sourcing. Confidence levels, legal authorities, and enforcement theory carried through per node.
+
+*Companion documents: WP-2026-SENI-01 · WP-2026-INFRA-01 · ISR Decision Support Annex*
+
+---
+
 ## About This Series
 
 The WP-2026 series is an independent policy research portfolio spanning sanctions enforcement law, competitive statecraft, financial intelligence, threat analysis, and enforcement framework design. It develops an integrated analytical architecture from foundational attribution methodology through strategic framework to operational execution, applied to the primary national security challenges of 2025–2026.
