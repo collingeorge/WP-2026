@@ -160,7 +160,7 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 
 Post-strike (Operation Midnight Hammer, June 2025) open-source assessment of Iran's nuclear status. Applies five-category analytic labeling: OBSERVED / ASSESSMENT / ALTERNATIVE EXPLANATION / KEY UNKNOWN / IMPLICATION. Covers pre-strike baseline (~408–440 kg U-235 at 60%, 18,000+ centrifuges), Fordow penetration effects, three-model stockpile location analysis, Pickaxe Mountain assessment (~33.707°N, 51.718°E, 260–330 feet depth), conditional breakout timeline (5–10 days worst case per DIA), and NCRI allegation calibration correctly held at Tier 3. Biological annex separated and held below Key Judgment threshold.
 
-**Reads into:** HORMUZ, CPF-02.
+**Reads into:** HORMUZ-01, HORMUZ-02, CPF-02.
 
 ---
 
@@ -181,12 +181,23 @@ Unclassified defensive assessment of state BW-related risk for China, Russia, Ir
 
 ---
 
-#### 14. HORMUZ — Strait of Hormuz Regional Posture Assessment
+#### 14. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
 📄 [`04-threat-analysis/WP-2026-HORMUZ.pdf`](04-threat-analysis/WP-2026-HORMUZ.pdf)
 
 Active crisis context (IRGC declared closure March 2, 2026). Three-posture analysis with reinforced distributed posture analytically favored. Stakes: ~20M bpd, all Qatari LNG, 5,000+ pre-positioned Iranian naval mines. Original strategic insight: threat of Kharg Island seizure is more durable leverage than actual seizure, given civilian protection obligations under Hague Regulations Arts. 42–56 and occupation obligation escalation. China exposure: 90%+ Iranian crude dependency, full substitution achievable 6–12 months, economic retaliation assessed more likely than naval intervention. Legal framework: UNCLOS Art. 38, Hague Convention VIII.
 
-**Reads into:** Iran Nuclear, SHIELD-01, MAXPRESS-01 Iran track.
+**Reads into:** HORMUZ-02, Iran Nuclear, SHIELD-01, MAXPRESS-01 Iran track.
+
+---
+
+#### 15. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
+📄 [`04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf`](04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf)
+
+Companion to HORMUZ-01. Full integrated campaign architecture for Hormuz stabilization across four time horizons (0–30 days through 1–5 years). Partner-by-partner coordination matrix covering 11 actors (Bahrain, Qatar, UAE, Saudi Arabia, Oman, Kuwait, Jordan, Israel, UK, France, Japan/South Korea, India) with specific military contributions, core interests, U.S. deliverables, and sustaining mechanisms. Four-track diplomatic resolution sequence: Oman/Swiss back-channel (0–90 days), Hormuz Transit Conference (3–6 months), Gulf Maritime Forum (12–36 months), economic integration framework (24–60 months). Proxy and multi-front risk architecture covering Houthi/Bab el-Mandeb, PMF, Hezbollah, Chinese economic retaliation, and mineral framework defection. Conditional great-power mineral trade framework — GCC critical minerals as compliance inducement for China-IRGC decoupling, with snap-back triggers and Russian/Iranian civilian differentiation. Full confidence lexicon with documented/modeled boundary convention applied throughout. Part X (post-seizure) converts the pre-seizure Kharg deterrence analysis into occupation obligation analysis: IHL obligations under Hague Regulations Arts. 42–56, revenue disposition requirements, partner political calculus revision, and exit architecture. Version v4.1 Final Hardened — post hostile stress-test.
+
+**Key authorities:** UNCLOS Art. 38; Hague Regulations Arts. 42–56; Geneva Convention IV; EO 13846; CISADA; IEEPA.
+
+**Reads into:** HORMUZ-01, MAXPRESS-01, UNIFIED-01, CONTAIN-01, INFRA-01.
 
 ---
 
@@ -196,7 +207,7 @@ Active crisis context (IRGC declared closure March 2, 2026). Three-posture analy
 
 ---
 
-#### 15. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
+#### 16. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
 📄 [`05-earlier-generation/WP-2026-UNIFIED-01.pdf`](05-earlier-generation/WP-2026-UNIFIED-01.pdf)
 
 Integration memorandum unifying the CTF-01, CPF-02, and ARCH-03 frameworks into a single coordinated enforcement architecture. Core analytical insight: Mexican cartels, Iranian proliferation networks, and Hezbollah financial facilitators utilize shared shadow banking infrastructure, hawala networks, and shell company jurisdictions. A single Section 311 designation against a Dubai exchange house creates enforcement efficiencies across fentanyl smuggling, WMD procurement, and terrorist financing simultaneously. Introduces cross-domain asset substitution (§981(k)), whistleblower incentive synchronization (§5323), and a unified 18-month phased implementation roadmap. Companion integration document for CTF-01, CPF-02, and ARCH-03.
@@ -205,7 +216,7 @@ Integration memorandum unifying the CTF-01, CPF-02, and ARCH-03 frameworks into 
 
 ---
 
-#### 16. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
+#### 17. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
 📄 [`05-earlier-generation/WP-2026-SIEGE-01.pdf`](05-earlier-generation/WP-2026-SIEGE-01.pdf)
 
 The most analytically ambitious paper in the earlier-generation series. Proposes a paradigm shift from sequential designation to simultaneous multi-channel denial across all seven viable financial access categories: formal banking, physical currency, cryptocurrency, trade finance, real estate, informal value transfer (hawala), and maritime/logistics networks. Demonstrates through economic modeling that coordinated seven-chokepoint closure creates 1,200–2,000% cumulative cost escalation, rendering industrial-scale criminal operations mathematically unprofitable. Includes full Sinaloa Cartel operational collapse case study (projected 14–18 month timeline, $8–12B revenue degradation, 18,000–28,000 lives saved annually) and cryptocurrency forensics technical feasibility appendix. Under revision to apply PERSIST evidence-gating standards and integrate SENI node-level targeting.
@@ -216,21 +227,21 @@ The most analytically ambitious paper in the earlier-generation series. Proposes
 
 ---
 
-#### 17. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
+#### 18. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
 📄 [`05-earlier-generation/WP-2026-CTF-01.pdf`](05-earlier-generation/WP-2026-CTF-01.pdf)
 
 Counter-terrorist financing framework synchronizing 31 U.S.C. §5318A, E.O. 13224, §5323, and §319(b). Applies Section 311 class designation for hawala corridors, §981(k) substitution bypassing foreign sovereign and bank secrecy barriers, §5323 whistleblower mechanics, and crypto enforcement including DeFi gateway targeting. Under revision to apply PERSIST evidence-gating standards.
 
 ---
 
-#### 18. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
+#### 19. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
 📄 [`05-earlier-generation/WP-2026-CPF-02.pdf`](05-earlier-generation/WP-2026-CPF-02.pdf)
 
 Counter-proliferation finance framework mapping CAATSA §231/232, CISADA, and NKSPEA by target, triggering condition, and evasion vector. Features 180-day warning letter protocol, maritime de-flagging sanctions targeting flag registries rather than individual vessels, §981(k) binary-choice framing for foreign banks, and crypto enforcement covering DPRK Lazarus Group mining and Iranian oil-in-crypto. Under revision to apply PERSIST evidence-gating standards.
 
 ---
 
-#### 19. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
+#### 20. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
 📄 [`05-earlier-generation/WP-2026-ARCH-03 .pdf`](05-earlier-generation/WP-2026-ARCH-03%20.pdf)
 
 Counter-narcotics framework applying the FEND Off Fentanyl Act, §5318A, and §5323 to PRC precursor-to-cartel supply chains. Primary analytical insight: the February 2025 FTO designation of Sinaloa and CJNG creates §2339B material support exposure (20-year maximum) for PRC precursor suppliers — converting export control violations into felony prosecutions. Enhanced Notice procedure eliminates knowledge-based defenses after delivery. Al Kassar precedent (660 F.3d 108) applied for extraterritorial jurisdiction. Under revision to apply PERSIST evidence-gating standards.
@@ -269,6 +280,7 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
 | EO 13224 | US Executive Order | SDGT blocking; terrorist financing |
 | EO 13722 / EO 13687 | US Executive Order | DPRK blocking authority |
 | EO 14059 | US Executive Order | Narcotics trafficking blocking authority |
+| EO 13846 | US Executive Order | Iran sanctions re-imposition authority |
 | CAATSA §226/231/232 | US Statute | FFI secondary sanctions; Russian defense; Russia-Iran tech transfer |
 | IEEPA §1702 | US Statute | Blocking authority; ISP-level de-peering |
 | GENIUS Act Pub. L. 119-27 (139 Stat. 419) | US Statute | Stablecoin BSA treatment; mandatory freeze/burn/seize |
@@ -311,9 +323,13 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      │         │
      │         └──► INFRA-01
      │
-     └──► HORMUZ ──► IRAN-NUCLEAR ──► BW-ASSESSMENT
-                                           │
-                                      IRAN-WMD
+     └──► HORMUZ-01 ──► HORMUZ-02 (integrated campaign architecture)
+          │                   │
+          │              MAXPRESS-01, UNIFIED-01, CONTAIN-01, INFRA-01
+          │
+          └──► IRAN-NUCLEAR ──► BW-ASSESSMENT
+                                     │
+                                IRAN-WMD
 
 UNIFIED-01 (cross-domain integration)
      │
