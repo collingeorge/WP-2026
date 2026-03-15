@@ -170,9 +170,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-fam
   <span>ESRI WORLD IMAGERY — LIVE SATELLITE</span>
   <span id="coords" style="color:var(--accent2)">0.000°N, 0.000°E</span>
   <span style="flex:1"></span>
-  <span style="color:var(--gray);font-size:9px">ESC close · / search · T tier-I filter</span>
+  <span style="color:var(--gray);font-size:9px">ESC close · / search · T tier-I · P print</span>
   <span style="width:1px;height:14px;background:var(--border);margin:0 8px"></span>
   <span onclick="zoomToVisible()" style="cursor:pointer;color:var(--accent2);font-size:9px" title="Zoom to fit visible nodes">⊞ FIT</span>
+  <span style="width:1px;height:14px;background:var(--border);margin:0 8px"></span>
+  <span onclick="exportNodes()" style="cursor:pointer;color:var(--accent2);font-size:9px" title="Export visible nodes as printable report">⬇ EXPORT</span>
   <span style="width:1px;height:14px;background:var(--border);margin:0 8px"></span>
   <span>SENI WP-2026-SENI-04 · C. GEORGE · MARCH 2026 · UNCLASSIFIED OSINT</span>
 </div>
@@ -730,12 +732,92 @@ function copyCoords(c){
 }
 function toggleSB(){const sb=document.getElementById('sidebar');sb.classList.toggle('collapsed');document.getElementById('stoggle').textContent=sb.classList.contains('collapsed')?'▶':'◀';}
 
+
+// ── EXPORT / PRINT ──
+function exportNodes(){
+  const q = document.getElementById('search').value.toLowerCase();
+  const visible = NODES.filter(n => {
+    const ms = activeStatuses.has(n.status);
+    const mn = activeNetworks.has(n.network);
+    const mq = !q || (n.name||'').toLowerCase().includes(q) ||
+      (n.location||'').toLowerCase().includes(q) ||
+      (n.owner||'').toLowerCase().includes(q) ||
+      (n.network||'').toLowerCase().includes(q) ||
+      (n.category||'').toLowerCase().includes(q);
+    return ms && mn && mq;
+  });
+  const filterDesc = [
+    q ? `Search: "${q}"` : null,
+    activeStatuses.size < Object.keys(STATUS_CONFIG).length ?
+      `Status: ${[...activeStatuses].join(', ')}` : null,
+    activeNetworks.size < allNetworks.size ?
+      `Networks: ${[...activeNetworks].join(', ')}` : null,
+  ].filter(Boolean).join(' | ') || 'All nodes';
+  const rows = visible.map(n => {
+    const statusColor = (STATUS_CONFIG[n.status]||{color:'#888'}).color;
+    return `<tr>
+      <td class="name">${n.name}${n.tier1?' ★':''}</td>
+      <td><span class="badge" style="background:${statusColor}22;color:${statusColor};border:1px solid ${statusColor}55">${n.status}</span></td>
+      <td>${n.network}</td>
+      <td>${n.category}</td>
+      <td class="coords">${n.coords}</td>
+      <td>${n.location}</td>
+      <td>${n.owner}</td>
+      <td class="action">${n.action}</td>
+    </tr>`;
+  }).join('');
+  const dateStr = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>SENI Export — ${dateStr}</title>
+<style>
+@page{margin:0.75in;size:landscape}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,Arial,sans-serif;font-size:9pt;color:#111;background:white}
+.header{border-bottom:2px solid #1C2B4A;padding-bottom:10px;margin-bottom:14px}
+.header h1{font-size:14pt;font-weight:bold;color:#1C2B4A;letter-spacing:0.05em;text-transform:uppercase}
+.header .meta{font-size:8pt;color:#666;margin-top:4px;font-family:monospace}
+.header .filter{font-size:8pt;color:#2E5090;margin-top:3px;font-family:monospace}
+.summary{font-size:8pt;color:#444;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:8pt}
+th{background:#1C2B4A;color:white;padding:5px 6px;text-align:left;font-size:7.5pt;letter-spacing:0.08em;text-transform:uppercase;font-weight:bold}
+td{padding:4px 6px;border-bottom:1px solid #e0e4ea;vertical-align:top}
+tr:nth-child(even) td{background:#f5f7fa}
+.name{font-weight:bold;color:#1C2B4A;min-width:140px}
+.badge{font-size:7pt;padding:1px 5px;font-family:monospace;letter-spacing:0.08em;white-space:nowrap}
+.coords{font-family:monospace;font-size:7.5pt;white-space:nowrap}
+.action{color:#333;max-width:260px;line-height:1.4}
+.footer{margin-top:14px;padding-top:8px;border-top:1px solid #ccc;font-size:7.5pt;color:#888;font-family:monospace;display:flex;justify-content:space-between}
+.print-btn{background:#1C2B4A;color:white;border:none;padding:7px 18px;font-size:9pt;cursor:pointer;margin-bottom:12px;font-family:monospace;letter-spacing:0.1em}
+.print-btn:hover{background:#2E5090}
+@media print{.no-print{display:none}tr{page-break-inside:avoid}thead{display:table-header-group}}
+</style></head><body>
+<button class="print-btn no-print" onclick="window.print()">&#x2399; PRINT / SAVE AS PDF</button>
+<div class="header">
+  <h1>SENI &#x2014; Strategic Enforcement Node Index &#xB7; Export Report</h1>
+  <div class="meta">WP-2026-SENI-04 &#xB7; C. George &#xB7; March 2026 &#xB7; UNCLASSIFIED // OPEN SOURCE // INDEPENDENT POLICY RESEARCH</div>
+  <div class="filter">Filter: ${filterDesc}</div>
+</div>
+<div class="summary"><strong>${visible.length}</strong> nodes &#xB7; Generated ${new Date().toLocaleString('en-US',{dateStyle:'full',timeStyle:'short'})}</div>
+<table><thead><tr>
+  <th>Node / Facility</th><th>Status</th><th>Network</th><th>Category</th>
+  <th>Coordinates</th><th>Location</th><th>Operator / Structure</th><th>Enforcement Theory &amp; Action</th>
+</tr></thead><tbody>${rows}</tbody></table>
+<div class="footer">
+  <span>SENI WP-2026-SENI-04 &#xB7; Strategic Enforcement Node Index &#xB7; C. George &#xB7; March 2026</span>
+  <span>UNCLASSIFIED // OPEN SOURCE // INDEPENDENT POLICY RESEARCH &#xB7; CC BY 4.0</span>
+</div></body></html>`;
+  const w = window.open('','_blank','width=1200,height=800');
+  w.document.write(html);
+  w.document.close();
+}
+
 // ── EXPOSE TO WINDOW SCOPE (fixes Full Profile in Leaflet popup context) ──
 window.showInfo = showInfo;
 window.flyTo = flyTo;
 window.copyCoords = copyCoords;
 window.closeInfo = closeInfo;
 window.toggleSB = toggleSB;
+window.exportNodes = exportNodes;
 
 // ── KEYBOARD SHORTCUTS ──
 document.addEventListener('keydown', e => {
@@ -745,6 +827,10 @@ document.addEventListener('keydown', e => {
     document.getElementById('search').focus();
   }
   // T = toggle Tier I only
+  if(e.key === 'p' && document.activeElement.id !== 'search') {
+    e.preventDefault();
+    exportNodes();
+  }
   if(e.key === 't' && document.activeElement.id !== 'search') {
     const q = document.getElementById('search');
     q.value = q.value === '★' ? '' : '★';
