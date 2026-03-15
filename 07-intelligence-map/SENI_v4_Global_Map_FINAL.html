@@ -731,16 +731,31 @@ ${node.extra?`<div class="ifield"><div class="iflabel">Additional Intelligence</
 }
 
 // ── PER-NODE PROFILE EXPORT WITH SATELLITE IMAGERY ──
-function exportNodeProfile(id){
+async function exportNodeProfile(id){
   const node = NODES.find(n => n.id === id);
   if(!node) return;
   const cfg = STATUS_CONFIG[node.status] || {color:'#888'};
   const nc = NETWORK_COLORS[node.network] || '#888';
   const GMAPS_KEY = 'AIzaSyCsEX06uP9P29YCj3k6aD1fWS7r3wVn1_s';
 
-  // Google Maps Static API — satellite imagery centered on node
+  // Google Maps Static API — fetch as blob to embed as base64 (preserves origin for key restriction)
   const zoom = 13;
   const imgUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${node.lat},${node.lng}&zoom=${zoom}&size=640x320&maptype=satellite&markers=color:red%7Csize:mid%7C${node.lat},${node.lng}&key=${GMAPS_KEY}`;
+  
+  // Fetch image and convert to base64 so it embeds in the PDF regardless of origin
+  let imgDataUrl = '';
+  try {
+    const resp = await fetch(imgUrl);
+    if(resp.ok){
+      const blob2 = await resp.blob();
+      imgDataUrl = await new Promise(res => {
+        const r = new FileReader();
+        r.onloadend = () => res(r.result);
+        r.readAsDataURL(blob2);
+      });
+    }
+  } catch(e) { imgDataUrl = ''; }
+  const imgSrc = imgDataUrl || imgUrl;
 
   // Status color as hex for use in HTML
   const statusColor = cfg.color;
@@ -799,7 +814,8 @@ body{font-family:Calibri,Arial,sans-serif;font-size:10pt;color:#111;background:w
 <div class="node-network" style="color:${networkColor}">${node.network} &mdash; ${node.category}</div>
 
 <div class="satellite-container">
-  <img class="satellite-img" src="${imgUrl}" alt="Satellite imagery: ${node.name}" onerror="this.style.display='none';this.nextElementSibling.style.background='#1C2B4A';this.nextElementSibling.innerHTML='Satellite imagery unavailable for this location'"/>
+  <img class="satellite-img" src="${imgSrc}" alt="Satellite imagery: ${node.name}" referrerpolicy="no-referrer-when-downgrade" crossorigin="anonymous" onerror="this.parentElement.style.background='#1a2540';this.style.display='none';document.getElementById('sat-fallback-${node.id}').style.display='flex'"/>
+  <div id="sat-fallback-${node.id}" style="display:none;height:260px;background:#0a1628;align-items:center;justify-content:center;color:#4a9eff;font-family:monospace;font-size:9pt;flex-direction:column;gap:8px"><span style='font-size:20pt'>🛰</span><span>Open in Google Maps for satellite view</span><a href="https://maps.google.com/?q=${node.lat},${node.lng}&t=k" target="_blank" style="color:#00d4ff">${node.coords}</a></div>
   <div class="satellite-label">&#x1F6F0; SATELLITE IMAGERY &middot; ${node.coords} &middot; Zoom ${zoom} &middot; Esri / Google Maps &middot; OSINT</div>
 </div>
 
@@ -832,9 +848,12 @@ body{font-family:Calibri,Arial,sans-serif;font-size:10pt;color:#111;background:w
 </div>
 </body></html>`;
 
-  const w = window.open('','_blank','width=900,height=1000');
-  w.document.write(html);
-  w.document.close();
+  // Use blob URL to preserve origin context — required for Google Maps Static API key restriction
+  const blob = new Blob([html], {type: 'text/html'});
+  const url = URL.createObjectURL(blob);
+  const w = window.open(url, '_blank', 'width=920,height=1050');
+  // Revoke after open to free memory
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
 }
 
 function closeInfo(){document.getElementById('infopanel').classList.remove('open');}
