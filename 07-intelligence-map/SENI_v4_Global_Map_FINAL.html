@@ -57,14 +57,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-fam
 .ndot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px}
 .nname{font-family:var(--head);font-weight:600;font-size:12px;color:var(--text);line-height:1.2}
 .nmeta{font-family:var(--mono);font-size:9px;color:var(--gray);margin-top:1px}
-#infopanel{position:absolute;top:52px;right:0;z-index:50;width:380px;max-height:calc(100vh - 80px);background:var(--panel);border-left:1px solid var(--border);backdrop-filter:blur(16px);transform:translateX(380px);transition:transform .3s ease;display:flex;flex-direction:column;overflow:hidden}
+#infopanel{position:absolute;top:52px;right:0;z-index:50;width:380px;max-height:calc(100vh - 80px);background:var(--panel);border-left:1px solid var(--border);backdrop-filter:blur(16px);transform:translateX(380px);transition:transform .3s ease;display:flex;flex-direction:column;overflow-y:auto}
 #infopanel.open{transform:translateX(0)}
 #iclose{position:absolute;top:10px;right:12px;z-index:10;background:none;border:none;color:var(--gray);font-size:16px;cursor:pointer}
 #iclose:hover{color:var(--text)}
-#icontent{flex:1;overflow-y:scroll;padding:16px 16px 24px 16px;-webkit-overflow-scrolling:touch}
-#icontent::-webkit-scrollbar{width:5px}
-#icontent::-webkit-scrollbar-track{background:rgba(255,255,255,0.03)}
-#icontent::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:2px}
+#icontent{padding:16px 16px 24px 16px;overflow:visible}
+#infopanel::-webkit-scrollbar{width:5px}
+#infopanel::-webkit-scrollbar-track{background:rgba(255,255,255,0.03)}
+#infopanel::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:2px}
 .istatus{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:2px 8px;margin-bottom:10px}
 .iname{font-family:var(--head);font-weight:900;font-size:19px;color:var(--text);text-transform:uppercase;line-height:1.1;margin-bottom:3px;letter-spacing:.03em}
 .icat{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
@@ -731,31 +731,15 @@ ${node.extra?`<div class="ifield"><div class="iflabel">Additional Intelligence</
 }
 
 // ── PER-NODE PROFILE EXPORT WITH SATELLITE IMAGERY ──
-async function exportNodeProfile(id){
+function exportNodeProfile(id){
   const node = NODES.find(n => n.id === id);
   if(!node) return;
   const cfg = STATUS_CONFIG[node.status] || {color:'#888'};
   const nc = NETWORK_COLORS[node.network] || '#888';
   const GMAPS_KEY = 'AIzaSyCsEX06uP9P29YCj3k6aD1fWS7r3wVn1_s';
-
-  // Google Maps Static API — fetch as blob to embed as base64 (preserves origin for key restriction)
-  const zoom = 13;
-  const imgUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${node.lat},${node.lng}&zoom=${zoom}&size=640x320&maptype=satellite&markers=color:red%7Csize:mid%7C${node.lat},${node.lng}&key=${GMAPS_KEY}`;
-  
-  // Fetch image and convert to base64 so it embeds in the PDF regardless of origin
-  let imgDataUrl = '';
-  try {
-    const resp = await fetch(imgUrl);
-    if(resp.ok){
-      const blob2 = await resp.blob();
-      imgDataUrl = await new Promise(res => {
-        const r = new FileReader();
-        r.onloadend = () => res(r.result);
-        r.readAsDataURL(blob2);
-      });
-    }
-  } catch(e) { imgDataUrl = ''; }
-  const imgSrc = imgDataUrl || imgUrl;
+  const zoom = 14;
+  // Direct URL — works when API key is restricted by API type only (not by HTTP referrer)
+  const imgSrc = `https://maps.googleapis.com/maps/api/staticmap?center=${node.lat},${node.lng}&zoom=${zoom}&size=640x360&maptype=satellite&markers=color:red%7Csize:mid%7Clabel:${encodeURIComponent(node.id)}%7C${node.lat},${node.lng}&key=${GMAPS_KEY}`;
 
   // Status color as hex for use in HTML
   const statusColor = cfg.color;
