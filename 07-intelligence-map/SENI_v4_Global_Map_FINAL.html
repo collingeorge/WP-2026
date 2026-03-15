@@ -718,8 +718,118 @@ ${node.extra?`<div class="ifield"><div class="iflabel">Additional Intelligence</
 <div class="ibtns">
   <button class="ibtn" onclick="flyTo(${node.lat},${node.lng})">🛰 Fly To</button>
   <button class="ibtn2" onclick="copyCoords('${node.coords}')">📋 Copy</button>
-</div>`;
+</div>
+<div class="idiv"></div>
+<button class="ibtn" style="width:100%;margin-top:2px;background:rgba(0,212,255,0.12);letter-spacing:0.08em" onclick="exportNodeProfile(${node.id})">⬇ EXPORT NODE PROFILE</button>
+`;
   document.getElementById('infopanel').classList.add('open');
+}
+
+// ── PER-NODE PROFILE EXPORT WITH SATELLITE IMAGERY ──
+function exportNodeProfile(id){
+  const node = NODES.find(n => n.id === id);
+  if(!node) return;
+  const cfg = STATUS_CONFIG[node.status] || {color:'#888'};
+  const nc = NETWORK_COLORS[node.network] || '#888';
+  const GMAPS_KEY = 'AIzaSyCsEX06uP9P29YCj3k6aD1fWS7r3wVn1_s';
+
+  // Google Maps Static API — satellite imagery centered on node
+  const zoom = 13;
+  const imgUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${node.lat},${node.lng}&zoom=${zoom}&size=640x320&maptype=satellite&markers=color:red%7Csize:mid%7C${node.lat},${node.lng}&key=${GMAPS_KEY}`;
+
+  // Status color as hex for use in HTML
+  const statusColor = cfg.color;
+  const networkColor = nc;
+
+  const dateStr = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const timeStr = new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Node Profile — ${node.name}</title>
+<style>
+@page{margin:0.65in;size:portrait}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,Arial,sans-serif;font-size:10pt;color:#111;background:white}
+.print-btn{background:#1C2B4A;color:white;border:none;padding:7px 20px;font-size:9pt;cursor:pointer;margin-bottom:14px;font-family:monospace;letter-spacing:0.1em}
+.print-btn:hover{background:#2E5090}
+.doc-header{border-bottom:3px solid #1C2B4A;padding-bottom:10px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:flex-end}
+.doc-header-left h1{font-size:10pt;font-weight:bold;color:#1C2B4A;letter-spacing:0.12em;text-transform:uppercase}
+.doc-header-left .sub{font-size:8pt;color:#666;font-family:monospace;margin-top:2px}
+.doc-header-right{font-size:7.5pt;color:#888;font-family:monospace;text-align:right}
+.status-badge{display:inline-block;font-family:monospace;font-size:8pt;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:10px;border-radius:2px}
+.node-name{font-size:18pt;font-weight:900;color:#1C2B4A;text-transform:uppercase;letter-spacing:0.04em;line-height:1.1;margin-bottom:4px}
+.node-network{font-size:8.5pt;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;font-family:monospace}
+.satellite-container{width:100%;margin-bottom:16px;border:1px solid #dde2ea;position:relative}
+.satellite-img{width:100%;display:block;height:260px;object-fit:cover}
+.satellite-label{position:absolute;bottom:0;left:0;right:0;background:rgba(28,43,74,0.82);color:white;font-family:monospace;font-size:7.5pt;padding:4px 8px;letter-spacing:0.08em}
+.coords-bar{background:#f2f4f7;border:1px solid #dde2ea;padding:6px 10px;font-family:monospace;font-size:8.5pt;color:#2E5090;margin-bottom:14px;letter-spacing:0.05em}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-bottom:14px}
+.field-full{grid-column:1/-1}
+.field-label{font-family:monospace;font-size:7.5pt;color:#2E5090;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:3px}
+.field-value{font-size:9.5pt;color:#111;line-height:1.5}
+.field-value.bold{font-weight:600;color:#1C2B4A}
+.field-value.amber{color:#7A5000;font-weight:500}
+.divider{height:1px;background:#dde2ea;margin:12px 0}
+.action-box{background:#f8f9fb;border-left:3px solid #1C2B4A;padding:10px 12px;font-size:9pt;line-height:1.6;color:#222}
+.footer{margin-top:16px;padding-top:8px;border-top:1px solid #ccc;font-size:7.5pt;color:#999;font-family:monospace;display:flex;justify-content:space-between}
+.tier-flag{display:inline-block;background:#ff3b3b22;color:#ff3b3b;border:1px solid #ff3b3b55;font-family:monospace;font-size:7.5pt;padding:2px 8px;letter-spacing:0.1em;margin-left:8px;vertical-align:middle}
+@media print{.no-print{display:none}}
+</style></head><body>
+<button class="print-btn no-print" onclick="window.print()">&#x2399; PRINT / SAVE AS PDF</button>
+<div class="doc-header">
+  <div class="doc-header-left">
+    <h1>Strategic Enforcement Node Index &mdash; Node Profile</h1>
+    <div class="sub">WP-2026-SENI-04 &middot; C. George &middot; March 2026 &middot; UNCLASSIFIED // OPEN SOURCE</div>
+  </div>
+  <div class="doc-header-right">
+    Generated ${dateStr}<br>${timeStr}<br>Node ID: ${node.id}
+  </div>
+</div>
+
+<div>
+  <span class="status-badge" style="background:${statusColor}18;color:${statusColor};border:1px solid ${statusColor}44">${node.status}${node.tier1?' &middot; TIER I PRIORITY':''}</span>
+  ${node.tier1?'<span class="tier-flag">&#9733; TIER I</span>':''}
+</div>
+<div class="node-name">${node.name}</div>
+<div class="node-network" style="color:${networkColor}">${node.network} &mdash; ${node.category}</div>
+
+<div class="satellite-container">
+  <img class="satellite-img" src="${imgUrl}" alt="Satellite imagery: ${node.name}" onerror="this.style.display='none';this.nextElementSibling.style.background='#1C2B4A';this.nextElementSibling.innerHTML='Satellite imagery unavailable for this location'"/>
+  <div class="satellite-label">&#x1F6F0; SATELLITE IMAGERY &middot; ${node.coords} &middot; Zoom ${zoom} &middot; Esri / Google Maps &middot; OSINT</div>
+</div>
+
+<div class="coords-bar">&#128205; ${node.coords}</div>
+
+<div class="fields">
+  <div>
+    <div class="field-label">Location</div>
+    <div class="field-value bold">${node.location}</div>
+  </div>
+  <div>
+    <div class="field-label">Network Group</div>
+    <div class="field-value" style="color:${networkColor};font-weight:600">${node.network}</div>
+  </div>
+  <div class="field-full">
+    <div class="field-label">Operator / Structure</div>
+    <div class="field-value">${node.owner}</div>
+  </div>
+  ${node.extra?`<div class="field-full"><div class="field-label">Additional Intelligence</div><div class="field-value amber">${node.extra}</div></div>`:''}
+</div>
+
+<div class="divider"></div>
+
+<div class="field-label" style="margin-bottom:6px">Enforcement Theory &amp; Action</div>
+<div class="action-box">${node.action}</div>
+
+<div class="footer">
+  <span>SENI WP-2026-SENI-04 &middot; Strategic Enforcement Node Index &middot; C. George &middot; March 2026</span>
+  <span>UNCLASSIFIED // OPEN SOURCE // INDEPENDENT POLICY RESEARCH &middot; CC BY 4.0</span>
+</div>
+</body></html>`;
+
+  const w = window.open('','_blank','width=900,height=1000');
+  w.document.write(html);
+  w.document.close();
 }
 
 function closeInfo(){document.getElementById('infopanel').classList.remove('open');}
