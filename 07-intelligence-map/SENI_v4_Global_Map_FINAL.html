@@ -736,9 +736,10 @@ function exportNodeProfile(id){
   const zoom = 14;
   // ArcGIS REST export API — proper CORS-enabled static image, same Esri World Imagery source
   // Calculate bounding box: ~0.02 degrees each side at zoom 14
-  const delta = 0.018;
-  const bbox = `${node.lng-delta},${node.lat-delta},${node.lng+delta},${node.lat+delta}`;
-  const imgSrc = `https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=${bbox}&bboxSR=4326&size=480,480&imageSR=4326&format=png&transparent=false&f=image`;
+  const delta = 0.022;
+  const deltaLat = 0.014;
+  const bbox = `${node.lng-delta},${node.lat-deltaLat},${node.lng+delta},${node.lat+deltaLat}`;
+  const imgSrc = `https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=${bbox}&bboxSR=4326&size=720,420&imageSR=4326&format=png&transparent=false&f=image`;
 
   // Status color as hex for use in HTML
   const statusColor = cfg.color;
@@ -762,7 +763,7 @@ body{font-family:Calibri,Arial,sans-serif;font-size:10pt;color:#111;background:w
 .status-badge{display:inline-block;font-family:monospace;font-size:8pt;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:10px;border-radius:2px}
 .node-name{font-size:18pt;font-weight:900;color:#1C2B4A;text-transform:uppercase;letter-spacing:0.04em;line-height:1.1;margin-bottom:4px}
 .node-network{font-size:8.5pt;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;font-family:monospace}
-.satellite-container{width:100%;max-width:480px;margin:0 auto 16px auto;border:1px solid #dde2ea;position:relative}
+.satellite-container{width:100%;margin-bottom:16px;border:1px solid #dde2ea;position:relative}
 .satellite-img{width:100%;display:block;height:420px;object-fit:cover}
 .satellite-label{position:absolute;bottom:0;left:0;right:0;background:rgba(28,43,74,0.82);color:white;font-family:monospace;font-size:7.5pt;padding:4px 8px;letter-spacing:0.08em}
 .coords-bar{background:#f2f4f7;border:1px solid #dde2ea;padding:6px 10px;font-family:monospace;font-size:8.5pt;color:#2E5090;margin-bottom:14px;letter-spacing:0.05em}
