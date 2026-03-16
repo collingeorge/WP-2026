@@ -35,8 +35,8 @@ All papers in this series are produced against documented editorial and producti
 
 | Document | Purpose |
 |---|---|
-| [WP-2026-StyleGuide-v3.docx](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-StyleGuide-v3.docx) | Governing editorial standard: institutional voice, ODNI-anchored analytic tradecraft, document architecture, visual design system, source tier system, pre-publication revision checklist |
-| [WP-2026-CI-Assessment-v2.docx](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v2.docx) | Open-source counterintelligence exposure assessment of the series, produced for academic risk management and professional transparency |
+| [WP-2026-StyleGuide-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-StyleGuide-v3.pdf) | Governing editorial standard: institutional voice, ODNI-anchored analytic tradecraft, document architecture, visual design system, source tier system, pre-publication revision checklist |
+| [WP-2026-CI-Assessment-v2.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v2.pdf) | Open-source counterintelligence exposure assessment of the series, produced for academic risk management and professional transparency |
 
 ---
 
