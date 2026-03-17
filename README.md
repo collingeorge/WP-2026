@@ -44,7 +44,7 @@ All papers in this series are produced against documented editorial and producti
 
 The WP-2026 series is an independent policy research portfolio spanning sanctions enforcement law, competitive statecraft, financial intelligence, threat analysis, and enforcement framework design. It develops an integrated analytical architecture from foundational attribution methodology through strategic framework to operational execution, applied to the primary national security challenges of 2025-2026.
 
-Four original analytical contributions anchor the series:
+Five original analytical contributions anchor the series:
 
 **The Nexus Protocol** (ATTRIBUTION-01 / CSE-01): a five-rung state nexus attribution framework with explicit disconfirmation criteria, corroboration standards, and institutional calibration across OFAC, DOJ, State, IC, and Commerce/BIS.
 
@@ -53,6 +53,8 @@ Four original analytical contributions anchor the series:
 **The Strategic Enforcement Node Index** (WP-2026-SENI-01): a 316-node global sanctions enforcement targeting register spanning 38 sections, covering Russia-China strategic infrastructure, global threat actor financial networks, UAE cross-network facilitation architecture, key persons layers, and a complete legal authority index updated through March 2026.
 
 **The Siege Doctrine** (SIEGE-01 / UNIFIED-01): a seven-chokepoint financial isolation framework demonstrating that coordinated simultaneous denial across all viable financial channels creates cumulative cost escalation sufficient to render large-scale criminal operations economically unsustainable, with a unified integration memorandum applying the framework across narcotics, proliferation, and terrorist financing domains simultaneously.
+
+**The Corridor Wager** (BRI-01 / EST-01): a grand strategy assessment of the conditional strategic opportunity space opened by the March 2026 Hormuz crisis, identifying a US-led coalition corridor architecture capable of competing with BRI at contestable nodes and institutionalizing transit governance through a Hormuz-Indian Ocean Forum. EST-01 presents the BRI-01 analysis as an IC-style strategic estimate with key judgments, scenario-conditioned outcome pathways, competing hypotheses, and indicators.
 
 For full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail: [00-authority-index/WP-2026-Authority-Index.pdf](00-authority-index/WP-2026-Authority-Index.pdf)
 
@@ -138,7 +140,7 @@ Reads into: All enforcement papers.
 
 [02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf)
 
-Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-India Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. v4.0 reframe replaced "winnability" language with conditional strategic opportunity space; v4.1 final hardening corrected conclusion register and clarified Forum-as-necessary-condition logic. Companion to EST-01 (strategic estimate derivative).
+Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-Indian Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. v4.0 reframe replaced "winnability" language with conditional strategic opportunity space; v4.1 final hardening corrected conclusion register and clarified Forum-as-necessary-condition logic. Companion to EST-01 (strategic estimate derivative).
 
 **Companion: WP-2026-EST-01 — BRI Corridor Architecture: Strategic Estimate**
 
@@ -147,6 +149,7 @@ Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic 
 IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v2.0 tradecraft standard. Generator script included in repository.
 
 Reads into: PERSIST-01, CONTAIN-01, SHIELD-01 (CCRP), HORMUZ-01/02.
+
 ---
 
 #### 8. Maximum Pressure Immigration Architecture — Border Enforcement and Financial Isolation Integration
@@ -385,6 +388,8 @@ ATTRIBUTION-01 (4-level nexus framework)
 CSE-01/NEXUS-01 (5-rung PRC extension)
      |
      |---> SHIELD-01 (CCRP) ---> SENI-01 (316 nodes, 38 sections)
+     |         |
+     |         +--> SHIELD-01-Academic-Article (peer-review derivative)
      |
      |---> PERSIST-01 ---> TARIFF-01
      |         |
@@ -397,12 +402,16 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      |         +--> INFRA-01
      |
      +--> HORMUZ-01 ---> HORMUZ-02 (integrated campaign architecture)
-          |                   |
-          |              MAXPRESS-01, UNIFIED-01, CONTAIN-01, INFRA-01
-          |
-          +--> IRAN-NUCLEAR ---> BW-ASSESSMENT
-                                      |
-                                 IRAN-WMD
+     |         |              |
+     |         |         MAXPRESS-01, UNIFIED-01, CONTAIN-01, INFRA-01
+     |         |
+     |         +--> IRAN-NUCLEAR ---> BW-ASSESSMENT
+     |                                     |
+     |                                IRAN-WMD
+     |
+     +--> BRI-01 (grand strategy capstone: corridor wager)
+               |
+               +--> EST-01 (IC-style strategic estimate derivative)
 
 UNIFIED-01 (cross-domain integration)
      |
