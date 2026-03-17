@@ -134,7 +134,22 @@ Reads into: All enforcement papers.
 
 ---
 
-#### 7. Maximum Pressure Immigration Architecture — Border Enforcement and Financial Isolation Integration
+#### 7. BRI-01 — The Corridor Wager: BRI Displacement, Hormuz Leverage, and Conditional Strategic Opportunity
+
+[02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf)
+
+Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-India Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. v4.0 reframe replaced "winnability" language with conditional strategic opportunity space; v4.1 final hardening corrected conclusion register and clarified Forum-as-necessary-condition logic. Companion to EST-01 (strategic estimate derivative).
+
+**Companion: WP-2026-EST-01 — BRI Corridor Architecture: Strategic Estimate**
+
+[02-strategic-architecture/WP-2026-EST-01.pdf](02-strategic-architecture/WP-2026-EST-01.pdf)
+
+IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v2.0 tradecraft standard. Generator script included in repository.
+
+Reads into: PERSIST-01, CONTAIN-01, SHIELD-01 (CCRP), HORMUZ-01/02.
+---
+
+#### 8. Maximum Pressure Immigration Architecture — Border Enforcement and Financial Isolation Integration
 
 [02-strategic-architecture/Maximum Pressure Immigration Architecture v6 FINAL.pdf](02-strategic-architecture/Maximum%20Pressure%20Immigration%20Architecture%20v6%20FINAL.pdf)
 
@@ -148,7 +163,7 @@ Reads into: MAXPRESS-01, ARCH-03, SIEGE-01.
 
 ---
 
-#### 8. SHIELD-01 — Sanctions Enforcement Architecture for PRC-Facilitated Networks
+#### 9. SHIELD-01 — Sanctions Enforcement Architecture for PRC-Facilitated Networks
 
 [03-applied-enforcement/WP-2026-SHIELD-01 V7 PUBLISH.pdf](03-applied-enforcement/WP-2026-SHIELD-01%20V7%20PUBLISH.pdf)
 [03-applied-enforcement/WP-2026-SHIELD-01-EB V7 FINAL2.pdf](03-applied-enforcement/WP-2026-SHIELD-01-EB%20V7%20FINAL2.pdf)
@@ -157,9 +172,15 @@ Applies the five-rung Commercial State Nexus Ladder to sanctions enforcement aga
 
 Reads into: PERSIST-01, MAXPRESS-01.
 
+**Academic Article Derivative: Targeting the Enablement Layer (Peer-Review Version)**
+
+[03-applied-enforcement/WP-2026-SHIELD-01-Academic-Article.pdf](03-applied-enforcement/WP-2026-SHIELD-01-Academic-Article.pdf)
+
+Peer-review-targeted academic article derived from SHIELD-01. Reformatted for *International Security* / *Security Studies* register. Introduces the Enablement-tier targeting thesis with comparative case evidence (Iran 2018–2020 cycle, DPRK shipping designation series, semiconductor denial case), develops the CCRP as a mechanism-design argument rather than a policy proposal, and provides a systematic open-source evidentiary ceiling mapping as a methodological contribution. ~8,500 body words, 26 continuous footnotes. Distinct in register and audience from the SHIELD-01 working paper.
+
 ---
 
-#### 9. WP-2026-SENI-01 — Strategic Enforcement Node Index
+#### 10. WP-2026-SENI-01 — Strategic Enforcement Node Index
 
 [03-applied-enforcement/WP-2026-SENI-01.pdf](03-applied-enforcement/WP-2026-SENI-01.pdf)
 
@@ -177,7 +198,7 @@ Reads into: SHIELD-01, PERSIST-01, MAXPRESS-01, CONTAIN-01.
 
 ---
 
-#### 10. INFRA-01 — Infrastructure Enforcement and Dissemination Framework
+#### 11. INFRA-01 — Infrastructure Enforcement and Dissemination Framework
 
 [03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf](03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf)
 
@@ -189,7 +210,7 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 
 ---
 
-#### 11. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
+#### 12. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
 
 [04-threat-analysis/WP-2026-IRAN NUCLEAR ASSESSMENT.pdf](04-threat-analysis/WP-2026-IRAN%20NUCLEAR%20ASSESSMENT.pdf)
 
@@ -199,7 +220,7 @@ Reads into: HORMUZ-01, HORMUZ-02, CPF-02.
 
 ---
 
-#### 12. Iran WMD Assessment
+#### 13. Iran WMD Assessment
 
 [04-threat-analysis/WP-2026- IRAN WMD ASSESSMENT.pdf](04-threat-analysis/WP-2026-%20IRAN%20WMD%20ASSESSMENT.pdf)
 
@@ -207,7 +228,7 @@ Companion assessment covering the broader Iranian weapons program including chem
 
 ---
 
-#### 13. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
+#### 14. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
 
 [04-threat-analysis/BW Assessment SUBMISSION FINAL.pdf](04-threat-analysis/BW%20Assessment%20SUBMISSION%20FINAL.pdf)
 [04-threat-analysis/BW Assessment Executive Derivative.pdf](04-threat-analysis/BW%20Assessment%20Executive%20Derivative.pdf)
@@ -218,7 +239,7 @@ Reads into: Iran Nuclear Assessment, CPF-02.
 
 ---
 
-#### 14. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
+#### 15. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ.pdf](04-threat-analysis/WP-2026-HORMUZ.pdf)
 
@@ -228,7 +249,7 @@ Reads into: HORMUZ-02, Iran Nuclear, SHIELD-01, MAXPRESS-01 Iran track.
 
 ---
 
-#### 15. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
+#### 16. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf](04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf)
 
@@ -248,7 +269,7 @@ These papers predate the methodology and architecture standards developed in ATT
 
 ---
 
-#### 16. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
+#### 17. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
 
 [05-earlier-generation/WP-2026-UNIFIED-01.pdf](05-earlier-generation/WP-2026-UNIFIED-01.pdf)
 
@@ -258,7 +279,7 @@ Key authorities: 31 U.S.C. §5318A, §5323, 18 U.S.C. §981(k), §2339B, §2339D
 
 ---
 
-#### 17. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
+#### 18. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
 
 [05-earlier-generation/WP-2026-SIEGE-01.pdf](05-earlier-generation/WP-2026-SIEGE-01.pdf)
 
@@ -270,7 +291,7 @@ Reads into: UNIFIED-01, CTF-01, CPF-02, ARCH-03, SENI (Section XXVIII).
 
 ---
 
-#### 18. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
+#### 19. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CTF-01.pdf](05-earlier-generation/WP-2026-CTF-01.pdf)
 
@@ -278,7 +299,7 @@ Counter-terrorist financing framework synchronizing 31 U.S.C. §5318A, E.O. 1322
 
 ---
 
-#### 19. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
+#### 20. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CPF-02.pdf](05-earlier-generation/WP-2026-CPF-02.pdf)
 
@@ -286,7 +307,7 @@ Counter-proliferation finance framework mapping CAATSA §231/232, CISADA, and NK
 
 ---
 
-#### 20. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
+#### 21. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
 
 [05-earlier-generation/WP-2026-ARCH-03 .pdf](05-earlier-generation/WP-2026-ARCH-03%20.pdf)
 
