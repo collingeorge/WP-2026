@@ -39,6 +39,8 @@ All papers in this series are produced against documented editorial and producti
 | [WP-2026-CI-Assessment-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v3.pdf) | Series-level open-source counterintelligence exposure assessment |
 | [WP-2026-SENI-CI-01-v1.1.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-SENI-CI-01-v1.1.pdf) | SENI sub-series CI assessment including v5.2 master register exposure vectors |
 | [WP-2026-MAP-CI-01.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-MAP-CI-01.pdf) | Interactive map and node database CI assessment: delivery architecture, satellite export function, filter aggregation, GitHub hosting vectors |
+| [BW Assessment Verbiage Guide.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/BW%20Assessment%20Verbiage%20Guide.pdf) | Domain-specific analytic language guide for biological weapons threat assessments |
+| [WP-2026_Editorial_Directive.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026_Editorial_Directive.pdf) | Internal editorial directive governing series production standards |
 
 ---
 
@@ -140,15 +142,15 @@ Reads into: All enforcement papers.
 
 #### 7. BRI-01 — The Corridor Wager: BRI Displacement, Hormuz Leverage, and Conditional Strategic Opportunity
 
-[02-strategic-architecture/WP-2026-BRI-01-v3.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v3.1.pdf)
+[02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf)
 
-Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-Indian Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. Second stress test passed. Publication-ready: SSRN, War on the Rocks, Foreign Affairs Ideas, Georgetown SSP. Companion to EST-01 (strategic estimate derivative).
+Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-Indian Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. Final hardened draft. Companion to EST-01 (strategic estimate derivative).
 
 **Companion: WP-2026-EST-01 — BRI Corridor Architecture: Strategic Estimate**
 
 [02-strategic-architecture/WP-2026-EST-01.pdf](02-strategic-architecture/WP-2026-EST-01.pdf)
 
-IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v3.0 tradecraft standard.
+IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v3.0 tradecraft standard. Generator script included in repository (WP-2026-EST-01-generator.js).
 
 Reads into: PERSIST-01, CONTAIN-01, SHIELD-01 (CCRP), HORMUZ-01/02.
 
@@ -384,6 +386,8 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
     CI Assessment v3.0 (series-level exposure review)
     SENI-CI-01 v1.1 (SENI sub-series CI assessment)
     MAP-CI-01 v1.4 (interactive map CI assessment)
+    BW Assessment Verbiage Guide (domain style guide)
+    Editorial Directive (production standards)
 
 ATTRIBUTION-01 (4-level nexus framework)
      |
@@ -411,7 +415,7 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      |                                     |
      |                                IRAN-WMD
      |
-     +--> BRI-01 v3.1 (grand strategy capstone: corridor wager)
+     +--> BRI-01 v4.1 (grand strategy capstone: corridor wager)
                |
                +--> EST-01 (IC-style strategic estimate derivative)
 
