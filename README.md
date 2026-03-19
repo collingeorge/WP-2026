@@ -21,9 +21,9 @@ This repository serves as the primary timestamped publication record for the WP-
 
 [Launch: SENI — Strategic Enforcement Node Index: Global Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)
 
-Georeferenced companion to WP-2026-SENI-01. 341 nodes across 20 threat networks: Russia-China strategic infrastructure, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber networks, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, and IRGC-QF external operations. Satellite imagery via Esri World Imagery (Maxar/Earthstar Geographics). OSINT basis only. Confidence levels, legal authorities, and enforcement theory carried through per node.
+Georeferenced companion to WP-2026-SENI-01. 372 nodes across 25 threat networks: Russia-China strategic infrastructure, Russian nuclear fuel cycle, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber networks, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, IRGC-QF external operations, and BRI strategic infrastructure. Satellite imagery via Esri World Imagery (Maxar/Earthstar Geographics). OSINT basis only. Confidence levels, legal authorities, and enforcement theory carried through per node.
 
-Companion documents: WP-2026-SENI-01 | WP-2026-INFRA-01 | ISR Decision Support Annex
+Companion documents: WP-2026-SENI-01 | WP-2026-INFRA-01 | WP-2026-MAP-CI-01 | ISR Decision Support Annex
 
 ---
 
@@ -36,7 +36,9 @@ All papers in this series are produced against documented editorial and producti
 | Document | Purpose |
 |---|---|
 | [WP-2026-StyleGuide-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-StyleGuide-v3.pdf) | Governing editorial standard: institutional voice, ODNI-anchored analytic tradecraft, document architecture, visual design system, source tier system, pre-publication revision checklist |
-| [WP-2026-CI-Assessment-v2.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v2.pdf) | Open-source counterintelligence exposure assessment of the series, produced for academic risk management and professional transparency |
+| [WP-2026-CI-Assessment-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v3.pdf) | Series-level open-source counterintelligence exposure assessment |
+| [WP-2026-SENI-CI-01-v1.1.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-SENI-CI-01-v1.1.pdf) | SENI sub-series CI assessment including v5.2 master register exposure vectors |
+| [WP-2026-MAP-CI-01.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-MAP-CI-01.pdf) | Interactive map and node database CI assessment: delivery architecture, satellite export function, filter aggregation, GitHub hosting vectors |
 
 ---
 
@@ -50,7 +52,7 @@ Five original analytical contributions anchor the series:
 
 **The PERSIST Architecture** (PERSIST-01 / TARIFF-01 / CONTAIN-01 / MAXPRESS-01): a litigation-resilient competitive statecraft framework with six authority rails, tiered escalation ladder, four-tier standards of proof, neutral designation-selection rule, guardrail index, and the Coalition Conflict Resolution Protocol (CCRP).
 
-**The Strategic Enforcement Node Index** (WP-2026-SENI-01): a 316-node global sanctions enforcement targeting register spanning 38 sections, covering Russia-China strategic infrastructure, global threat actor financial networks, UAE cross-network facilitation architecture, key persons layers, and a complete legal authority index updated through March 2026.
+**The Strategic Enforcement Node Index** (WP-2026-SENI-01): a 372-node global sanctions enforcement targeting register spanning 15 sections, covering Russia-China strategic infrastructure, Russian nuclear fuel cycle, global threat actor financial networks, BRI strategic infrastructure, and Western financial counterparty chains updated through March 2026.
 
 **The Siege Doctrine** (SIEGE-01 / UNIFIED-01): a seven-chokepoint financial isolation framework demonstrating that coordinated simultaneous denial across all viable financial channels creates cumulative cost escalation sufficient to render large-scale criminal operations economically unsustainable, with a unified integration memorandum applying the framework across narcotics, proliferation, and terrorist financing domains simultaneously.
 
@@ -138,15 +140,15 @@ Reads into: All enforcement papers.
 
 #### 7. BRI-01 — The Corridor Wager: BRI Displacement, Hormuz Leverage, and Conditional Strategic Opportunity
 
-[02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v4.1.pdf)
+[02-strategic-architecture/WP-2026-BRI-01-v3.1.pdf](02-strategic-architecture/WP-2026-BRI-01-v3.1.pdf)
 
-Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-Indian Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. v4.0 reframe replaced "winnability" language with conditional strategic opportunity space; v4.1 final hardening corrected conclusion register and clarified Forum-as-necessary-condition logic. Companion to EST-01 (strategic estimate derivative).
+Grand strategy capstone of the WP-2026 series. Assesses a conditional strategic opportunity space opened by the March 2026 Hormuz crisis: a US-led coalition corridor architecture capable of displacing BRI at contestable nodes, institutionalizing transit governance through a Hormuz-Indian Ocean Forum, and converting the GCC relationship into a decade-level strategic lock-in. Six key judgments with dual-axis confidence labels. Scenario-conditioned throughout. Second stress test passed. Publication-ready: SSRN, War on the Rocks, Foreign Affairs Ideas, Georgetown SSP. Companion to EST-01 (strategic estimate derivative).
 
 **Companion: WP-2026-EST-01 — BRI Corridor Architecture: Strategic Estimate**
 
 [02-strategic-architecture/WP-2026-EST-01.pdf](02-strategic-architecture/WP-2026-EST-01.pdf)
 
-IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v2.0 tradecraft standard. Generator script included in repository.
+IC-style strategic estimate derived from BRI-01. Presents the BRI-01 analysis in tradecraft format: six key judgments with probability assessments and dual-axis confidence labels, scope and open-source ceiling statement, baseline assessment separate from scenario-conditioned estimate, five scenario-conditioned outcome pathways with probability bands, three competing alternative hypotheses, ten-indicator signpost table, and implications under scenario conditions. Produced to the WP-2026 CI Assessment v3.0 tradecraft standard.
 
 Reads into: PERSIST-01, CONTAIN-01, SHIELD-01 (CCRP), HORMUZ-01/02.
 
@@ -185,17 +187,15 @@ Peer-review-targeted academic article derived from SHIELD-01. Reformatted for *I
 
 #### 10. WP-2026-SENI-01 — Strategic Enforcement Node Index
 
-[03-applied-enforcement/WP-2026-SENI-01.pdf](03-applied-enforcement/WP-2026-SENI-01.pdf)
+[03-applied-enforcement/WP-2026-SENI-01-v5.2-final.pdf](03-applied-enforcement/WP-2026-SENI-01-v5.2-final.pdf)
 
-316-node global sanctions enforcement targeting register across 38 sections.
+372-node global sanctions enforcement targeting register across 15 sections. Current version: v5.2 | March 2026.
 
-**Scope:** Russia-China strategic infrastructure (Sections I-XIV); enforcement calendar, GL risk matrix, and legal authority index (XVI-XIX); Chinese evasion architecture and UAE/Indian transshipment layer (XX-XXI); global threat actor financial networks covering Hezbollah, Hamas/PIJ, DPRK Lazarus Group, Iran IRGC-QF, Venezuela/PDVSA, Cuba GAESA, Sinaloa/CJNG, Houthis, Wagner/Africa Corps (XXII-XXX); key persons layers (XI, XXXI); expanded enforcement networks covering Iraqi PMF, MS-13/TdA US operations, Clan del Golfo/FARC/ELN, Russian GRU/FSB covert finance, Myanmar SAC, Kinahan Cartel (XXXII-XXXVII); UAE cross-cutting facilitation hub (XXXVIII).
+**Scope:** Russia-China strategic infrastructure (Section I); BRI / PRC military expansion (II); Russian nuclear fuel cycle — enrichment, fabrication, reprocessing, weapons complex, research reactors, Western financial counterparties (III); terrorist finance networks — Hezbollah, Hamas/PIJ (IV); Iran nuclear / Makran (V); Hormuz / IRGC military (VI); cartel / narcotics finance — Sinaloa, CJNG (VII); DPRK finance and WMD (VIII); Venezuela / Cuba evasion (IX); Wagner / Africa Corps (X); Russian covert finance / intelligence — GRU/FSB (XI); bioweapons / dual-use bio (XII); Pakistan proliferation / CPEC (XIII); Russia WMD programs (XIV); Myanmar SAC revenue (XV).
 
-**Node counts:** 127 DESIGNATED | 58 TARGETABLE | 44 PARTIAL | 48 MONITOR | 15 OFF-LIMITS | 6 NEXUS | 8 SEIZED
+**Node counts:** 110 DESIGNATED | 52 TARGETABLE | 35 PARTIAL | 144 MONITOR | 11 CONSTRAINED | 15 OFF-LIMITS | 3 NEXUS | 3 SEIZED
 
-**Key authorities:** EO 14024/EO 14114, EO 13382, EO 13694 (90 FR 24723, June 11 2025), CAATSA §226/231/232, IEEPA §1702, GENIUS Act Pub. L. 119-27 (139 Stat. 419, July 18 2025), Kingpin Act, 18 U.S.C. §2339B, 31 U.S.C. §5318A, EU Reg. 833/2014 (19th package), EO 14014, EO 13224, EO 13722/13687, FATF R.15/R.16, IMO A.1192(33).
-
-Version: v21 | March 2026 | Supersedes russia_china_master_index_v4
+**Key authorities:** EO 14024/EO 14114, EO 13382, EO 13694 (90 FR 24723), CAATSA §226/231/232, IEEPA §1702, GENIUS Act Pub. L. 119-27 (139 Stat. 419), Kingpin Act, 18 U.S.C. §2339B, 31 U.S.C. §5318A, EU Reg. 833/2014 (19th package), EO 14014, EO 13224, EO 13722/13687, FATF R.15/R.16, IMO A.1192(33).
 
 Reads into: SHIELD-01, PERSIST-01, MAXPRESS-01, CONTAIN-01.
 
@@ -290,7 +290,7 @@ Proposes a paradigm shift from sequential designation to simultaneous multi-chan
 
 Key authorities: 31 U.S.C. §5318A, §5323, §5324, 18 U.S.C. §981(k), §981(a), E.O. 13224, E.O. 13382, E.O. 14059, 46 U.S.C. §70201, 31 C.F.R. §1010.370 (RRE Rule), GENIUS Act Pub. L. 119-27.
 
-Reads into: UNIFIED-01, CTF-01, CPF-02, ARCH-03, SENI (Section XXVIII).
+Reads into: UNIFIED-01, CTF-01, CPF-02, ARCH-03, SENI (Section VII/VIII).
 
 ---
 
@@ -381,13 +381,15 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
 ```
 00-series-standards/
     Style Guide v3.0 (governs all papers)
-    CI Assessment v2.0 (series exposure review)
+    CI Assessment v3.0 (series-level exposure review)
+    SENI-CI-01 v1.1 (SENI sub-series CI assessment)
+    MAP-CI-01 v1.4 (interactive map CI assessment)
 
 ATTRIBUTION-01 (4-level nexus framework)
      |
 CSE-01/NEXUS-01 (5-rung PRC extension)
      |
-     |---> SHIELD-01 (CCRP) ---> SENI-01 (316 nodes, 38 sections)
+     |---> SHIELD-01 (CCRP) ---> SENI-01 (372 nodes, 15 sections)
      |         |
      |         +--> SHIELD-01-Academic-Article (peer-review derivative)
      |
@@ -409,7 +411,7 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      |                                     |
      |                                IRAN-WMD
      |
-     +--> BRI-01 (grand strategy capstone: corridor wager)
+     +--> BRI-01 v3.1 (grand strategy capstone: corridor wager)
                |
                +--> EST-01 (IC-style strategic estimate derivative)
 
