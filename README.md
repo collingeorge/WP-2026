@@ -1,5 +1,6 @@
 # WP-2026: Independent Policy Research Series
 
+| | |
 |---|---|
 | **Author** | Collin George |
 | **Contact** | [collin.george@protonmail.com](mailto:collin.george@protonmail.com) |
