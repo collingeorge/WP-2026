@@ -13,7 +13,7 @@
 
 ## Disclaimer
 
-All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of the University of Washington, UW Medical Center, Georgetown University, the Georgetown Security Studies Program, or any other institution. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used.
+All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of the University of Washington, UW Medical Center, or any other institution. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used.
 
 This repository serves as the primary timestamped publication record for the WP-2026 series. Licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
@@ -24,7 +24,7 @@ This repository serves as the primary timestamped publication record for the WP-
 | | |
 |---|---|
 | **[SENI Sub-Series Corpus](01-seni/)** | 11-document sanctions enforcement targeting framework for the Russian nuclear fuel cycle — node profiles, scoring model, financial pathway analysis, strategic annexes |
-| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 401-node georeferenced enforcement database across 25 threat networks with satellite imagery |
+| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 372 -node georeferenced enforcement database across 25 threat networks with satellite imagery |
 | **[SENI Executive Synthesis](01-seni/WP-2026-SENI-EXEC-01.pdf)** | Two-page bottom-line findings and priority enforcement options for the Russian nuclear fuel cycle |
 | **[Series Authority Index](00-authority-index/WP-2026-Authority-Index.pdf)** | Full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail |
 
@@ -34,7 +34,7 @@ This repository serves as the primary timestamped publication record for the WP-
 
 [**Launch: SENI v4 — Strategic Enforcement Node Index: Global Map**](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)
 
-Georeferenced companion to the WP-2026 series. 401 nodes across 25 threat networks: Russia-China strategic infrastructure, Russian nuclear fuel cycle, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber networks, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, IRGC-QF external operations, and BRI strategic infrastructure. Satellite imagery via Esri World Imagery (Maxar/Earthstar Geographics). OSINT basis only. Confidence levels, legal authorities, and enforcement theory carried through per node.
+Georeferenced companion to the WP-2026 series. 372 nodes across 25 threat networks: Russia-China strategic infrastructure, Russian nuclear fuel cycle, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber networks, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, IRGC-QF external operations, and BRI strategic infrastructure. Satellite imagery via Esri World Imagery (Maxar/Earthstar Geographics). OSINT basis only. Confidence levels, legal authorities, and enforcement theory carried through per node.
 
 Companion documents: [WP-2026-SENI-01](03-applied-enforcement/WP-2026-SENI-01-v5.2-final.pdf) | [SENI Sub-Series](01-seni/) | [WP-2026-INFRA-01](03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf) | [Map CI Assessment](07-intelligence-map/WP-2026-MAP-CI-01.pdf)
 
