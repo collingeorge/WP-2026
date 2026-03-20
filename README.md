@@ -24,7 +24,7 @@ This repository serves as the primary timestamped publication record for the WP-
 | | |
 |---|---|
 | **[SENI Sub-Series Corpus](01-seni/)** | 11-document sanctions enforcement targeting framework for the Russian nuclear fuel cycle — node profiles, scoring model, financial pathway analysis, strategic annexes |
-| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 372 -node georeferenced enforcement database across 25 threat networks with satellite imagery |
+| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 372-node georeferenced enforcement database across 25 threat networks with satellite imagery |
 | **[SENI Executive Synthesis](01-seni/WP-2026-SENI-EXEC-01.pdf)** | Two-page bottom-line findings and priority enforcement options for the Russian nuclear fuel cycle |
 | **[Series Authority Index](00-authority-index/WP-2026-Authority-Index.pdf)** | Full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail |
 
@@ -227,11 +227,21 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 
 ---
 
+#### 12. AXIS-01 — The Russia–China Energy and Financial Axis
+
+[03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.docx](03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.docx)
+
+Public-source assessment of enforcement resilience, node criticality, and sanctions friction across the Russia–China strategic economic partnership and its 60-node infrastructure complex. Central analytical contribution: a two-axis node-criticality framework combining irreplaceability and throughput volume to distinguish node classes by exposure profile and pressure-durability constraint. Core finding: available evidence suggests hosting-layer continuity and stablecoin liquidity access are more consequential to network durability than entity-level designation alone, based on documented migration patterns following the March 2022 Garantex designation. Six Key Judgments with dual-axis confidence labels. Legal-authority mapping across EO 14024, EO 13382, CAATSA §226, GENIUS Act Pub. L. 119-27, and IEEPA §1702 with explicit legal-operational distinction. Identifies three structural enforcement gaps not remediable through designation alone: third-country enforcement deficit (Kyrgyzstan/UAE/HK), Chinese sovereign infrastructure constraint, and BRICS Bridge/mBridge CBDC gap outside stablecoin jurisdiction. Four-scenario defensive planning model replacing protocol framing. Explicit counterintelligence and deception-risk caveat on open-source network visibility as a potential selection effect. Version: v3.0 FINAL · Style Guide v3.0 compliant.
+
+Reads upstream from: MAXPRESS-01, SENI-01 §I, PERSIST-01, BRI-01.
+
+---
+
 ### Threat Analysis
 
 ---
 
-#### 12. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
+#### 13. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
 
 [04-threat-analysis/WP-2026-IRAN NUCLEAR ASSESSMENT.pdf](04-threat-analysis/WP-2026-IRAN%20NUCLEAR%20ASSESSMENT.pdf)
 
@@ -241,7 +251,7 @@ Reads into: HORMUZ-01, HORMUZ-02, CPF-02.
 
 ---
 
-#### 13. Iran WMD Assessment
+#### 14. Iran WMD Assessment
 
 [04-threat-analysis/WP-2026- IRAN WMD ASSESSMENT.pdf](04-threat-analysis/WP-2026-%20IRAN%20WMD%20ASSESSMENT.pdf)
 
@@ -249,7 +259,7 @@ Companion assessment covering the broader Iranian weapons program including chem
 
 ---
 
-#### 14. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
+#### 15. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
 
 [04-threat-analysis/BW Assessment SUBMISSION FINAL.pdf](04-threat-analysis/BW%20Assessment%20SUBMISSION%20FINAL.pdf)
 [04-threat-analysis/BW Assessment Executive Derivative.pdf](04-threat-analysis/BW%20Assessment%20Executive%20Derivative.pdf)
@@ -260,7 +270,7 @@ Reads into: Iran Nuclear Assessment, CPF-02.
 
 ---
 
-#### 15. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
+#### 16. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ.pdf](04-threat-analysis/WP-2026-HORMUZ.pdf)
 
@@ -270,7 +280,7 @@ Reads into: HORMUZ-02, Iran Nuclear, SHIELD-01, MAXPRESS-01 Iran track.
 
 ---
 
-#### 16. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
+#### 17. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf](04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf)
 
@@ -286,7 +296,7 @@ These papers predate the methodology and architecture standards developed in ATT
 
 ---
 
-#### 17. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
+#### 18. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
 
 [05-earlier-generation/WP-2026-UNIFIED-01.pdf](05-earlier-generation/WP-2026-UNIFIED-01.pdf)
 
@@ -296,7 +306,7 @@ Key authorities: 31 U.S.C. §5318A, §5323, 18 U.S.C. §981(k), §2339B, §2339D
 
 ---
 
-#### 18. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
+#### 19. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
 
 [05-earlier-generation/WP-2026-SIEGE-01.pdf](05-earlier-generation/WP-2026-SIEGE-01.pdf)
 
@@ -306,7 +316,7 @@ Key authorities: 31 U.S.C. §5318A, §5323, §5324, 18 U.S.C. §981(k), §981(a)
 
 ---
 
-#### 19. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
+#### 20. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CTF-01.pdf](05-earlier-generation/WP-2026-CTF-01.pdf)
 
@@ -314,7 +324,7 @@ Counter-terrorist financing framework synchronizing 31 U.S.C. §5318A, E.O. 1322
 
 ---
 
-#### 20. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
+#### 21. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CPF-02.pdf](05-earlier-generation/WP-2026-CPF-02.pdf)
 
@@ -322,7 +332,7 @@ Counter-proliferation finance framework mapping CAATSA §231/232, CISADA, and NK
 
 ---
 
-#### 21. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
+#### 22. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
 
 [05-earlier-generation/WP-2026-ARCH-03 .pdf](05-earlier-generation/WP-2026-ARCH-03%20.pdf)
 
@@ -420,6 +430,10 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      |         |         |
      |         |    MAXPRESS-01 (execution layer)
      |         |         |
+     |         |         +--> AXIS-01 (Russia-China axis: enforcement resilience and friction assessment)
+     |         |                   |
+     |         |                   +--> SENI-01 §I (Russia-China strategic infrastructure nodes)
+     |         |
      |         |    Immigration Architecture
      |         |
      |         +--> INFRA-01
