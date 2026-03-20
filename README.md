@@ -22,7 +22,7 @@ This repository serves as the primary timestamped publication record for the WP-
 | | |
 |---|---|
 | **[SENI Sub-Series Corpus](01-seni/)** | 11-document sanctions enforcement targeting framework for the Russian nuclear fuel cycle — node profiles, scoring model, financial pathway analysis, strategic annexes |
-| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 401-node georeferenced enforcement database across 25 threat networks with satellite imagery |
+| **[Interactive Intelligence Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** | 372 -node georeferenced enforcement database across 25 threat networks with satellite imagery |
 | **[SENI Executive Synthesis](01-seni/WP-2026-SENI-EXEC-01.pdf)** | Two-page bottom-line findings and priority enforcement options for the Russian nuclear fuel cycle |
 | **[Series Authority Index](00-authority-index/WP-2026-Authority-Index.pdf)** | Full paper assessments, reading order rationale, cross-cutting gaps, and series architecture detail |
 
