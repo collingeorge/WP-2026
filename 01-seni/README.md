@@ -107,7 +107,7 @@ The remaining gap between this corpus and operational deployment is a collection
 
 ## Companion Products
 
-- **[Interactive Map](../07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** — Visual interface to the node database. 27 nuclear fuel cycle nodes with satellite imagery export. Use as orientation and navigation tool alongside the written documents, not as a substitute for them.
+- **[Interactive Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** — Visual interface to the node database. 27 nuclear fuel cycle nodes with satellite imagery export. Use as orientation and navigation tool alongside the written documents, not as a substitute for them.
 - **[Map CI Assessment](../07-intelligence-map/WP-2026-MAP-CI-01.pdf)** — Counterintelligence exposure assessment of the interactive map specifically.
 
 ---
