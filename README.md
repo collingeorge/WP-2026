@@ -229,7 +229,7 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 
 #### 12. AXIS-01 — The Russia–China Energy and Financial Axis
 
-[03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.docx](03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.pdf)
+[03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.pdf](03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.pdf)
 
 Public-source assessment of enforcement resilience, node criticality, and sanctions friction across the Russia–China strategic economic partnership and its 60-node infrastructure complex. Central analytical contribution: a two-axis node-criticality framework combining irreplaceability and throughput volume to distinguish node classes by exposure profile and pressure-durability constraint. Core finding: available evidence suggests hosting-layer continuity and stablecoin liquidity access are more consequential to network durability than entity-level designation alone, based on documented migration patterns following the March 2022 Garantex designation. Six Key Judgments with dual-axis confidence labels. Legal-authority mapping across EO 14024, EO 13382, CAATSA §226, GENIUS Act Pub. L. 119-27, and IEEPA §1702 with explicit legal-operational distinction. Identifies three structural enforcement gaps not remediable through designation alone: third-country enforcement deficit (Kyrgyzstan/UAE/HK), Chinese sovereign infrastructure constraint, and BRICS Bridge/mBridge CBDC gap outside stablecoin jurisdiction. Four-scenario defensive planning model replacing protocol framing. Explicit counterintelligence and deception-risk caveat on open-source network visibility as a potential selection effect. Version: v3.0 FINAL · Style Guide v3.0 compliant.
 
