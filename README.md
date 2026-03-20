@@ -11,7 +11,7 @@
 
 ## Disclaimer
 
-All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of the University of Washington, UW Medical Center, Georgetown University, the Georgetown Security Studies Program, or any other institution. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used.
+All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of the University of Washington, UW Medical Center, or any other institution. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used.
 
 This repository serves as the primary timestamped publication record for the WP-2026 series. Licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
