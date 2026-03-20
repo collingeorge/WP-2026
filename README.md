@@ -52,7 +52,7 @@ All papers in this series are produced against documented editorial and producti
 | [WP-2026-CI-Assessment-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v3.pdf) | Series-level open-source counterintelligence exposure assessment |
 | [WP-2026-SENI-CI-01.pdf](01-seni/00-architecture/WP-2026-SENI-CI-01.pdf) | SENI sub-series CI assessment (v1.4 final) — adversary utility ratings by document, legal analysis, partial mitigation assessment |
 | [WP-2026-MAP-CI-01.pdf](07-intelligence-map/WP-2026-MAP-CI-01.pdf) | Interactive map and node database CI assessment (v1.4 final) — delivery architecture, satellite export function, filter aggregation, GitHub hosting vectors |
-| [BW Assessment Verbiage Guide.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/BW%20Assessment%20Verbiage%20Guide.pdf) | Domain-specific analytic language guide for biological weapons threat assessments |
+| [WP-2026-Verbiage-Guide-v2.2.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-Verbiage-Guide-v2.2.pdf) | Governing analytic drafting doctrine: institutional register, ODNI-anchored tradecraft, agency-specific register alignment, prohibited language taxonomy, competing hypotheses discipline, open-source visibility bias, friction/coercive effect distinction, and mandatory pre-submission sweep checklist |
 
 ---
 
@@ -406,7 +406,7 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
     CI Assessment v3.0 (series-level exposure review)
     SENI-CI-01 v1.4 → 01-seni/00-architecture/ (SENI sub-series CI assessment)
     MAP-CI-01 v1.4 → 07-intelligence-map/ (interactive map CI assessment)
-    BW Assessment Verbiage Guide (domain style guide)
+    Verbiage Guide v2.2 (governing analytic drafting doctrine)
 
 ATTRIBUTION-01 (4-level nexus framework)
      |
