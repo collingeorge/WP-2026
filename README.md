@@ -50,6 +50,7 @@ All papers in this series are produced against documented editorial and producti
 |---|---|
 | [WP-2026-StyleGuide-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-StyleGuide-v3.pdf) | Governing editorial standard: institutional voice, ODNI-anchored analytic tradecraft, document architecture, visual design system, source tier system, pre-publication revision checklist |
 | [WP-2026-CI-Assessment-v3.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-v3.pdf) | Series-level open-source counterintelligence exposure assessment |
+| [WP-2026-CI-Assessment-02.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-CI-Assessment-02.pdf) | CI assessment for the enforcement architecture and resilience foundation layer — ESCALATE-01 and RESILIENCE-01 adversary utility ratings by document component, system-level interaction effects, legal exposure assessment, and prospective CI recommendations |
 | [WP-2026-SENI-CI-01.pdf](01-seni/00-architecture/WP-2026-SENI-CI-01.pdf) | SENI sub-series CI assessment (v1.4 final) — adversary utility ratings by document, legal analysis, partial mitigation assessment |
 | [WP-2026-MAP-CI-01.pdf](07-intelligence-map/WP-2026-MAP-CI-01.pdf) | Interactive map and node database CI assessment (v1.4 final) — delivery architecture, satellite export function, filter aggregation, GitHub hosting vectors |
 | [WP-2026-Verbiage-Guide-v2.2.pdf](https://github.com/collingeorge/WP-2026/blob/main/00-series-standards/WP-2026-Verbiage-Guide-v2.2.pdf) | Governing analytic drafting doctrine: institutional register, ODNI-anchored tradecraft, agency-specific register alignment, prohibited language taxonomy, competing hypotheses discipline, open-source visibility bias, friction/coercive effect distinction, and mandatory pre-submission sweep checklist |
@@ -78,7 +79,7 @@ For full paper assessments, reading order rationale, cross-cutting gaps, and ser
 
 ## Reading Order
 
-Read the Methodology Stack first. Strategic Architecture papers assume familiarity with the attribution framework. Threat Analysis papers can be read in any order after the methodology stack. The SENI sub-series has its own internal reading order — see [01-seni/README.md](01-seni/README.md). Earlier-Generation papers are flagged for revision.
+Read the Methodology Stack first. Strategic Architecture papers assume familiarity with the attribution framework. RESILIENCE-01 should be read after PERSIST-01 and before ESCALATE-01 — it establishes the domestic capacity prerequisites that the enforcement architecture assumes. ESCALATE-01 should be read after MAXPRESS-01 and RESILIENCE-01, before SHIELD-01 and SENI-01. Threat Analysis papers can be read in any order after the methodology stack. The SENI sub-series has its own internal reading order — see [01-seni/README.md](01-seni/README.md). Earlier-Generation papers are flagged for revision.
 
 ---
 
@@ -118,7 +119,7 @@ Reads into: SHIELD-01, PERSIST-01, all PRC-focused enforcement papers.
 
 Five-pillar competitive statecraft framework — Economic Constraint, Information Disruption, Military Readiness Uncertainty, Deterrence Architecture, Allied and Domestic Resilience — with six authority rails, tiered escalation ladder (Tier 0–3), four-tier standards of proof, neutral designation-selection rule with prohibited-factor list, guardrail index with automatic pause mechanics, prescriptive substitution guide, and model memoranda. Explicitly acknowledges allied fracture, blowback, substitution, escalation, legitimacy, and legal record risks.
 
-Reads into: TARIFF-01, CONTAIN-01, MAXPRESS-01, all enforcement papers.
+Reads into: TARIFF-01, CONTAIN-01, MAXPRESS-01, RESILIENCE-01, all enforcement papers.
 
 ---
 
@@ -128,7 +129,7 @@ Reads into: TARIFF-01, CONTAIN-01, MAXPRESS-01, all enforcement papers.
 
 Seven-rail tariff enforcement architecture (Section 301, Section 232, IEEPA, Section 122 bridge, AD-CVD, WTO/FTA, Customs Administration) with bright-line predicate definitions, an explicit exclusions list naming trade deficits and FX movements as insufficient predicates, and a five-indicator economic shock guardrail. Appendix C provides a 70%/30%/24-month strategic dependency threshold. The instrument sequencing rule prevents tariff tools from substituting for what export controls and sanctions are designed to do.
 
-Reads into: PERSIST-01, CONTAIN-01, MAXPRESS-01.
+Reads into: PERSIST-01, CONTAIN-01, MAXPRESS-01, RESILIENCE-01.
 
 ---
 
@@ -138,7 +139,7 @@ Reads into: PERSIST-01, CONTAIN-01, MAXPRESS-01.
 
 Rejects regime collapse and coercive breakthrough as realistic success criteria. Four-component framework: Integrated Systemic Attrition Doctrine (ISAD) targeting +25–45% transaction cost inflation over 12–24 months; Sustainable Pressure and Alternatives Denial (SPAD) targeting reliability inputs rather than settlement rails; Dollar Enforcement Effectiveness Index (DEEI) with automatic non-discretionary downshift protocol; and a 90-day operational observability cycle. Failure indicators are defined with the same precision as success indicators.
 
-Reads into: MAXPRESS-01.
+Reads into: MAXPRESS-01, ESCALATE-01.
 
 ---
 
@@ -148,7 +149,7 @@ Reads into: MAXPRESS-01.
 
 Companion to CONTAIN-01. Translates strategic architecture into practitioner-ready execution grounded in 2025–2026 enforcement practice. Addresses five structural gaps from prior maximum pressure campaigns: designation latency, sequential enforcement, episodic secondary sanctions, absent observability protocol, and coalition endurance deficit. Documents pre-staging rolling 90-day readiness packages, simultaneous BIS/OFAC action as default, Lloyd's/P&I Club maritime reliability degradation mechanism, and target-specific parameters for Iran/IRGC, Russia/shadow fleet, PRC networks, Cuba/GAESA, and Venezuela.
 
-Reads into: All enforcement papers.
+Reads into: ESCALATE-01, all enforcement papers.
 
 ---
 
@@ -178,6 +179,23 @@ Reads into: MAXPRESS-01, ARCH-03, SIEGE-01.
 
 ---
 
+### Resilience Foundation
+
+---
+
+#### R-1. RESILIENCE-01 — National Technology Modernization and Industrial Resilience Strategy
+
+[08-resilience-foundation/WP-2026-RESILIENCE-01.pdf](08-resilience-foundation/WP-2026-RESILIENCE-01.pdf)
+
+Domestic capacity as the prerequisite layer for credible competitive statecraft across four priority domains: critical minerals processing and refining, battery technology and energy storage, energy system resilience for industrial continuity, and advanced manufacturing. Addresses whether the United States retains sufficient industrial and technological capacity to make enforcement-layer strategies credible and sustainable over multi-year campaigns. Six Key Judgments with probability and confidence labels. Original analytical contributions include: enforcement credibility threshold architecture specifying the domestic and allied capacity levels at which technology-denial strategies become coalition-credible; priority discipline framework (first-order protections, second-order allied-complementary preferences, deferral candidates, intolerable concentration hard limits); failure probability layer with six failure modes and compound failure scenario; constraint conflict table with explicit resolution rules under simultaneous binding conditions; adversary industrial disruption model covering PRC price suppression, overcapacity flooding, supply chain targeting, and allied industrial capture; and allied dependency tolerance matrix with contingency posture for five domains.
+
+Version: v9.0 Final · Style Guide v3.0 · Verbiage Guide v2.2 compliant. Enabling authorities: CHIPS and Science Act (Public Law 117-167); Inflation Reduction Act (Public Law 117-169); Energy Policy Act of 2005 (42 U.S.C. § 16511 et seq.); National Defense Stockpile (50 U.S.C. §§ 98 et seq.).
+
+Reads upstream from: PERSIST-01 (Pillar V) · CONTAIN-01 (SPAD) · ESCALATE-01 (Substitution Matrix)
+Reads into: ESCALATE-01 · SHIELD-01 · TARIFF-01 · All technology-denial enforcement papers
+
+---
+
 ### Applied Enforcement
 
 ---
@@ -199,7 +217,20 @@ Peer-review-targeted academic article derived from SHIELD-01. Reformatted for *I
 
 ---
 
-#### 10. WP-2026-SENI-01 — Strategic Enforcement Node Index
+#### 10. ESCALATE-01 — Non-Kinetic Escalation and Constraint Framework
+
+[03-applied-enforcement/WP-2026-ESCALATE-01.pdf](03-applied-enforcement/WP-2026-ESCALATE-01.pdf)
+
+Graduated enforcement decision architecture spanning 15 parts. Translates the PERSIST-01 / CONTAIN-01 / MAXPRESS-01 strategic stack into a governed institutional system with mandatory Phase sequencing, allied coordination protocols, verification infrastructure, and market stability safeguards. Seven Key Judgments with probability and confidence labels. Original analytical contributions include: institutional throughput constraint layer (OFAC designation capacity band, DOJ forfeiture timelines, BIS FDPR enforcement lag); market feedback loop model with nonlinear coalition fracture threshold and circuit-breaker architecture; compressed timeline mode and emergency exception protocol; IEEPA authority failure contingency layer with four-step re-designation sequence and domain-specific enforcement degradation estimate; adversary adaptation cycle (probe–exploit–institutionalize–normalize) with target-specific objective function analysis; and process degradation architecture identifying the four institutional decay mechanisms that historically compromise multi-year enforcement campaigns. Country-specific application parameters for Iran, DPRK, Russia, Venezuela, and PRC-facilitated networks with Best Lever / Primary Risk / Likely Underperformance Path per target.
+
+Version: v7.0 Final · Style Guide v3.0 · Verbiage Guide v2.2 compliant. Key authorities: IEEPA (50 U.S.C. §§ 1701–1707) exercised under National Emergencies Act (50 U.S.C. § 1601 et seq.); CAATSA (Public Law 115-44); CISADA (Public Law 111-195); NKSPEA (Public Law 114-122); ECRA/EAR. Judicial risk analysis: West Virginia v. EPA (597 U.S. 697, 2022); Loper Bright Enterprises v. Raimondo (603 U.S. 369, 2024).
+
+Reads upstream from: PERSIST-01 · CONTAIN-01 · MAXPRESS-01 · RESILIENCE-01
+Reads into: SHIELD-01 · Master Index v4 · All applied enforcement papers
+
+---
+
+#### 11. WP-2026-SENI-01 — Strategic Enforcement Node Index
 
 [03-applied-enforcement/WP-2026-SENI-01-v5.2-final.pdf](03-applied-enforcement/WP-2026-SENI-01-v5.2-final.pdf)
 
@@ -219,7 +250,7 @@ Reads into: SHIELD-01, PERSIST-01, MAXPRESS-01, CONTAIN-01.
 
 ---
 
-#### 11. INFRA-01 — Infrastructure Enforcement and Dissemination Framework
+#### 12. INFRA-01 — Infrastructure Enforcement and Dissemination Framework
 
 [03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf](03-applied-enforcement/WP-2026-INFRA-01-v5-4-DISSEMINATION.pdf)
 
@@ -227,7 +258,7 @@ Infrastructure enforcement framework addressing physical and digital supply chai
 
 ---
 
-#### 12. AXIS-01 — The Russia–China Energy and Financial Axis
+#### 13. AXIS-01 — The Russia–China Energy and Financial Axis
 
 [03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.pdf](03-applied-enforcement/WP-2026-AXIS-01-v3.0-FINAL.pdf)
 
@@ -241,7 +272,7 @@ Reads upstream from: MAXPRESS-01, SENI-01 §I, PERSIST-01, BRI-01.
 
 ---
 
-#### 13. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
+#### 14. Iran Nuclear Assessment — Post-Strike Open-Source Nuclear Assessment
 
 [04-threat-analysis/WP-2026-IRAN NUCLEAR ASSESSMENT.pdf](04-threat-analysis/WP-2026-IRAN%20NUCLEAR%20ASSESSMENT.pdf)
 
@@ -251,7 +282,7 @@ Reads into: HORMUZ-01, HORMUZ-02, CPF-02.
 
 ---
 
-#### 14. Iran WMD Assessment
+#### 15. Iran WMD Assessment
 
 [04-threat-analysis/WP-2026- IRAN WMD ASSESSMENT.pdf](04-threat-analysis/WP-2026-%20IRAN%20WMD%20ASSESSMENT.pdf)
 
@@ -259,7 +290,7 @@ Companion assessment covering the broader Iranian weapons program including chem
 
 ---
 
-#### 15. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
+#### 16. BW Assessment — Biological Weapons Threat Assessment: State Actor Analysis
 
 [04-threat-analysis/BW Assessment SUBMISSION FINAL.pdf](04-threat-analysis/BW%20Assessment%20SUBMISSION%20FINAL.pdf)
 [04-threat-analysis/BW Assessment Executive Derivative.pdf](04-threat-analysis/BW%20Assessment%20Executive%20Derivative.pdf)
@@ -270,7 +301,7 @@ Reads into: Iran Nuclear Assessment, CPF-02.
 
 ---
 
-#### 16. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
+#### 17. HORMUZ-01 — Strait of Hormuz Regional Posture Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ.pdf](04-threat-analysis/WP-2026-HORMUZ.pdf)
 
@@ -280,7 +311,7 @@ Reads into: HORMUZ-02, Iran Nuclear, SHIELD-01, MAXPRESS-01 Iran track.
 
 ---
 
-#### 17. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
+#### 18. HORMUZ-02 — Strait of Hormuz Integrated Strategic Assessment
 
 [04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf](04-threat-analysis/WP-2026-HORMUZ-02-v4_1-FINAL.pdf)
 
@@ -296,7 +327,7 @@ These papers predate the methodology and architecture standards developed in ATT
 
 ---
 
-#### 18. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
+#### 19. UNIFIED-01 — Integrated Maximum Pressure Framework: Cross-Domain Enforcement Architecture
 
 [05-earlier-generation/WP-2026-UNIFIED-01.pdf](05-earlier-generation/WP-2026-UNIFIED-01.pdf)
 
@@ -306,7 +337,7 @@ Key authorities: 31 U.S.C. §5318A, §5323, 18 U.S.C. §981(k), §2339B, §2339D
 
 ---
 
-#### 19. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
+#### 20. SIEGE-01 — Systematic Financial Isolation Framework: The Seven Chokepoints Doctrine
 
 [05-earlier-generation/WP-2026-SIEGE-01.pdf](05-earlier-generation/WP-2026-SIEGE-01.pdf)
 
@@ -316,7 +347,7 @@ Key authorities: 31 U.S.C. §5318A, §5323, §5324, 18 U.S.C. §981(k), §981(a)
 
 ---
 
-#### 20. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
+#### 21. CTF-01 — Maximum Pressure Framework for Terrorist Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CTF-01.pdf](05-earlier-generation/WP-2026-CTF-01.pdf)
 
@@ -324,7 +355,7 @@ Counter-terrorist financing framework synchronizing 31 U.S.C. §5318A, E.O. 1322
 
 ---
 
-#### 21. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
+#### 22. CPF-02 — Maximum Pressure Framework for Proliferation Financing Network Disruption
 
 [05-earlier-generation/WP-2026-CPF-02.pdf](05-earlier-generation/WP-2026-CPF-02.pdf)
 
@@ -332,7 +363,7 @@ Counter-proliferation finance framework mapping CAATSA §231/232, CISADA, and NK
 
 ---
 
-#### 22. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
+#### 23. ARCH-03 — Enforcement Framework for Disrupting Transnational Fentanyl Supply Chains
 
 [05-earlier-generation/WP-2026-ARCH-03 .pdf](05-earlier-generation/WP-2026-ARCH-03%20.pdf)
 
@@ -376,17 +407,21 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
 | EO 14059 | US Executive Order | Narcotics trafficking blocking authority |
 | EO 13846 | US Executive Order | Iran sanctions re-imposition authority |
 | CAATSA §226/231/232 | US Statute | FFI secondary sanctions; Russian defense; Russia-Iran tech transfer |
-| IEEPA §1702 | US Statute | Blocking authority; ISP-level de-peering |
+| IEEPA §1702 (50 U.S.C. §§ 1701–1707) | US Statute | Blocking authority; exercised under National Emergencies Act (50 U.S.C. § 1601 et seq.) |
 | GENIUS Act Pub. L. 119-27 (139 Stat. 419) | US Statute | Stablecoin BSA treatment; mandatory freeze/burn/seize |
 | 31 U.S.C. §5318A (Section 311) | US Statute | Primary money laundering concern designations |
 | 31 U.S.C. §5323 | US Statute | AML whistleblower bounty program |
 | 18 U.S.C. §981(k) | US Statute | Asset substitution; correspondent balance seizure |
 | 18 U.S.C. §2339B / §2339D | US Statute | Material support to terrorism / WMD |
 | Kingpin Act | US Statute | Narcotics cartel blocking authority |
-| CISADA | US Statute | Iranian petroleum/financial messaging secondary sanctions |
-| NKSPEA | US Statute | DPRK dual-use trade enforcement |
+| CISADA (Public Law 111-195) | US Statute | Iranian petroleum/financial messaging secondary sanctions |
+| NKSPEA (Public Law 114-122) | US Statute | DPRK dual-use trade enforcement |
 | FEND Off Fentanyl Act | US Statute | PRC precursor supply chain enforcement |
-| ECRA / EAR | US Statute/Regulation | Export controls; BIS Entity List |
+| ECRA / EAR | US Statute/Regulation | Export controls; BIS Entity List; Foreign Direct Product Rule |
+| CHIPS and Science Act (Public Law 117-167) | US Statute | Semiconductor manufacturing enabling authority |
+| Inflation Reduction Act (Public Law 117-169) | US Statute | Industrial manufacturing incentive authority |
+| Energy Policy Act of 2005 (42 U.S.C. § 16511 et seq.) | US Statute | DOE loan guarantee authority |
+| National Defense Stockpile (50 U.S.C. §§ 98 et seq.) | US Statute | Strategic materials stockpile authority |
 | 31 C.F.R. §1010.370 | US Regulation | Real estate reporting rule; GTO authority |
 | EU Regulation 833/2014 (19th package, Oct 23 2025) | EU Regulation | Russia sectoral sanctions; LNG ban; shadow fleet; SPFS/Mir/SBP |
 | EU Regulation 269/2014 | EU Regulation | Individual asset freeze and travel ban |
@@ -395,6 +430,8 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
 | UNCLOS Art. 38 | International Law | Transit passage; Hormuz legal framework |
 | Hague Convention VIII / Regulations Arts. 42–56 | International Law | Mine warfare; occupation obligations |
 | Geneva Convention IV | International Law | Civilian protection; Kharg Island analysis |
+| West Virginia v. EPA, 597 U.S. 697 (2022) | US Case Law | Major questions doctrine; IEEPA judicial risk |
+| Loper Bright Enterprises v. Raimondo, 603 U.S. 369 (2024) | US Case Law | Chevron overrule; agency statutory interpretation |
 
 ---
 
@@ -404,9 +441,15 @@ WMD-focused intelligence briefing providing decision-support analysis for the th
 00-series-standards/
     Style Guide v3.0 (governs all papers)
     CI Assessment v3.0 (series-level exposure review)
+    CI Assessment-02 (ESCALATE-01 / RESILIENCE-01 exposure review)
     SENI-CI-01 v1.4 → 01-seni/00-architecture/ (SENI sub-series CI assessment)
     MAP-CI-01 v1.4 → 07-intelligence-map/ (interactive map CI assessment)
     Verbiage Guide v2.2 (governing analytic drafting doctrine)
+
+08-resilience-foundation/
+    RESILIENCE-01 v9.0 (domestic capacity prerequisite layer)
+         |
+         +--> [feeds ESCALATE-01 and all technology-denial enforcement papers]
 
 ATTRIBUTION-01 (4-level nexus framework)
      |
@@ -430,9 +473,14 @@ CSE-01/NEXUS-01 (5-rung PRC extension)
      |         |         |
      |         |    MAXPRESS-01 (execution layer)
      |         |         |
-     |         |         +--> AXIS-01 (Russia-China axis: enforcement resilience and friction assessment)
+     |         |         +--> ESCALATE-01 (institutional decision architecture)
+     |         |         |         |    [reads upstream from RESILIENCE-01]
+     |         |         |         |
+     |         |         |         +--> SHIELD-01, SENI-01, all enforcement papers
+     |         |         |
+     |         |         +--> AXIS-01 (Russia-China axis: enforcement resilience)
      |         |                   |
-     |         |                   +--> SENI-01 §I (Russia-China strategic infrastructure nodes)
+     |         |                   +--> SENI-01 §I (Russia-China strategic infrastructure)
      |         |
      |         |    Immigration Architecture
      |         |
