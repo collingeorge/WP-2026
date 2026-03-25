@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDO-01 v3.0 — Multi-Domain Operations Doctrine — WP-2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:      #1B2A4A;
+  --navy-mid:  #2E4172;
+  --navy-deep: #0d1a30;
+  --slate:     #4A5568;
+  --slate-lt:  #718096;
+  --gold:      #8B6914;
+  --gold-lt:   #b8902a;
+  --lnav:      #E8EDF5;
+  --lnav-dk:   #d4dcea;
+  --warm:      #FAFAFA;
+  --amber:     #FEF3E2;
+  --amber-b:   #7A4000;
+  --sage:      #EAF4EC;
+  --sage-b:    #1A5C2E;
+  --red-fill:  #FDECEC;
+  --red-b:     #8B1A1A;
+  --black:     #111827;
+  --body-bg:   #F7F8FA;
+  --rule:      #CBD5E0;
+
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-body:    'Libre Franklin', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  --content-max: 900px;
+  --sidebar-w:   260px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--body-bg);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ── CLASSIFICATION BANNER ────────────────────────────── */
+.class-banner {
+  background: var(--navy);
+  color: #8fa8c8;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  padding: 6px 20px;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── LAYOUT SHELL ─────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-areas: "nav main";
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR NAV ──────────────────────────────────────── */
+.sidebar {
+  grid-area: nav;
+  position: sticky;
+  top: 33px;
+  height: calc(100vh - 33px);
+  overflow-y: auto;
+  background: var(--navy-deep);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 0 60px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.nav-series {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  padding: 0 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 20px;
+}
+
+.nav-series strong {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 4px;
+}
+
+.nav-part {
+  margin-bottom: 4px;
+}
+
+.nav-part-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--gold-lt);
+  text-transform: uppercase;
+  padding: 8px 24px 4px;
+  display: block;
+}
+
+.nav-link {
+  display: block;
+  padding: 5px 24px 5px 32px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  line-height: 1.4;
+}
+
+.nav-link:hover {
+  color: rgba(255,255,255,0.85);
+  border-left-color: var(--gold);
+  background: rgba(255,255,255,0.03);
+}
+
+.nav-link.active {
+  color: #fff;
+  border-left-color: var(--gold-lt);
+  background: rgba(255,255,255,0.05);
+  font-weight: 500;
+}
+
+.nav-sub {
+  display: block;
+  padding: 3px 24px 3px 44px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.4;
+}
+.nav-sub:hover { color: rgba(255,255,255,0.6); }
+
+/* ── MAIN CONTENT ─────────────────────────────────────── */
+.main {
+  grid-area: main;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* ── COVER ────────────────────────────────────────────── */
+.cover {
+  background: var(--navy);
+  padding: 72px 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 400px; height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.025) 100%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,105,20,0.6), transparent);
+}
+
+.cover-series {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.cover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-lt);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.cover-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 48px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 32px;
+  max-width: 700px;
+}
+
+.meta-item {
+  padding-right: 32px;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ── NOTICE BAND ──────────────────────────────────────── */
+.notice-band {
+  background: var(--amber);
+  border-top: 3px solid var(--amber-b);
+  border-bottom: 1px solid #e8c870;
+  padding: 16px 80px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.notice-icon {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--amber-b);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.notice-text {
+  font-size: 12px;
+  color: #5a3500;
+  line-height: 1.6;
+}
+
+/* ── DOCUMENT BODY ────────────────────────────────────── */
+.doc-body {
+  padding: 64px 80px;
+  max-width: var(--content-max);
+}
+
+/* ── SECTIONS ─────────────────────────────────────────── */
+.part {
+  margin-bottom: 72px;
+}
+
+.part-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 36px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--navy);
+}
+
+.part-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.part-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--slate-lt);
+  font-weight: 400;
+}
+
+.subsection {
+  margin-bottom: 20px;
+}
+
+.subsection-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--slate);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subsection-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  max-width: 120px;
+}
+
+p {
+  margin-bottom: 14px;
+  color: var(--black);
+}
+
+cite {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate-lt);
+  font-style: normal;
+  background: var(--lnav);
+  padding: 1px 5px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ── CONFIDENCE LEXICON ───────────────────────────────── */
+.lexicon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.lexicon-item {
+  padding: 10px 14px;
+  background: var(--lnav);
+  border-left: 3px solid var(--navy);
+}
+
+.lexicon-term {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.lexicon-def {
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+/* ── KEY JUDGMENT BOXES ───────────────────────────────── */
+.kj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.kj {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  background: var(--lnav);
+  border: 1px solid var(--lnav-dk);
+}
+
+.kj-num {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.kj-body {
+  padding: 14px 18px;
+}
+
+.kj-conf {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.kj-text {
+  font-size: 13px;
+  color: var(--black);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.kj-detail {
+  display: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--lnav-dk);
+}
+
+.kj-detail.open { display: block; }
+
+.kj-detail-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.kj-detail-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--slate);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding-top: 1px;
+}
+
+.kj-detail-val { color: var(--slate); line-height: 1.5; }
+
+.kj-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--navy);
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--lnav-dk);
+  text-underline-offset: 3px;
+}
+.kj-toggle:hover { color: var(--gold); }
+
+/* ── ACCENT BOXES ─────────────────────────────────────── */
+.accent-box {
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: 4px 1fr;
+}
+
+.accent-bar { }
+
+.accent-content {
+  padding: 16px 20px;
+}
+
+.accent-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.accent-body {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.accent-body p { margin-bottom: 8px; }
+.accent-body p:last-child { margin-bottom: 0; }
+
+.accent-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accent-body ul li {
+  padding-left: 16px;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.accent-body ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  opacity: 0.5;
+}
+
+/* navy */
+.accent-box.navy .accent-bar { background: var(--navy); }
+.accent-box.navy .accent-content { background: var(--lnav); }
+.accent-box.navy .accent-title { color: var(--navy); }
+
+/* amber */
+.accent-box.amber .accent-bar { background: var(--amber-b); }
+.accent-box.amber .accent-content { background: var(--amber); }
+.accent-box.amber .accent-title { color: var(--amber-b); }
+
+/* green */
+.accent-box.green .accent-bar { background: var(--sage-b); }
+.accent-box.green .accent-content { background: var(--sage); }
+.accent-box.green .accent-title { color: var(--sage-b); }
+
+/* red */
+.accent-box.red .accent-bar { background: var(--red-b); }
+.accent-box.red .accent-content { background: var(--red-fill); }
+.accent-box.red .accent-title { color: var(--red-b); }
+
+/* ── DATA TABLES ──────────────────────────────────────── */
+.data-table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.data-table th {
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 10px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.55;
+  color: var(--black);
+}
+
+.data-table tr:nth-child(even) td { background: var(--lnav); }
+.data-table tr:nth-child(odd) td { background: var(--warm); }
+
+.data-table tr:hover td { background: var(--lnav-dk); }
+
+.track-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.track-1 { background: #dbe8f8; color: #1B4080; }
+.track-2 { background: #fde8d8; color: #7a2a00; }
+.track-3 { background: #e8ddf8; color: #3a1a7a; }
+.track-23 { background: #e8f0d8; color: #1a4a1a; }
+
+.conf-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.conf-high { background: var(--lnav); color: var(--navy); border: 1px solid var(--navy-mid); }
+.conf-mod  { background: #fff8e8; color: #6b4800; border: 1px solid #d4a840; }
+.conf-low  { background: var(--red-fill); color: var(--red-b); border: 1px solid #d4a0a0; }
+
+/* ── DOMAIN CARDS ─────────────────────────────────────── */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.domain-card {
+  padding: 16px 12px;
+  background: var(--lnav);
+  border: 1px solid var(--lnav-dk);
+  border-top: 3px solid var(--domain-color);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: default;
+}
+
+.domain-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.domain-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+
+.domain-name {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--domain-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.domain-list {
+  list-style: none;
+  font-size: 11px;
+  color: var(--slate);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* ── CASE BOXES ───────────────────────────────────────── */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.case-card {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.case-header {
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-card.green .case-header { background: var(--sage-b); color: #fff; }
+.case-card.amber .case-header { background: var(--amber-b); color: #fff; }
+
+.case-verdict {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 14px;
+  text-transform: uppercase;
+}
+
+.case-card.green .case-verdict { background: var(--sage); color: var(--sage-b); border-bottom: 1px solid #c0dcc4; }
+.case-card.amber .case-verdict { background: var(--amber); color: var(--amber-b); border-bottom: 1px solid #e8c870; }
+
+.case-body {
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* ── PHASE TIMELINE ───────────────────────────────────── */
+.phase-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 20px 0;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.phase-col {
+  border-right: 1px solid var(--rule);
+  padding: 0;
+}
+.phase-col:last-child { border-right: none; }
+
+.phase-head {
+  background: var(--navy);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.phase-body {
+  padding: 12px 14px;
+  font-size: 11.5px;
+  color: var(--slate);
+  line-height: 1.6;
+  background: var(--warm);
+}
+
+.phase-trigger {
+  padding: 8px 14px;
+  background: var(--amber);
+  border-top: 1px solid #e8c870;
+  font-size: 11px;
+  color: var(--amber-b);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+/* ── PRINCIPAL UNCERTAINTIES ──────────────────────────── */
+.uncertainty-list {
+  counter-reset: unc;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.uncertainty-list li {
+  counter-increment: unc;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--lnav);
+  border-left: 3px solid var(--navy);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--black);
+  align-items: start;
+}
+
+.uncertainty-list li::before {
+  content: counter(unc);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  opacity: 0.4;
+  padding-top: 1px;
+}
+
+/* ── SOURCES ──────────────────────────────────────────── */
+.source-section { margin-bottom: 28px; }
+
+.source-tier-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.source-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.source-list li {
+  font-size: 12.5px;
+  color: var(--slate);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.source-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--slate-lt);
+}
+
+/* ── END OF DOCUMENT ──────────────────────────────────── */
+.eod {
+  margin: 60px 0 0;
+  padding: 20px 80px;
+  background: var(--navy);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+/* ── SCROLL ANIMATIONS ────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; grid-template-areas: "main"; }
+  .sidebar { display: none; }
+  .cover { padding: 48px 40px; }
+  .doc-body { padding: 40px 40px; }
+  .notice-band { padding: 16px 40px; }
+  .domain-grid { grid-template-columns: repeat(3, 1fr); }
+  .case-grid { grid-template-columns: 1fr; }
+  .cover-meta { grid-template-columns: 1fr 1fr; }
+  .eod { padding: 20px 40px; }
+}
+
+@media (max-width: 700px) {
+  .cover { padding: 36px 24px; }
+  .cover-title { font-size: 28px; }
+  .doc-body { padding: 32px 24px; }
+  .notice-band { padding: 14px 24px; }
+  .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .phase-strip { grid-template-columns: 1fr 1fr; }
+  .lexicon-grid { grid-template-columns: 1fr; }
+  .eod { padding: 20px 24px; }
+}
+
+/* ── PRINT ────────────────────────────────────────────── */
+@media print {
+  .sidebar, .class-banner { display: none; }
+  .layout { display: block; }
+  .cover { background: var(--navy) !important; -webkit-print-color-adjust: exact; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="class-banner">UNCLASSIFIED // FOR EDUCATIONAL AND ANALYTICAL PURPOSES // CENTER FOR COMPETITIVE STATECRAFT AND STRATEGIC POLICY // WP-2026 // MDO-01 v3.0</div>
+
+<div class="layout">
+
+<!-- ── SIDEBAR ────────────────────────────────────────── -->
+<nav class="sidebar" aria-label="Document navigation">
+  <div class="nav-series">
+    <strong>WP-2026 Series</strong>
+    Center for Competitive Statecraft<br>and Strategic Policy
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Cover</span>
+    <a class="nav-link" href="#cover">MDO-01 v3.0</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part I</span>
+    <a class="nav-link" href="#part1">Methodological Note</a>
+    <a class="nav-sub" href="#lexicon">Confidence Lexicon</a>
+    <a class="nav-sub" href="#kj">Key Judgments</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part II</span>
+    <a class="nav-link" href="#part2">Strategic Doctrine</a>
+    <a class="nav-sub" href="#mdo">Multi-Domain Operations</a>
+    <a class="nav-sub" href="#three-track">Three-Track Model</a>
+    <a class="nav-sub" href="#friction">Interagency Friction</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part III</span>
+    <a class="nav-link" href="#part3">Five-Domain Architecture</a>
+    <a class="nav-sub" href="#land">Land</a>
+    <a class="nav-sub" href="#sea">Sea &amp; Submarines</a>
+    <a class="nav-sub" href="#air">Air</a>
+    <a class="nav-sub" href="#space">Space</a>
+    <a class="nav-sub" href="#cyber">Cyberspace</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part IV</span>
+    <a class="nav-link" href="#part4">PSYOP, IO &amp; Economic</a>
+    <a class="nav-sub" href="#miso">PSYOP / MISO</a>
+    <a class="nav-sub" href="#ew">Electronic Warfare</a>
+    <a class="nav-sub" href="#sanctions">Sanctions</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part V</span>
+    <a class="nav-link" href="#part5">SOF &amp; Covert Action</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part VI</span>
+    <a class="nav-link" href="#part6">Adversary Context</a>
+    <a class="nav-sub" href="#prc">PRC</a>
+    <a class="nav-sub" href="#russia">Russia</a>
+    <a class="nav-sub" href="#dprk">DPRK</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part VII</span>
+    <a class="nav-link" href="#part7">Execution Workflow</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Part VIII</span>
+    <a class="nav-link" href="#part8">Constraints &amp; Limits</a>
+  </div>
+
+  <div class="nav-part">
+    <span class="nav-part-label">Sources</span>
+    <a class="nav-link" href="#sources">Reference Basis</a>
+  </div>
+</nav>
+
+<!-- ── MAIN ───────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- COVER -->
+  <section class="cover" id="cover">
+    <div class="cover-series">WP-2026 Series · Paper MDO-01 v3.0 · March 2026</div>
+    <div class="cover-eyebrow">Multi-Domain Operations Doctrine</div>
+    <h1 class="cover-title">Strategic Framework,<br>Execution Architecture,<br>and the Three-Track Analytic Model</h1>
+    <p class="cover-subtitle">Final Edition — v3.0 polish pass: compression, confidence standardization, tonal uniformity. Pairs with MDO-01-v3.docx.</p>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">3.0 — Final</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Classification</div>
+        <div class="meta-value">Unclassified // Open Source</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-value">Style Guide v3.0 · ODNI Standards</div>
+      </div>
+      <div class="meta-item" style="margin-top:20px;">
+        <div class="meta-label">Reads Into</div>
+        <div class="meta-value">HORMUZ-01/02 · SHIELD-01 · PERSIST-01</div>
+      </div>
+      <div class="meta-item" style="margin-top:20px;">
+        <div class="meta-label">Revision History</div>
+        <div class="meta-value">v1 initial · v2 red-team structural · v3 polish</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <div class="notice-band">
+    <div class="notice-icon">Notice</div>
+    <div class="notice-text">Unclassified open-source analytical product. All content derived from publicly available doctrine, government publications, and open-source academic sources. The three-track framework is an analytic organizing construct — not a formally codified U.S. decision architecture. Claims derived by logical extension are labeled <strong>ANALYTICALLY INFERRED</strong>. Where the public record does not sustain a firm judgment, the limit is stated explicitly.</div>
+  </div>
+
+  <div class="doc-body">
+
+  <!-- ── PART I ──────────────────────────────────────── -->
+  <article class="part fade-in" id="part1">
+    <div class="part-header">
+      <span class="part-num">Part I</span>
+      <h2 class="part-title">Methodological Note and Key Judgments</h2>
+    </div>
+
+    <div class="section" id="scope">
+      <h3 class="section-title"><span class="section-num">1.1</span> Analytical Posture and Scope</h3>
+      <p>This paper constructs a consolidated reference framework for multi-domain operations (MDO) at the strategic and operational levels. Version 3.0 is the final polish pass following structural revision in v2.0, which addressed four red-team findings: overstatement of the three-track framework's formal status, confidence labels outrunning evidence, insufficient interagency and coalition friction, and insufficient adversary-facing analysis.</p>
+      <p>Each section separates <strong>Documented Doctrine</strong>, <strong>Public-Law Authority</strong>, and <strong>Analytic Assessment</strong>. The paper applies a three-track analytic model — Diplomatic, Overt Warfare, and Clandestine/Covert — to organize the principal channels of U.S. state power in competition and conflict.</p>
+    </div>
+
+    <div class="section" id="lexicon">
+      <h3 class="section-title"><span class="section-num">1.1a</span> Confidence Lexicon</h3>
+      <div class="lexicon-grid">
+        <div class="lexicon-item"><div class="lexicon-term">High Confidence</div><div class="lexicon-def">Directly supported by multiple independent Tier 1 sources. Analytic inference minimal.</div></div>
+        <div class="lexicon-item"><div class="lexicon-term">Moderate Confidence</div><div class="lexicon-def">Supported by Tier 1/2 sourcing with meaningful inference or an unresolved variable.</div></div>
+        <div class="lexicon-item"><div class="lexicon-term">Low-Moderate Confidence</div><div class="lexicon-def">Structurally sound inference from indirect public reporting.</div></div>
+        <div class="lexicon-item"><div class="lexicon-term">Low Confidence</div><div class="lexicon-def">Primarily analytic inference. Reasonable alternative conclusions exist.</div></div>
+        <div class="lexicon-item"><div class="lexicon-term">Analytically Inferred</div><div class="lexicon-def">Derived by logical extension from documented premises. Not directly observed.</div></div>
+        <div class="lexicon-item"><div class="lexicon-term">Scenario-Conditioned</div><div class="lexicon-def">Valid only under stated premises. Not a prediction.</div></div>
+      </div>
+    </div>
+
+    <div class="section" id="kj">
+      <h3 class="section-title"><span class="section-num">1.2</span> Key Judgments</h3>
+      <p>Six judgments govern this paper. Each carries a probability word, a confidence tag, a stated basis, a principal counterargument, and the condition that would change the confidence assessment. Click any judgment to expand the analytical sub-elements.</p>
+
+      <div class="kj-list">
+
+        <div class="kj">
+          <div class="kj-num">1</div>
+          <div class="kj-body">
+            <div class="kj-conf">High Confidence · Doctrine-Supported</div>
+            <p class="kj-text">MDO is <em>almost certainly</em> the governing joint warfighting concept for peer and near-peer conflict, codified in FM 3-0 (2022) and JP 3-0. Its central mechanism — convergence of cross-domain effects timed to exceed adversary decision-cycle speed — is directly documented.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">Primary doctrine: FM 3-0 (October 2022); JP 3-0 (2022).</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">MDO remains contested; critics hold that cross-service interoperability gaps prevent the concept from functioning as specified.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Public evidence of CCMD-level rejection of MDO in favor of a competing concept.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kj">
+          <div class="kj-num">2</div>
+          <div class="kj-body">
+            <div class="kj-conf">Moderate Confidence · Analytically Inferred</div>
+            <p class="kj-text">The three-track framework <em>likely</em> reflects the principal channels through which U.S. state power has been employed in documented strategic campaigns. It is an analytic construct — not a formally codified U.S. decision architecture.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">Cross-reference of IEEPA, Title 10, Title 50 authorities, official strategy documents, and observed practice.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">Real campaigns blur track boundaries; the paper's categorical structure is likely neater than actual interagency practice.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Formal government codification or explicit rejection of this categorical structure.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kj">
+          <div class="kj-num">3</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <p class="kj-text">Submarine and undersea forces <em>may</em> offer greater survivability and operational flexibility than surface or air assets under current ASW technology conditions. Comparative ranking across asset classes is not supported by the open-source record and is not asserted.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">CBO FY2024 Navy Submarine Programs; public USN posture statements on acoustic survivability.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">PRC ASW investment trajectories may narrow the survivability gap by the late 2030s; long-range air-launched strike may provide comparable effect at lower political risk.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Public reporting on adversary ASW capability closing the acoustic detection margin.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kj">
+          <div class="kj-num">4</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <p class="kj-text">MISO <em>may contribute</em> to shaping the pre-conflict competition environment when integrated with diplomatic signaling, cyber effects, and economic measures. The public record does not permit isolated causal attribution of behavioral change to information operations.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">JP 3-13.2 doctrine; reported use in Ukraine and Gulf campaigns.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">PRC media control and Russian domestic narrative management materially limit target audience accessibility for U.S. MISO against primary peer adversaries.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Independently evaluated public evidence of MISO producing specific, measurable adversary behavioral change.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kj">
+          <div class="kj-num">5</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <p class="kj-text">Multilateral sanctions <em>likely</em> impose greater cost on target states than unilateral designation. Whether that cost differential produces strategic behavioral change is not established by the open-source record and is not asserted.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">OFAC Annual Report FY2024; Iran JCPOA case (contributory); Russia 2022 counter-case (cost without behavioral change).</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">Three of four major post-2014 sanctions regimes have not demonstrably altered core adversary strategic behavior.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Documented causal linkage between sanctions cost and operational constraint in a peer-equivalent adversary.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kj">
+          <div class="kj-num">6</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low Confidence · Analytically Inferred</div>
+            <p class="kj-text">Clandestine and covert options <em>may be</em> considered in gray-zone and pre-conflict phases because they impose cost below the armed conflict threshold and preserve diplomatic optionality. The public record does not permit confident assessment of their frequency, effectiveness, or comparative preference.</p>
+            <button class="kj-toggle" onclick="toggleKJ(this)">▸ Basis / Counterargument / Conditions</button>
+            <div class="kj-detail">
+              <div class="kj-detail-row"><div class="kj-detail-label">Basis</div><div class="kj-detail-val">Statutory authorities; publicly reported covert programs in Afghanistan, Syria, Ukraine.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">Principal Counterargument</div><div class="kj-detail-val">Presidential Finding requirements and interagency friction may make covert action slower and more politically costly than the framework implies; proxy/partner outcomes have been mixed.</div></div>
+              <div class="kj-detail-row"><div class="kj-detail-label">What Would Change Confidence</div><div class="kj-detail-val">Systematic public evaluation of covert option effectiveness comparable to unclassified RAND after-action assessments.</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART II ─────────────────────────────────────── -->
+  <article class="part fade-in" id="part2">
+    <div class="part-header">
+      <span class="part-num">Part II</span>
+      <h2 class="part-title">Strategic Doctrine and the Three-Track Analytic Model</h2>
+    </div>
+
+    <div class="section" id="mdo">
+      <h3 class="section-title"><span class="section-num">2.1</span> Multi-Domain Operations</h3>
+      <div class="subsection">
+        <div class="subsection-label">Documented Doctrine</div>
+        <p>FM 3-0 (October 2022), JP 3-0 (2022), and the Chairman's Joint Warfighting Concept establish MDO as the governing framework for peer adversary operations. No single domain is decisive. Adversary A2/AD architectures deny U.S. freedom of action, primarily in air. The MDO response is convergence: simultaneous cross-domain effects timed to collapse adversary decision cycles before integrated defense responds coherently. Three operational tasks: <strong>Compete</strong> (below armed conflict); <strong>Penetrate and Disintegrate A2/AD</strong>; <strong>Exploit Freedom of Action</strong>. <cite>TIER 1 — FM 3-0, October 2022, Chs. 1–3</cite></p>
+      </div>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with moderate confidence that MDO's internal logic is sound but faces three documented implementation constraints: (1) cross-domain convergence requires interoperability that remains incomplete across services; (2) the concept requires decision speed that existing command structures may not consistently deliver; (3) PRC investments in EW, space denial, and cyber specifically target the enabling architecture MDO depends upon. The principal uncertainty is whether the institutional force can execute the concept under peer-adversary contested conditions. The public record does not resolve that question. <cite>TIER 2 — RAND MDO Analysis, 2023</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="three-track">
+      <h3 class="section-title"><span class="section-num">2.2</span> The Three-Track Analytic Framework</h3>
+      <p>This paper applies a three-track analytic framework to organize the principal channels through which U.S. state power is employed. It is an analytic organizing construct — not a formally codified U.S. decision architecture. Real campaigns frequently blur or compress track boundaries: covert action often precedes diplomatic action; overt military presence functions as economic signaling.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Definition</th>
+              <th>Primary Legal Authority</th>
+              <th>Execution Lead</th>
+              <th>Sanctions Integration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="track-badge track-1">1 — Diplomatic</span></td>
+              <td>Negotiation, deterrence signaling, coalition building, economic coercion, and international pressure through official governmental and multilateral channels.</td>
+              <td>IEEPA; Arms Export Control Act; Title 22 USC; UN Charter</td>
+              <td>NSC / State / Treasury OFAC</td>
+              <td>Primary vehicle for sanctions designation; provides coalition legitimacy for secondary sanctions.</td>
+            </tr>
+            <tr>
+              <td><span class="track-badge track-2">2 — Overt Warfare</span></td>
+              <td>Declared or acknowledged use of military force under Title 10, including conventional operations, strikes, maritime interdiction, and power projection.</td>
+              <td>AUMF; Title 10 USC; UN Charter Art. 51; LOAC/IHL</td>
+              <td>SecDef / CCMD / JFC</td>
+              <td>Sanctions inform target lists; maritime interdiction enforces cargo restrictions.</td>
+            </tr>
+            <tr>
+              <td><span class="track-badge track-3">3 — Clandestine/Covert</span></td>
+              <td>Deniable or unacknowledged operations including CIA covert action, SOF unconventional warfare, proxy support, offensive cyber, and information operations.</td>
+              <td>Title 50 USC § 3093 (Presidential Finding required); EO 12333; Title 10 § 127e</td>
+              <td>CIA SAC / JSOC / USCYBERCOM</td>
+              <td>May disrupt sanctions evasion networks; operational outcomes not publicly assessed.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section" id="friction">
+      <h3 class="section-title"><span class="section-num">2.3</span> Authorities Overlap and Interagency Friction</h3>
+      <p>The three-track model implies procedural neatness that does not reflect documented interagency practice. The following constraints are established in public reporting and congressional testimony.</p>
+      <div class="accent-box amber">
+        <div class="accent-bar"></div>
+        <div class="accent-content">
+          <div class="accent-title">Documented Interagency Friction Points</div>
+          <div class="accent-body"><ul>
+            <li><strong>Contested Jurisdiction (Title 10 vs. Title 50):</strong> The 2017 Niger incident demonstrated that Section 127e authorities remain legally and politically contested when operations produce casualties; congressional oversight has tightened since.</li>
+            <li><strong>Legal Review Variance:</strong> OCO against adversary critical infrastructure faces unsettled LOAC proportionality and distinction analysis that imposes real execution delays.</li>
+            <li><strong>Coalition Veto Points:</strong> NATO Article 5 does not automatically generate allied operational participation. Compartmented U.S. cyber operations may not be shareable with coalition partners.</li>
+            <li><strong>Attribution Thresholds:</strong> Both the 2016 DNC attribution and SolarWinds response demonstrate months-scale gaps between detection and policy authorization.</li>
+            <li><strong>Escalation Management Constraints:</strong> Track 3 options may be legally available but held in reserve due to escalation concern, alliance equities, or domestic political cost. The operative question is political cost, not legal authority.</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART III ────────────────────────────────────── -->
+  <article class="part fade-in" id="part3">
+    <div class="part-header">
+      <span class="part-num">Part III</span>
+      <h2 class="part-title">Five-Domain Warfighting Architecture</h2>
+    </div>
+
+    <div class="domain-grid">
+      <div class="domain-card" style="--domain-color:#2563EB;">
+        <span class="domain-icon">⚔️</span>
+        <div class="domain-name">Land</div>
+        <ul class="domain-list">
+          <li>M1A2 SEPv3 armor</li>
+          <li>HIMARS / PrSM (499+ km)</li>
+          <li>Patriot PAC-3 / THAAD GBAD</li>
+          <li>BCT — armored / IBCT / Stryker</li>
+        </ul>
+      </div>
+      <div class="domain-card" style="--domain-color:#0891B2;">
+        <span class="domain-icon">⚓</span>
+        <div class="domain-name">Sea</div>
+        <ul class="domain-list">
+          <li>SSN — Virginia Block V</li>
+          <li>SSBN — Ohio / Trident D5</li>
+          <li>CVN Carrier Strike Groups</li>
+          <li>DDG Arleigh Burke Aegis BMD</li>
+        </ul>
+      </div>
+      <div class="domain-card" style="--domain-color:#7C3AED;">
+        <span class="domain-icon">🛩️</span>
+        <div class="domain-name">Air</div>
+        <ul class="domain-list">
+          <li>F-22 / F-35 5th-gen stealth</li>
+          <li>B-21 Raider penetrating strike</li>
+          <li>JASSM-ER (1,000+ km)</li>
+          <li>EA-18G Growler EW</li>
+        </ul>
+      </div>
+      <div class="domain-card" style="--domain-color:#059669;">
+        <span class="domain-icon">🛰️</span>
+        <div class="domain-name">Space</div>
+        <ul class="domain-list">
+          <li>GPS III — PNT backbone</li>
+          <li>SBIRS / Next-Gen OPIR</li>
+          <li>WGS — wideband SATCOM</li>
+          <li>NRO overhead targeting</li>
+        </ul>
+      </div>
+      <div class="domain-card" style="--domain-color:#DC2626;">
+        <span class="domain-icon">💻</span>
+        <div class="domain-name">Cyberspace</div>
+        <ul class="domain-list">
+          <li>CYBERCOM — CMF 133 teams</li>
+          <li>Defend Forward / OCO</li>
+          <li>NSA SIGINT / TAO</li>
+          <li>Hunt Forward operations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="land">
+      <h3 class="section-title"><span class="section-num">3.1</span> Land Domain</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with moderate confidence that the primary land-domain constraint in an INDOPACOM contingency is access, not capability. The theater lacks sufficient pre-positioned Army heavy forces; strategic lift throughput via APOD/SPOD is the binding logistics constraint. The public record does not establish whether pre-positioning improvements currently underway will resolve this constraint within the relevant contingency timeline. <cite>TIER 2 — RAND INDOPACOM Logistics Analysis, 2023</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="sea">
+      <h3 class="section-title"><span class="section-num">3.2</span> Sea Domain and Submarine Architecture</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with low-moderate confidence that submarine forces may offer greater survivability and flexibility than surface or air assets under current ASW technology conditions. The public record supports high SSN acoustic survivability at current adversary detection capability levels. The degree to which PRC fixed-array, helicopter-dipping sonar, and UUV investments have already narrowed that margin constitutes the <strong>principal uncertainty</strong> for this judgment. Comparative leverage ranking against other asset classes is not supported by available evidence and is not asserted. <cite>TIER 1 — CBO FY2024 Navy Submarine Programs</cite></p>
+      </div>
+      <div class="accent-box navy">
+        <div class="accent-bar"></div>
+        <div class="accent-content">
+          <div class="accent-title">Submarine Integration — Three Tracks</div>
+          <div class="accent-body"><ul>
+            <li><strong>Track 1 (Diplomatic):</strong> Forward SSN deployment to contested maritime regions provides deterrence signaling without declared combat action. Documented in public USN force posture statements.</li>
+            <li><strong>Track 2 (Overt Warfare):</strong> SSNs execute anti-ship strikes (Mk-48 ADCAP), TLAM land-attack, and undersea ISR under CCMD EXORD or pre-delegated OPLAN authority.</li>
+            <li><strong>Track 3 (Clandestine):</strong> SSNs conduct special reconnaissance and SEAL delivery under Title 10 and EO 12333 authorities and classified operational orders. The public record does not establish specific operational parameters.</li>
+            <li><strong>Principal Uncertainty:</strong> The public record does not establish the current operational impact of PRC undersea sensing improvements on SSN freedom of maneuver in the South China Sea and Taiwan Strait.</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="air">
+      <h3 class="section-title"><span class="section-num">3.3</span> Air Domain</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with moderate confidence that air superiority over Taiwan Strait or South China Sea against PRC IADS — HQ-9, S-400 derivatives, DF-21D/DF-26 — is achievable with current 5th-generation and JASSM-ER combinations, but requires attrition-based DEAD that imposes real cost. The principal vulnerability is the enabling architecture — AWACS, J-STARS, tankers — which is soft-killable via PRC cyber and ASCM. <cite>TIER 2 — CSIS China Power Project, 2024</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="space">
+      <h3 class="section-title"><span class="section-num">3.4</span> Space Domain</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with moderate-high confidence, based on ODNI ATA 2025, that PRC counter-space investments — co-orbital maneuvering satellites, directed energy, jamming — target the GPS, SATCOM, and OPIR architecture MDO requires. ODNI ATA 2025 reports China "has fielded ground-based ASAT missiles" and is developing additional capabilities. Resilience measures partially offset but do not eliminate this risk. <cite>TIER 1 — ODNI ATA 2025, p. 10</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="cyber">
+      <h3 class="section-title"><span class="section-num">3.5</span> Cyberspace Domain</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>Public reporting indicates USCYBERCOM has conducted Hunt Forward operations in 17 countries through FY2023. The public record does not establish whether pre-positioned OCO capabilities would execute reliably against PRC integrated defense under contested electromagnetic conditions. Attribution latency is a documented constraint: both the 2016 DNC case and the SolarWinds response demonstrate months-scale gaps between detection and policy-level authorization. <cite>TIER 1 — DoD Cyber Strategy 2023</cite></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART IV ─────────────────────────────────────── -->
+  <article class="part fade-in" id="part4">
+    <div class="part-header">
+      <span class="part-num">Part IV</span>
+      <h2 class="part-title">PSYOP, Information Operations, and Economic Integration</h2>
+    </div>
+
+    <div class="section" id="miso">
+      <h3 class="section-title"><span class="section-num">4.1</span> PSYOP and Military Information Support Operations</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with low-moderate confidence that MISO may contribute to shaping the competition environment when integrated with diplomatic, cyber, and economic measures. The public record does not permit isolated causal attribution of behavioral change to information operations.</p>
+        <p>Adversary resilience is a documented constraint. PRC information environment controls substantially limit target audience accessibility. Russian domestic information management achieved sufficient narrative control from 2014 through at least 2022 to sustain public support for major strategic actions. This paper assesses with moderate confidence that adversary information environment architecture materially constrains U.S. MISO effectiveness against both primary peer adversaries. <cite>TIER 2 — RAND, 2023</cite></p>
+      </div>
+
+      <div class="accent-box navy">
+        <div class="accent-bar"></div>
+        <div class="accent-content">
+          <div class="accent-title">PSYOP — Sanctions Integration Framework</div>
+          <div class="accent-body"><ul>
+            <li><strong>Phase 1 (Pre-Designation):</strong> MISO establishes the narrative framework before OFAC designation. Causal contribution is <em>ANALYTICALLY INFERRED</em>; the public record does not establish this phase's effect.</li>
+            <li><strong>Phase 2 (Designation):</strong> OFAC designation is the primary verifiable event. State/GEC MISO amplification is documented. Whether amplification produces behavioral change is the principal unresolved variable.</li>
+            <li><strong>Phase 3 (Pressure Escalation):</strong> Causal linkage between sanctions cost and policy change is documented in limited cases (Iran JCPOA 2015) and absent in others (Russia 2022, DPRK). This paper does not assert this phase reliably produces behavioral change.</li>
+            <li><strong>Phase 4 (Covert Reinforcement):</strong> <em>ANALYTICALLY INFERRED.</em> Title 50 covert influence capabilities are publicly acknowledged; effectiveness against PRC or Russian elite cohesion is not publicly assessed.</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="ew">
+      <h3 class="section-title"><span class="section-num">4.2</span> Electronic Warfare</h3>
+      <div class="subsection">
+        <div class="subsection-label">Documented Doctrine</div>
+        <p>EW — jamming, spoofing, deception, directed-energy — contests adversary spectrum use while protecting U.S. use. EA-18G Growler is the primary EW aircraft. EW enables SEAD/DEAD and CNE by degrading adversary radar and expanding exploitation windows. <cite>TIER 1 — USAF EW FY2024 Budget Justification</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="sanctions">
+      <h3 class="section-title"><span class="section-num">4.3</span> Sanctions as Economic Instrument</h3>
+      <div class="subsection">
+        <div class="subsection-label">Public-Law Authority</div>
+        <p>OFAC administers approximately 35 active sanctions programs under IEEPA, TWEA, and specific statutory authorities. OFAC FY2024 reported $1.54 billion in civil monetary penalties. Primary sanctions restrict U.S. person dealings. Secondary sanctions restrict third-country entities. <cite>TIER 1 — OFAC Annual Report FY2024</cite></p>
+      </div>
+      <div class="subsection">
+        <div class="subsection-label">Case Evidence</div>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card green">
+          <div class="case-header">Mini-Case 1 — Iran: JCPOA</div>
+          <div class="case-verdict">Assessment: Contributory, not isolated cause</div>
+          <div class="case-body">2012–2015 sanctions (SWIFT exclusion, oil embargo) contributed to ~15–20% GDP contraction and 60% reduction in oil revenue. Iran signed JCPOA July 2015. Post-2018 maximum pressure produced no equivalent agreement — inconsistent with simple effectiveness models. <cite>TIER 1 — EIA 2015; IMF 2015</cite></div>
+        </div>
+        <div class="case-card amber">
+          <div class="case-header">Mini-Case 2 — Russia: Behavioral Limits</div>
+          <div class="case-verdict">Assessment: Cost imposed; behavioral change not produced</div>
+          <div class="case-body">Post-2022 regime — SWIFT exclusion, $300B+ reserve freeze, export controls — produced documented costs but GDP contracted only ~2.1% in 2022. Military operations continued through 2024. Primary counter-case to claims of sanctions decisiveness. <cite>TIER 1 — OFAC Russia Designations FY2022–2024</cite></div>
+        </div>
+        <div class="case-card amber">
+          <div class="case-header">Mini-Case 3 — DPRK: Enforcement Gap</div>
+          <div class="case-verdict">Assessment: Evasion outpaced enforcement ~18–24 months</div>
+          <div class="case-body">UNSCR 2375/2397 imposed comprehensive commodity sanctions. UN PoE (2019–2023) identified 25–40 vessel ship-to-ship transfer network using AIS spoofing. Petroleum cap enforcement assessed as largely ineffective by 2022. Illustrates Track 1 designation authority / Track 2–3 enforcement gap. <cite>TIER 1 — UN PoE Reports 2019–2023</cite></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART V ──────────────────────────────────────── -->
+  <article class="part fade-in" id="part5">
+    <div class="part-header">
+      <span class="part-num">Part V</span>
+      <h2 class="part-title">Special Operations, Clandestine Forces, and Covert Action</h2>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">5.1</span> Legal Architecture</h3>
+      <div class="subsection">
+        <div class="subsection-label">Public-Law Authority</div>
+        <p>Title 10 USC § 167 establishes USSOCOM as a combatant command. § 127e authorizes SOF support to foreign partner forces in CT operations. Title 50 USC § 3093 requires a written Presidential Finding for CIA covert action and Congressional notification (Gang of Eight minimum). EO 12333 (2008) governs peacetime clandestine collection. <cite>TIER 1 — Title 10 USC; Title 50 USC § 3093; EO 12333</cite></p>
+      </div>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>Covert action is not a rapid-response instrument in the first instance. The Presidential Finding requirement imposes procedural latency. The 2017 Niger incident and subsequent NDAA FY2018 tightening of § 127e authorities illustrate that congressional tolerance for casualties in deniable operations imposes operational risk-acceptance constraints not captured in the statutory structure.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">5.2</span> SOF and Covert Force Employment</h3>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Force</th><th>Tier</th><th>Authority</th><th>Track</th><th>Primary Function</th><th>Execution Order</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>SF ODA</td><td>2</td><td>Title 10; SOFA/bilateral</td><td><span class="track-badge track-23">2/3</span></td><td>UW, FID, SR, PSYOP support</td><td>CCMD OPORD / JSOTF order</td></tr>
+            <tr><td>75th Ranger Regiment</td><td>2</td><td>Title 10; AUMF</td><td><span class="track-badge track-2">2</span></td><td>Direct action, airfield seizure</td><td>JSOC OPORD</td></tr>
+            <tr><td>Delta Force / DEVGRU</td><td>1</td><td>Title 10; Presidential authority</td><td><span class="track-badge track-2">2</span></td><td>HVT, hostage rescue, counter-WMD</td><td>SECDEF or POTUS EXORD</td></tr>
+            <tr><td>CIA Ground Branch (SAC)</td><td>1</td><td>Title 50; Presidential Finding</td><td><span class="track-badge track-3">3</span></td><td>Covert paramilitary, lethal covert action</td><td>Presidential Finding; SECSTATE coordination</td></tr>
+            <tr><td>SEAL Teams (non-Tier 1)</td><td>2</td><td>Title 10; AUMF</td><td><span class="track-badge track-23">2/3</span></td><td>DA, SR, VBSS, UW</td><td>CCMD JSOTF order</td></tr>
+            <tr><td>160th SOAR</td><td>2</td><td>Title 10</td><td><span class="track-badge track-23">2/3</span></td><td>SOF aviation: infiltration/exfiltration, ISR</td><td>JTF or JSOC order</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="accent-box amber">
+        <div class="accent-bar"></div>
+        <div class="accent-content">
+          <div class="accent-title">Note on Table Certainty</div>
+          <div class="accent-body"><p>The authority and execution order columns document the predicate statutory framework. Actual operational thresholds — which force requires which Presidential-level, SECDEF-level, or CCMD-level approval in specific contingencies — are governed by classified operational orders and may differ from the statutory baseline presented.</p></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART VI ─────────────────────────────────────── -->
+  <article class="part fade-in" id="part6">
+    <div class="part-header">
+      <span class="part-num">Part VI</span>
+      <h2 class="part-title">Adversary Context and Escalation Logic</h2>
+    </div>
+
+    <div class="section" id="prc">
+      <h3 class="section-title"><span class="section-num">6.1</span> People's Republic of China — Systems Confrontation and Political Warfare</h3>
+      <div class="subsection">
+        <div class="subsection-label">Documented Doctrine</div>
+        <p>PLA doctrine centers on systems confrontation (体系对抗): neutralizing an adversary's operational system before attriting its platforms. The PLA targets C2, logistics, ISR, and space/cyber enablers before engaging combat platforms. This approach is structurally analogous to MDO convergence but oriented toward disabling the enabling architecture U.S. forces require. <cite>TIER 2 — RAND PLA Modernization, 2023; USCC Annual Report 2024</cite></p>
+      </div>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>Consistent with ODNI ATA 2025, PRC Three Warfares doctrine — legal warfare (法律战), media warfare (舆论战), and psychological warfare (心理战) — is designed to exploit Track 1/Track 3 seams in the U.S. response architecture. The campaign does not require winning on any single dimension; it requires imposing sufficient friction to delay decisive U.S. action past the adversary's operational culmination point. <cite>TIER 1 — ODNI ATA 2025, pp. 8–12</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="russia">
+      <h3 class="section-title"><span class="section-num">6.2</span> Russia — Escalation Signaling and Decision-Window Compression</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>This paper assesses with moderate confidence that Russia's escalation signaling — nuclear exercises, strategic bomber flights, threshold-testing actions — specifically targets the deliberative timeline that U.S. Track 2 authority structures require. War Powers Resolution notification norms and Congressional consultation requirements assume a faster congressional-executive relationship than currently exists. This assessment is based on documented Russian operational patterns in Georgia (2008), Crimea (2014), and Syria (2015). <cite>TIER 2 — Brookings, Charap and Darden, 2023</cite></p>
+      </div>
+    </div>
+
+    <div class="section" id="dprk">
+      <h3 class="section-title"><span class="section-num">6.3</span> DPRK — Nuclear Asymmetry and Proportionality Constraints</h3>
+      <div class="subsection">
+        <div class="subsection-label">Analytic Assessment</div>
+        <p>ODNI ATA 2025 assesses with high confidence that DPRK has demonstrated ICBM capability. This paper assesses with low-moderate confidence, <em>ANALYTICALLY INFERRED</em> from LOAC doctrine and DPRK capability reporting, that demonstrated ICBM capability materially affects the proportionality calculus applicable to any Track 2 response to North Korean conventional provocations. The relevant question is not whether nuclear retaliation is certain, but whether its non-zero probability at asymmetric consequence affects the proportionality determination. The public record does not establish whether this factor is incorporated into current U.S. contingency planning. <cite>TIER 1 — ODNI ATA 2025, pp. 15–17</cite></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART VII ────────────────────────────────────── -->
+  <article class="part fade-in" id="part7">
+    <div class="part-header">
+      <span class="part-num">Part VII</span>
+      <h2 class="part-title">Execution Workflow and Decision Conditions</h2>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">7.1</span> F2T2EA Targeting Sequence</h3>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Phase</th><th>Function</th><th>Assets</th><th>Authority</th><th>Decision Condition</th><th>Off-Ramp / Friction</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>FIND</strong></td><td>Multi-INT cueing; pattern-of-life development</td><td>NSA SIGINT; NRO; CIA HUMINT; NGA; airborne ISR</td><td>EO 12333; Title 10 ISR authority</td><td>Target identified as valid military objective under LOAC</td><td>ID below legal threshold — return to collection; do not proceed</td></tr>
+            <tr><td><strong>FIX</strong></td><td>Precise geolocation to weapon delivery CEP threshold</td><td>SIGINT geolocation; GPS-referenced imagery; HUMINT</td><td>Existing ISR authority</td><td>Location accuracy meets planned munition CEP threshold</td><td>Geolocation uncertainty — delay or select larger-radius munition</td></tr>
+            <tr><td><strong>TRACK</strong></td><td>Persistent surveillance through engagement window</td><td>MQ-9; satellite; SIGINT continuation</td><td>Continued ISR authority</td><td>Sensor continuity maintained; no track-loss gap</td><td>Track lost — return to FIX; do not engage on stale data</td></tr>
+            <tr><td><strong>TARGET</strong></td><td>Weaponeering; ROE check; LOAC legal review; CDE</td><td>J2 target intel; J3 fires; SJA legal review</td><td>JTF ROE; LOAC CDE proportionality; EXORD thresholds</td><td>Legal review complete; CDE within limits; ROE satisfied</td><td>CDE exceeds threshold — refer up; legal unresolved — hold fire</td></tr>
+            <tr><td><strong>ENGAGE</strong></td><td>Execute; assign shooter; activate terminal guidance</td><td>Strike aircraft; TLAM; HIMARS/PrSM; OCO; SOF DA</td><td>EXORD; CCMD delegation; ROE card</td><td>Positive ID confirmed at engagement; no protected status change</td><td>Target moves to protected site — abort; escalation threshold exceeded — refer to CCMD</td></tr>
+            <tr><td><strong>ASSESS</strong></td><td>Physical, functional, target system BDA; re-attack recommendation</td><td>NRO post-strike imagery; SIGINT BDA; HUMINT; SSE</td><td>Standard ISR collection authority</td><td>Assessment complete; re-attack based on functional damage assessment</td><td>BDA inconclusive — hold pending ISR; collateral damage confirmed — escalate to CCMD/SJA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">7.2</span> Four-Phase Campaign Workflow</h3>
+      <div class="phase-strip">
+        <div class="phase-col">
+          <div class="phase-head">Phase 0 — Competition</div>
+          <div class="phase-body"><strong>T1:</strong> Coalition building; sanctions architecture; deterrence signaling.<br><br><strong>T2:</strong> Forward presence; security cooperation; BMD posture.<br><br><strong>T3:</strong> HUMINT collection; SOF FID; CNE pre-positioning; PSYOP framework.<br><br><strong>Sanctions:</strong> OFAC architecture established; secondary sanctions active; FININT targeting.</div>
+          <div class="phase-trigger">Trigger: adversary aggregation above exercise threshold</div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">Phase 1 — Crisis</div>
+          <div class="phase-body"><strong>T1:</strong> Coercive diplomacy; UNSC proceedings; expanded designation.<br><br><strong>T2:</strong> CCMD force flow; submarine surge; maritime interdiction.<br><br><strong>T3:</strong> Covert action under Finding; proxy activation; PSYOP surge; OCO disruption.<br><br><strong>Sanctions:</strong> Emergency OFAC; SWIFT exclusion threat; energy sector.</div>
+          <div class="phase-trigger">Trigger: adversary first kinetic or cyber use against U.S./ally</div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">Phases 2–3 — Armed Conflict</div>
+          <div class="phase-body"><strong>T1:</strong> Coalition management; war termination preparation.<br><br><strong>T2:</strong> EXORD; A2/AD penetration; kinetic fires; maritime/air operations.<br><br><strong>T3:</strong> SOF DA; JSOC Tier 1 HVT; CIA covert resistance; continued OCO.<br><br><strong>Sanctions:</strong> Maintained; maritime blockade; possible central bank OCO.</div>
+          <div class="phase-trigger">Trigger: adversary nuclear signaling — threshold assessed as approached</div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">Phase 4 — Post-Conflict</div>
+          <div class="phase-body"><strong>T1:</strong> Reconstruction; conditioned sanctions relief; peace agreement.<br><br><strong>T2:</strong> Security assistance; partner force advising.<br><br><strong>T3:</strong> Long-term intelligence architecture; SOF stabilization transition.<br><br><strong>Sanctions:</strong> Relief structured as behavioral compliance leverage.</div>
+          <div class="phase-trigger">Trigger: renewed aggression or ceasefire violation</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── PART VIII ───────────────────────────────────── -->
+  <article class="part fade-in" id="part8">
+    <div class="part-header">
+      <span class="part-num">Part VIII</span>
+      <h2 class="part-title">Structural Constraints and Confidence Boundaries</h2>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">8.1</span> Limitations of the Public Record</h3>
+      <div class="accent-box amber">
+        <div class="accent-bar"></div>
+        <div class="accent-content">
+          <div class="accent-title">Documented Limitations</div>
+          <div class="accent-body"><ul>
+            <li>Operational details of current OPLANs, contingency plans, and active covert programs are classified and not reflected in this analysis.</li>
+            <li>The three-track framework is an analytic organizing construct. Real interagency practice may differ materially from the categorical structure presented.</li>
+            <li>Capability assessments reflect publicly acknowledged specifications. Actual performance — particularly for classified cyber tools, submarine sensors, and adversary ASW systems — may differ materially.</li>
+            <li>The mini-cases are bounded by the public record. Causal attribution is limited to "contributory" language. No claim of decisiveness is asserted.</li>
+            <li>The adversary analysis in Part VI relies on translated public documents and Western analysis — not primary intelligence.</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title"><span class="section-num">8.2</span> Principal Uncertainties</h3>
+      <ul class="uncertainty-list">
+        <li>Whether PRC ASW investments have already reduced SSN freedom of maneuver in contested waters.</li>
+        <li>Whether U.S. MISO has produced measurable behavioral change in any primary peer adversary population.</li>
+        <li>Whether USCYBERCOM OCO pre-positioning would execute reliably against PRC integrated defense under contested electromagnetic conditions.</li>
+        <li>Whether the DPRK nuclear threshold is operationalized at a level already constraining Track 2 contingency planning.</li>
+        <li>Whether Russian escalation signaling reflects standing doctrine or real-time improvisation.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ── SOURCES ─────────────────────────────────────── -->
+  <article class="part fade-in" id="sources">
+    <div class="part-header">
+      <span class="part-num">Sources</span>
+      <h2 class="part-title">Reference Basis</h2>
+    </div>
+
+    <div class="source-section">
+      <div class="source-tier-label">Tier 1 — Primary Government and Official Sources</div>
+      <ul class="source-list">
+        <li>FM 3-0, Operations (Department of the Army, October 2022)</li>
+        <li>JP 3-0, Joint Operations (CJCS, 2022)</li>
+        <li>JP 3-05, Special Operations (CJCS, July 2019)</li>
+        <li>JP 3-12, Cyberspace Operations (CJCS, June 2018)</li>
+        <li>JP 3-13, Information Operations (CJCS, November 2014, updated 2022)</li>
+        <li>JP 3-13.2, Military Information Support Operations (CJCS, December 2022)</li>
+        <li>JP 3-14, Space Operations (CJCS, April 2018, updated 2022)</li>
+        <li>JP 3-60, Joint Targeting (CJCS, January 2019)</li>
+        <li>DoD Cyber Strategy 2023 (unclassified summary, September 2023)</li>
+        <li>ODNI Annual Threat Assessment 2025 (ODNI, March 2025)</li>
+        <li>USAF Posture Statement FY2025 (Secretary of the Air Force, 2024)</li>
+        <li>USSF Posture Statement FY2025 (Chief of Space Operations, 2024)</li>
+        <li>OFAC Annual Report FY2024 (U.S. Department of the Treasury, 2024)</li>
+        <li>Title 10 USC; Title 50 USC § 3093; EO 12333 (2008 amendment)</li>
+        <li>UNSCR 2375 and 2397 (UN Security Council, 2017)</li>
+        <li>Congressional Budget Office, FY2024 Navy Submarine Programs (CBO, 2024)</li>
+        <li>USCC Annual Report 2024 (U.S.-China Economic and Security Review Commission, 2024)</li>
+        <li>IMF Article IV Consultation — Iran (IMF, 2015); EIA Iran Country Analysis Brief (EIA, 2015)</li>
+        <li>UN Panel of Experts Reports on DPRK (UNSC, 2019–2023)</li>
+      </ul>
+    </div>
+
+    <div class="source-section">
+      <div class="source-tier-label">Tier 2 — Analytical and Research Sources</div>
+      <ul class="source-list">
+        <li>RAND, Multi-Domain Operations: Strategic Implications (2023)</li>
+        <li>RAND, Russian Operational Art and the War in Ukraine (2022)</li>
+        <li>RAND, Countering Russian Disinformation (2023)</li>
+        <li>RAND, U.S. Military in the Indo-Pacific: Logistics and Posture (2023)</li>
+        <li>CSIS China Power Project, China Military Capabilities Assessment (2024)</li>
+        <li>CSIS, Space Threat Assessment 2024 (2024)</li>
+        <li>Atlantic Council Cyber Statecraft Initiative, Defend Forward Analysis (2023)</li>
+        <li>CRS R44647, U.S. Special Operations Forces (2024)</li>
+        <li>CRS R45175, Covert Action and Clandestine Activities (2024)</li>
+        <li>CRS R46514, Overview of U.S. Economic Sanctions (2024)</li>
+        <li>Kofman and Fink, "Escalation Management in the War in Ukraine," Foreign Affairs, 2023</li>
+        <li>Charap and Darden, "Russia's Strategy of Permanent Revolution," Brookings Foreign Policy, 2023</li>
+      </ul>
+    </div>
+  </article>
+
+  </div><!-- /.doc-body -->
+
+  <div class="eod">
+    End of Document — MDO-01 v3.0 // Multi-Domain Operations Doctrine — Final — WP-2026 Series — March 2026 — Unclassified // Open Source
+  </div>
+
+</main>
+</div><!-- /.layout -->
+
+<script>
+// ── KJ TOGGLE ──────────────────────────────────────────
+function toggleKJ(btn) {
+  const detail = btn.nextElementSibling;
+  const open = detail.classList.toggle('open');
+  btn.textContent = open
+    ? '▾ Basis / Counterargument / Conditions'
+    : '▸ Basis / Counterargument / Conditions';
+}
+
+// ── SCROLL SPY ─────────────────────────────────────────
+const navLinks = document.querySelectorAll('.nav-link, .nav-sub');
+const sections = [];
+navLinks.forEach(link => {
+  const id = link.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if (el) sections.push({ id, el, link });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[href="#${id}"], .nav-sub[href="#${id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-10% 0px -85% 0px', threshold: 0 });
+
+sections.forEach(s => observer.observe(s.el));
+
+// ── FADE IN ON SCROLL ───────────────────────────────────
+const fadeEls = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      fadeObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.04 });
+
+fadeEls.forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>

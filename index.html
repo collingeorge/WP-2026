@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WP-2026 — Center for Competitive Statecraft and Strategic Policy</title>
+<meta name="description" content="WP-2026 open-source policy research series on U.S. legal-economic statecraft, competitive statecraft, sanctions enforcement architecture, and multi-domain operations doctrine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ RESET & TOKENS ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;
+  --navy-mid:#2E4172;
+  --navy-deep:#0d1a30;
+  --slate:#4A5568;
+  --slate-lt:#718096;
+  --gold:#8B6914;
+  --gold-lt:#b8902a;
+  --lnav:#E8EDF5;
+  --lnav-dk:#d4dcea;
+  --warm:#FAFAFA;
+  --amber:#FEF3E2;
+  --amber-b:#7A4000;
+  --sage:#EAF4EC;
+  --sage-b:#1A5C2E;
+  --black:#111827;
+  --body-bg:#F4F6FA;
+  --rule:#CBD5E0;
+  --font-d:'Libre Baskerville',Georgia,serif;
+  --font-b:'Libre Franklin',system-ui,sans-serif;
+  --font-m:'IBM Plex Mono','Courier New',monospace;
+  --max:1280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--body-bg);color:var(--black);font-family:var(--font-b);font-size:14px;line-height:1.7;}
+
+/* ═══════════════ CLASSIFICATION ═══════════════ */
+.cls-top{
+  background:var(--navy);color:rgba(139,105,20,.85);
+  font-family:var(--font-m);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;text-align:center;padding:6px 20px;
+  position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(139,105,20,.2);
+}
+
+/* ═══════════════ HEADER ═══════════════ */
+.site-header{
+  background:var(--navy);
+  padding:52px 40px 44px;
+  border-bottom:3px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.site-header::after{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.025) 79px,rgba(255,255,255,.025) 80px),
+             repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.015) 79px,rgba(255,255,255,.015) 80px);
+  pointer-events:none;
+}
+.header-inner{max-width:var(--max);margin:0 auto;position:relative;}
+.header-series{
+  font-family:var(--font-m);font-size:10px;color:rgba(255,255,255,.4);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;
+}
+.header-title{
+  font-family:var(--font-d);font-size:38px;font-weight:700;
+  color:#fff;line-height:1.15;margin-bottom:10px;max-width:800px;
+}
+.header-sub{
+  font-family:var(--font-b);font-size:15px;font-weight:300;
+  color:rgba(255,255,255,.55);margin-bottom:36px;max-width:620px;line-height:1.6;
+}
+.header-meta{
+  display:flex;flex-wrap:wrap;gap:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:24px;
+}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-family:var(--font-m);font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.18em;text-transform:uppercase;}
+.meta-val{font-family:var(--font-b);font-size:13px;color:rgba(255,255,255,.7);font-weight:500;}
+
+/* ═══════════════ NOTICE BAND ═══════════════ */
+.notice-band{
+  background:var(--amber);border-bottom:1px solid #e8c870;
+  border-top:3px solid var(--amber-b);
+  padding:14px 40px;display:flex;gap:12px;align-items:flex-start;
+}
+.notice-label{font-family:var(--font-m);font-size:9px;color:var(--amber-b);letter-spacing:.15em;text-transform:uppercase;padding-top:1px;white-space:nowrap;}
+.notice-text{font-size:12px;color:#5a3500;line-height:1.6;}
+
+/* ═══════════════ MAIN LAYOUT ═══════════════ */
+.site-main{max-width:var(--max);margin:0 auto;padding:52px 40px 80px;}
+
+/* ═══════════════ SECTION HEADERS ═══════════════ */
+.section-eyebrow{
+  font-family:var(--font-m);font-size:9px;letter-spacing:.2em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:8px;
+}
+.section-title{
+  font-family:var(--font-d);font-size:22px;font-weight:700;
+  color:var(--navy);margin-bottom:8px;
+}
+.section-desc{font-size:13px;color:var(--slate);line-height:1.65;max-width:680px;margin-bottom:28px;}
+.section-rule{height:2px;background:var(--navy);margin-bottom:32px;}
+
+/* ═══════════════ FEATURED TOOLS SECTION ═══════════════ */
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:52px;}
+
+.featured-card{
+  background:#fff;border:1px solid var(--lnav-dk);
+  border-top:4px solid var(--navy);
+  overflow:hidden;transition:box-shadow .2s,transform .2s;
+  display:flex;flex-direction:column;
+}
+.featured-card:hover{box-shadow:0 6px 32px rgba(27,42,74,.12);transform:translateY(-2px);}
+.featured-card.gold-top{border-top-color:var(--gold);}
+.featured-card.sage-top{border-top-color:var(--sage-b);}
+
+.fc-img{
+  background:var(--navy-deep);height:200px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.fc-img.console-bg{
+  background:linear-gradient(135deg,#0a0e17 0%,#1a2440 100%);
+}
+.fc-img.map-bg{
+  background:linear-gradient(135deg,#0d1a0d 0%,#1a3a1a 100%);
+}
+/* Mini console mockup */
+.mock-console{width:85%;max-width:320px;font-family:var(--font-m);}
+.mock-bar{background:rgba(27,42,74,.9);border:1px solid rgba(139,105,20,.3);padding:5px 10px;font-size:8px;color:rgba(139,105,20,.7);letter-spacing:.12em;margin-bottom:4px;display:flex;justify-content:space-between;}
+.mock-body{background:rgba(15,21,32,.95);border:1px solid rgba(30,45,72,.8);padding:10px;}
+.mock-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid rgba(30,45,72,.5);}
+.mock-row:last-child{border-bottom:none}
+.mock-key{font-size:7px;color:rgba(148,163,184,.5);letter-spacing:.08em;text-transform:uppercase;}
+.mock-val{font-size:8px;letter-spacing:.06em;}
+.mock-cyan{color:#38bdf8}.mock-amber{color:#f59e0b}.mock-green{color:#22c55e}.mock-gold{color:#b8902a}
+.mock-kj{background:rgba(27,42,74,.6);border:1px solid rgba(30,45,72,.6);padding:6px 8px;margin-top:6px;}
+.mock-kj-conf{font-size:6px;color:rgba(139,105,20,.7);letter-spacing:.1em;margin-bottom:3px;}
+.mock-kj-text{font-size:7px;color:rgba(148,163,184,.7);line-height:1.4;}
+
+/* Mini map mockup */
+.mock-map{width:85%;max-width:300px;font-family:var(--font-m);}
+.mock-map-canvas{background:#0a1a0a;border:1px solid rgba(0,255,100,.15);height:100px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:6px;}
+.mock-node{position:absolute;width:6px;height:6px;border-radius:50%;}
+.mock-node.critical{background:#ff3344;box-shadow:0 0 6px rgba(255,51,68,.6);}
+.mock-node.high{background:#f59e0b;box-shadow:0 0 4px rgba(245,158,11,.4);}
+.mock-node.med{background:#38bdf8;box-shadow:0 0 4px rgba(56,189,248,.3);}
+.mock-stats{display:flex;gap:8px;}
+.mock-stat{flex:1;background:rgba(0,20,0,.6);border:1px solid rgba(0,255,100,.1);padding:4px 6px;text-align:center;}
+.mock-stat-num{font-size:11px;color:#22c55e;font-weight:500;}
+.mock-stat-label{font-size:6px;color:rgba(148,163,184,.4);letter-spacing:.08em;text-transform:uppercase;}
+
+.fc-content{padding:20px 22px;flex:1;display:flex;flex-direction:column;}
+.fc-badge{
+  display:inline-block;font-family:var(--font-m);font-size:9px;
+  padding:3px 9px;border-radius:2px;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.badge-console{background:rgba(27,42,74,.1);color:var(--navy);border:1px solid rgba(27,42,74,.2);}
+.badge-map{background:rgba(26,92,46,.1);color:var(--sage-b);border:1px solid rgba(26,92,46,.2);}
+.badge-new{background:rgba(139,105,20,.12);color:var(--gold);border:1px solid rgba(139,105,20,.25);}
+.badge-doc{background:var(--lnav);color:var(--navy);border:1px solid var(--lnav-dk);}
+
+.fc-title{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.fc-desc{font-size:12.5px;color:var(--slate);line-height:1.65;flex:1;}
+.fc-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);
+}
+.fc-meta{font-family:var(--font-m);font-size:9px;color:var(--slate-lt);letter-spacing:.08em;}
+.fc-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;background:var(--navy);color:#fff;
+  font-family:var(--font-m);font-size:10px;letter-spacing:.1em;
+  text-decoration:none;text-transform:uppercase;
+  border:1px solid var(--navy-mid);transition:background .15s;
+}
+.fc-btn:hover{background:var(--navy-mid);}
+.fc-btn.gold-btn{background:var(--gold);border-color:var(--gold-lt);}
+.fc-btn.gold-btn:hover{background:var(--gold-lt);}
+
+/* ═══════════════ PAPER SERIES GRID ═══════════════ */
+.paper-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:52px;}
+
+.paper-card{
+  background:#fff;border:1px solid var(--lnav-dk);
+  border-left:3px solid var(--navy);
+  padding:16px 18px;transition:all .2s;
+  display:flex;flex-direction:column;gap:8px;
+}
+.paper-card:hover{border-left-color:var(--gold);box-shadow:0 2px 12px rgba(27,42,74,.08);}
+.paper-card.capstone{border-left-color:var(--gold);}
+.paper-card.tools{border-left-color:var(--sage-b);}
+.paper-card.assessment{border-left-color:#7C3AED;}
+
+.pc-id{font-family:var(--font-m);font-size:9px;color:var(--slate-lt);letter-spacing:.12em;text-transform:uppercase;}
+.pc-title{font-family:var(--font-b);font-size:13px;font-weight:600;color:var(--navy);line-height:1.35;}
+.pc-desc{font-size:11.5px;color:var(--slate);line-height:1.55;flex:1;}
+.pc-footer{display:flex;justify-content:space-between;align-items:center;margin-top:4px;}
+.pc-tag{font-family:var(--font-m);font-size:8.5px;padding:2px 7px;border-radius:2px;text-transform:uppercase;letter-spacing:.06em;}
+.tag-policy{background:rgba(27,42,74,.08);color:var(--navy);}
+.tag-ic{background:rgba(124,58,237,.08);color:#7C3AED;}
+.tag-tool{background:rgba(26,92,46,.08);color:var(--sage-b);}
+.tag-console{background:rgba(139,105,20,.1);color:var(--gold);}
+.pc-link{
+  font-family:var(--font-m);font-size:9px;color:var(--gold);
+  text-decoration:none;letter-spacing:.08em;
+}
+.pc-link:hover{color:var(--gold-lt);text-decoration:underline;}
+
+/* ═══════════════ KEY JUDGMENTS STRIP ═══════════════ */
+.kj-strip{background:var(--navy);padding:40px;margin-bottom:52px;}
+.kj-strip-inner{max-width:var(--max);margin:0 auto;}
+.kj-strip-head{
+  font-family:var(--font-d);font-size:17px;font-weight:700;color:#fff;
+  margin-bottom:4px;
+}
+.kj-strip-sub{font-family:var(--font-m);font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.12em;margin-bottom:24px;}
+.kj-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.kj-item{
+  display:flex;gap:10px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  padding:12px 14px;
+}
+.kj-num{
+  font-family:var(--font-d);font-size:20px;font-weight:700;
+  color:rgba(255,255,255,.15);flex-shrink:0;width:24px;
+}
+.kj-body{}
+.kj-conf{font-family:var(--font-m);font-size:8.5px;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.kj-text{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.55;}
+
+/* ═══════════════ CONFIDENCE BAND ═══════════════ */
+.conf-band{
+  background:var(--lnav);border:1px solid var(--lnav-dk);
+  border-left:4px solid var(--navy);
+  padding:18px 24px;margin-bottom:52px;
+}
+.conf-band-head{font-family:var(--font-m);font-size:9px;color:var(--navy);letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;}
+.conf-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.conf-pill{
+  display:flex;align-items:center;gap:7px;
+  padding:6px 12px;border-radius:2px;
+  font-family:var(--font-m);font-size:10px;letter-spacing:.08em;
+  border:1px solid;
+}
+.cp-high{background:rgba(34,197,94,.08);color:#166534;border-color:rgba(34,197,94,.25);}
+.cp-mod{background:rgba(245,158,11,.08);color:#92400e;border-color:rgba(245,158,11,.25);}
+.cp-low-mod{background:rgba(249,115,22,.08);color:#7c2d12;border-color:rgba(249,115,22,.25);}
+.cp-low{background:rgba(239,68,68,.08);color:#991b1b;border-color:rgba(239,68,68,.25);}
+.cp-dot{width:7px;height:7px;border-radius:50%;}
+
+/* ═══════════════ SERIES ARCHITECTURE ═══════════════ */
+.arch-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:52px;}
+.arch-table th{background:var(--navy);color:#fff;font-family:var(--font-m);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;text-align:left;}
+.arch-table td{padding:9px 12px;border-bottom:1px solid var(--rule);color:var(--slate);vertical-align:top;line-height:1.5;}
+.arch-table tr:nth-child(even) td{background:var(--lnav);}
+.arch-table tr:hover td{background:var(--lnav-dk);}
+.arch-table .paper-id{font-family:var(--font-m);font-size:9px;color:var(--navy);font-weight:600;}
+.arch-table a{color:var(--gold);text-decoration:none;font-family:var(--font-m);font-size:9px;}
+.arch-table a:hover{color:var(--gold-lt);text-decoration:underline;}
+.arch-table .status-live{font-family:var(--font-m);font-size:8px;padding:2px 6px;background:rgba(26,92,46,.1);color:var(--sage-b);border:1px solid rgba(26,92,46,.2);border-radius:2px;}
+.arch-table .status-new{font-family:var(--font-m);font-size:8px;padding:2px 6px;background:rgba(139,105,20,.1);color:var(--gold);border:1px solid rgba(139,105,20,.25);border-radius:2px;}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.site-footer{
+  background:var(--navy-deep);
+  border-top:2px solid var(--gold);
+  padding:36px 40px;
+}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+.footer-col{}
+.footer-label{font-family:var(--font-m);font-size:9px;color:rgba(255,255,255,.25);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;}
+.footer-text{font-size:12px;color:rgba(255,255,255,.4);line-height:1.65;max-width:360px;}
+.footer-links{display:flex;flex-direction:column;gap:4px;}
+.footer-links a{font-family:var(--font-m);font-size:10px;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .15s;}
+.footer-links a:hover{color:rgba(139,105,20,.8);}
+.footer-eod{
+  width:100%;border-top:1px solid rgba(255,255,255,.06);
+  padding-top:16px;margin-top:16px;
+  text-align:center;font-family:var(--font-m);font-size:9px;
+  color:rgba(255,255,255,.2);letter-spacing:.12em;text-transform:uppercase;
+}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:1024px){
+  .featured-grid{grid-template-columns:1fr;}
+  .paper-grid{grid-template-columns:1fr 1fr;}
+  .kj-row{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:720px){
+  .site-header{padding:36px 24px 32px;}
+  .header-title{font-size:26px;}
+  .site-main{padding:36px 24px 60px;}
+  .notice-band{padding:14px 24px;}
+  .paper-grid{grid-template-columns:1fr;}
+  .kj-row{grid-template-columns:1fr;}
+  .conf-pills{flex-direction:column;}
+  .site-footer{padding:28px 24px;}
+  .footer-inner{flex-direction:column;}
+  .kj-strip{padding:28px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- CLASSIFICATION -->
+<div class="cls-top">UNCLASSIFIED // FOR EDUCATIONAL AND ANALYTICAL PURPOSES // CENTER FOR COMPETITIVE STATECRAFT AND STRATEGIC POLICY // WP-2026</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-series">WP-2026 Series · Center for Competitive Statecraft and Strategic Policy</div>
+    <h1 class="header-title">U.S. Legal-Economic Statecraft and Competitive Strategy</h1>
+    <p class="header-sub">Open-source policy research series on sanctions enforcement architecture, financial intelligence, multi-domain operations doctrine, and strategic competition. All analysis derived from public sources and bounded by the public record.</p>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Series</span>
+        <span class="meta-val">WP-2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Papers</span>
+        <span class="meta-val">19 Documents</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Classification</span>
+        <span class="meta-val">Unclassified // Open Source</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Authority</span>
+        <span class="meta-val">ODNI Analytic Standards · Style Guide v3.0 · Verbiage Guide v2.1</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-val">March 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NOTICE -->
+<div class="notice-band">
+  <div class="notice-label">Notice</div>
+  <div class="notice-text">All WP-2026 products are unclassified open-source analytical products produced for educational, research, and policy analysis purposes. Content is derived exclusively from publicly available doctrine, government publications, and open-source academic sources. Analytical frameworks are organizing constructs derived from documented authorities and observed practice. Where the public record does not sustain a firm judgment, the limit is stated explicitly. <strong>This platform aggregates analytic frameworks and publicly derived data. It may reduce the effort required to structure analysis but does not provide operational capability, targeting instruction, or executable guidance. The platform does not integrate modules into a unified analytic output. Cross-module synthesis remains the responsibility of the user.</strong></div>
+</div>
+
+<!-- MAIN -->
+<main class="site-main">
+
+  <!-- FEATURED TOOLS -->
+  <div style="margin-bottom:10px">
+    <div class="section-eyebrow">Featured Analytic Tools</div>
+    <h2 class="section-title">Interactive Analytic Interfaces</h2>
+    <p class="section-desc">Two interactive interfaces that present the WP-2026 analytic framework and publicly derived enforcement data in structured form. Each module is independently bounded by the public record. No module is dependent on or derived from non-public information.</p>
+  </div>
+  <div class="section-rule"></div>
+
+  <div class="featured-grid">
+
+    <!-- MDO CONSOLE CARD -->
+    <div class="featured-card gold-top">
+      <div class="fc-img console-bg">
+        <div class="mock-console">
+          <div class="mock-bar">
+            <span>MDO-01 ANALYTIC CONSOLE · WP-2026</span>
+            <span class="mock-gold">v3.0</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-row">
+              <span class="mock-key">Scenario</span>
+              <span class="mock-val mock-gold">Taiwan Strait — Crisis</span>
+            </div>
+            <div class="mock-row">
+              <span class="mock-key">Adversary</span>
+              <span class="mock-val mock-cyan">PRC</span>
+            </div>
+            <div class="mock-row">
+              <span class="mock-key">T1 Viability</span>
+              <span class="mock-val mock-green">Relatively Higher</span>
+            </div>
+            <div class="mock-row">
+              <span class="mock-key">T2 Viability</span>
+              <span class="mock-val mock-amber">Conditional</span>
+            </div>
+            <div class="mock-kj">
+              <div class="mock-kj-conf">Low-Mod Confidence · Analytically Inferred</div>
+              <div class="mock-kj-text">Submarine forces may offer relatively greater survivability under current ASW conditions. Comparative ranking not asserted.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-content">
+        <div>
+          <span class="fc-badge badge-console">Decision-Support Console</span>
+          <span class="fc-badge badge-new" style="margin-left:6px">New</span>
+        </div>
+        <h3 class="fc-title">MDO-01 Analytic Console</h3>
+        <p class="fc-desc">Interactive decision-support interface operationalizing MDO-01 v3.0. Eight modules: three-track comparator, authorities and friction map, adversary stress test (PRC/Russia/DPRK), campaign workflow viewer, confidence matrix, F2T2EA targeting sequence, sanctions case validation, and scenario builder with exportable brief generator. All outputs are scenario-conditioned and bounded by the public record. Does not determine, recommend, or prioritize courses of action.</p>
+        <div class="fc-footer">
+          <div class="fc-meta">MDO-01 v3.0 · WP-2026 Series · March 2026</div>
+          <a href="08-mdo-console/MDO-01-console-v2.html" class="fc-btn gold-btn">Open Console →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SENI MAP CARD -->
+    <div class="featured-card sage-top">
+      <div class="fc-img map-bg">
+        <div class="mock-map">
+          <div class="mock-map-canvas">
+            <!-- Scattered nodes mimicking SENI map -->
+            <div class="mock-node critical" style="top:20%;left:30%"></div>
+            <div class="mock-node critical" style="top:55%;left:60%"></div>
+            <div class="mock-node critical" style="top:35%;left:75%"></div>
+            <div class="mock-node high" style="top:70%;left:20%"></div>
+            <div class="mock-node high" style="top:45%;left:48%"></div>
+            <div class="mock-node high" style="top:25%;left:55%"></div>
+            <div class="mock-node med" style="top:60%;left:35%"></div>
+            <div class="mock-node med" style="top:80%;left:65%"></div>
+            <div class="mock-node med" style="top:15%;left:45%"></div>
+            <div class="mock-node med" style="top:40%;left:15%"></div>
+            <div class="mock-node med" style="top:65%;left:80%"></div>
+            <div style="font-family:var(--font-m);font-size:7px;color:rgba(0,255,100,.3);letter-spacing:.1em;position:absolute;bottom:6px;left:8px">374 NODES · 36 BRI LAYER</div>
+          </div>
+          <div class="mock-stats">
+            <div class="mock-stat"><div class="mock-stat-num">374</div><div class="mock-stat-label">Total Nodes</div></div>
+            <div class="mock-stat"><div class="mock-stat-num">36</div><div class="mock-stat-label">BRI Layer</div></div>
+            <div class="mock-stat"><div class="mock-stat-num">8</div><div class="mock-stat-label">Regions</div></div>
+            <div class="mock-stat"><div class="mock-stat-num">V4</div><div class="mock-stat-label">Version</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-content">
+        <div>
+          <span class="fc-badge badge-map">Intelligence Map</span>
+          <span class="fc-badge badge-doc" style="margin-left:6px">SENI v4</span>
+        </div>
+        <h3 class="fc-title">Strategic Enforcement Node Index — Global Map</h3>
+        <p class="fc-desc">374-node interactive global intelligence map covering the Strategic Enforcement Node Index (SENI v4), including a 36-node BRI Strategic Infrastructure layer. Node criticality scored on throughput and irreplaceability axes. Filterable by region, category, and criticality tier. Supports the WP-2026 sanctions enforcement architecture analysis series. Framework is a heuristic prioritization construct derived from open-source analysis — not a validated hierarchy of system-wide strategic effect.</p>
+        <div class="fc-footer">
+          <div class="fc-meta">SENI v4 · 374 nodes · BRI-01/02 series · March 2026</div>
+          <a href="07-intelligence-map/SENI_v4_Global_Map_FINAL.html" class="fc-btn">Open Map →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SERIES KEY JUDGMENTS -->
+  <div class="kj-strip">
+    <div class="kj-strip-inner">
+      <div class="kj-strip-head">Series Governing Key Judgments</div>
+      <div class="kj-strip-sub">MDO-01 v3.0 · ODNI Two-Axis Standard · All judgments bounded by public record</div>
+      <div class="kj-row">
+        <div class="kj-item">
+          <div class="kj-num">1</div>
+          <div class="kj-body">
+            <div class="kj-conf">High Confidence · Doctrine-Supported</div>
+            <div class="kj-text">MDO is almost certainly the governing joint warfighting concept for peer and near-peer conflict, codified in FM 3-0 (2022) and JP 3-0.</div>
+          </div>
+        </div>
+        <div class="kj-item">
+          <div class="kj-num">2</div>
+          <div class="kj-body">
+            <div class="kj-conf">Moderate Confidence · Analytically Inferred</div>
+            <div class="kj-text">The three-track framework (Diplomatic / Overt Warfare / Clandestine) likely reflects principal channels of U.S. state power — an analytic construct, not a codified architecture.</div>
+          </div>
+        </div>
+        <div class="kj-item">
+          <div class="kj-num">3</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <div class="kj-text">Multilateral sanctions may impose greater cost than unilateral designation. Whether cost differential produces behavioral change is not established by the open-source record.</div>
+          </div>
+        </div>
+        <div class="kj-item">
+          <div class="kj-num">4</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <div class="kj-text">Submarine forces may offer relatively greater survivability under current ASW conditions. Comparative leverage ranking across asset classes is not asserted.</div>
+          </div>
+        </div>
+        <div class="kj-item">
+          <div class="kj-num">5</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low-Moderate Confidence · Analytically Inferred</div>
+            <div class="kj-text">MISO may contribute to competition environment shaping when integrated with other instruments. Isolated causal attribution of behavioral change is not supported by the public record.</div>
+          </div>
+        </div>
+        <div class="kj-item">
+          <div class="kj-num">6</div>
+          <div class="kj-body">
+            <div class="kj-conf">Low Confidence · Analytically Inferred</div>
+            <div class="kj-text">Clandestine and covert options may be considered in gray-zone phases. Frequency, effectiveness, and comparative preference are not established in the public record.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIDENCE BAND -->
+  <div class="conf-band">
+    <div class="conf-band-head">Confidence Architecture — ODNI Two-Axis Standard</div>
+    <div class="conf-pills">
+      <div class="conf-pill cp-high"><div class="cp-dot" style="background:#22c55e"></div>HIGH — Multiple independent Tier 1 sources; inference minimal</div>
+      <div class="conf-pill cp-mod"><div class="cp-dot" style="background:#f59e0b"></div>MODERATE — Tier 1/2 sourcing with meaningful inference or unresolved variable</div>
+      <div class="conf-pill cp-low-mod"><div class="cp-dot" style="background:#f97316"></div>LOW-MODERATE — Structurally sound inference from indirect public reporting</div>
+      <div class="conf-pill cp-low"><div class="cp-dot" style="background:#ef4444"></div>LOW — Primarily analytic inference; reasonable alternative conclusions exist</div>
+    </div>
+  </div>
+
+  <!-- SYSTEM ARCHITECTURE -->
+  <div style="margin-bottom:10px">
+    <div class="section-eyebrow">Platform Architecture</div>
+    <h2 class="section-title">System Architecture and Module Separation</h2>
+    <p class="section-desc">The WP-2026 platform comprises three independent layers. No module is derived from non-public information. No module outputs data to another. Cross-module synthesis remains the responsibility of the user.</p>
+  </div>
+  <div class="section-rule"></div>
+
+  <div class="paper-grid" style="margin-bottom:52px">
+    <div class="paper-card" style="border-left-color:var(--gold)">
+      <div class="pc-id">Layer 1 — Analytic Framework</div>
+      <div class="pc-title">MDO-01 v3.0 and the WP-2026 Policy Series</div>
+      <div class="pc-desc">The paper series and MDO-01 console provide doctrinal framing, legal authority mapping, and scenario-conditioned analytic assessments. All content is derived from publicly available doctrine and open-source academic sources. The console organizes analytic considerations — it does not determine, recommend, or prioritize courses of action.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Public-Source Doctrine</span>
+        <a href="08-mdo-console/MDO-01-console-v2.html" class="pc-link">Console →</a>
+      </div>
+    </div>
+    <div class="paper-card" style="border-left-color:var(--sage-b)">
+      <div class="pc-id">Layer 2 — Intelligence Representation</div>
+      <div class="pc-title">SENI v4 Global Map — 374 Nodes</div>
+      <div class="pc-desc">The SENI map represents publicly documented enforcement-relevant infrastructure nodes derived from open-source analysis. Node ordering reflects the open-source record's observability ceiling — not a validated hierarchy of system-wide strategic effect. This map is a heuristic prioritization construct. It does not output scenario logic and is not coupled to the console or paper series.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-tool">Open-Source Representation</span>
+        <a href="07-intelligence-map/SENI_v4_Global_Map_FINAL.html" class="pc-link">Map →</a>
+      </div>
+    </div>
+    <div class="paper-card" style="border-left-color:var(--slate)">
+      <div class="pc-id">Layer 3 — Dissemination Interface</div>
+      <div class="pc-title">WP-2026 Site and Series Portal</div>
+      <div class="pc-desc">This site provides structured access to the WP-2026 document archive, interactive interfaces, and series standards. It does not aggregate or synthesize outputs from the console or map. No module is dependent on or derived from another. The platform may reduce the effort required to structure analysis but does not provide operational capability, targeting instruction, or executable guidance.</div>
+      <div class="pc-footer">
+        <span class="pc-tag" style="background:rgba(74,85,104,.08);color:var(--slate)">Dissemination Only</span>
+        <a href="https://github.com/collingeorge/WP-2026" class="pc-link" target="_blank" rel="noopener">Repository →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER SERIES GRID -->
+  <div style="margin-bottom:10px">
+    <div class="section-eyebrow">Research Series</div>
+    <h2 class="section-title">WP-2026 Document Archive</h2>
+    <p class="section-desc">19-document series spanning sanctions enforcement law, competitive statecraft, financial intelligence, multi-domain operations, and threat analysis. All documents apply Style Guide v3.0 and Verbiage Guide v2.1 analytic standards.</p>
+  </div>
+  <div class="section-rule"></div>
+
+  <div class="paper-grid">
+
+    <div class="paper-card capstone">
+      <div class="pc-id">MDO-01 v3.0</div>
+      <div class="pc-title">Multi-Domain Operations Doctrine: Strategic Framework and Execution Architecture</div>
+      <div class="pc-desc">Strategic doctrine, five-domain warfighting architecture, three-track analytic model, adversary context, F2T2EA targeting, and sanctions integration. Final polish edition.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Policy / Doctrine</span>
+        <a href="08-mdo-console/MDO-01-console-v2.html" class="pc-link">Console →</a>
+      </div>
+    </div>
+
+    <div class="paper-card capstone">
+      <div class="pc-id">BRI-01 v4.1</div>
+      <div class="pc-title">The Corridor Wager: BRI Strategic Architecture and U.S. Enforcement Options</div>
+      <div class="pc-desc">Grand strategy capstone. PRC Belt and Road Initiative commercial-state nexus, SENI enforcement targeting, Hormuz integration, and Nexus Protocol application.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Grand Strategy</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card capstone">
+      <div class="pc-id">SHIELD-01 v7</div>
+      <div class="pc-title">Strategic Enforcement Architecture: PRC-Facilitated Evasion and Coercive Response Posture</div>
+      <div class="pc-desc">PRC commercial state-nexus attribution, CCRP methodology, enforcement architecture design, and executive brief companion.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Enforcement</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">EST-01</div>
+      <div class="pc-title">Strategic Estimate: China-Russia Economic Corridor Architecture</div>
+      <div class="pc-desc">IC-style strategic estimate covering China-Russia energy and financial corridor architecture, BRI port concession leverage, and coercive utility assessment.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-ic">IC-Style Estimate</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">HORMUZ-01/02 v4.1</div>
+      <div class="pc-title">Strait of Hormuz: Regional Posture and Integrated Campaign Architecture</div>
+      <div class="pc-desc">Two-paper series covering Hormuz crisis scenario, PRC/Russia corridor dependency analysis, and integrated coalition campaign architecture.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Regional Strategy</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">PERSIST-01</div>
+      <div class="pc-title">PERSIST Architecture: Five-Pillar Strategic Enforcement Framework</div>
+      <div class="pc-desc">Strategic enforcement doctrine. Five-pillar architecture for durable sanctions pressure: Penetrate, Enforce, Restrict, Sustain, Isolate, Stabilize, and Target.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Enforcement Doctrine</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">NEXUS-01 / CSE-01</div>
+      <div class="pc-title">PRC Commercial State-Nexus Attribution: Four-Level Framework</div>
+      <div class="pc-desc">Attribution methodology for PRC state-directed commercial activity. Four-level nexus ladder, five-rung extension, and dissertation prospectus companion.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Attribution</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">MAXPRESS-01</div>
+      <div class="pc-title">Maximum Pressure Execution Layer: Practitioner-Ready Enforcement</div>
+      <div class="pc-desc">Execution-layer sanctions enforcement guidance. Reads into CONTAIN-01 and all enforcement papers. Covers operational sequencing, coalition coordination, and escalation management.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Execution Layer</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="pc-id">CONTAIN-01</div>
+      <div class="pc-title">Long-Term Sanctions Containment Doctrine</div>
+      <div class="pc-desc">Multi-year sanctions containment architecture. Reads from PERSIST-01 and ANCHOR into MAXPRESS-01. Covers pressure durability, evasion adaptation, and coalition endurance.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-policy">Sanctions Doctrine</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card assessment">
+      <div class="pc-id">CI ASSESSMENT v3.0</div>
+      <div class="pc-title">Counterintelligence Exposure Review: WP-2026 Series</div>
+      <div class="pc-desc">Series-level CI assessment. Covers Espionage Act, AECA/ITAR, EAR, CFAA, First Amendment, and clearance implications for the full WP-2026 portfolio.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-ic">CI Assessment</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card assessment">
+      <div class="pc-id">BW ASSESSMENT</div>
+      <div class="pc-title">Countering State Biological Weapons Risk: IC-Style Public Assessment</div>
+      <div class="pc-desc">Two-axis confidence framework biological weapons threat assessment. Four-state analysis: Russia, PRC, Iran, DPRK. Covers capability, program posture, and employment threshold.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-ic">Threat Assessment</span>
+        <a href="#" class="pc-link">PDF →</a>
+      </div>
+    </div>
+
+    <div class="paper-card tools">
+      <div class="pc-id">SENI v4 Master Index</div>
+      <div class="pc-title">Strategic Enforcement Node Index: 374-Node Global Targeting Matrix</div>
+      <div class="pc-desc">374-node SENI master index with 36-node BRI Strategic Infrastructure layer. Node criticality on throughput and irreplaceability axes. Interactive global map available.</div>
+      <div class="pc-footer">
+        <span class="pc-tag tag-tool">Intelligence Map</span>
+        <a href="07-intelligence-map/SENI_v4_Global_Map_FINAL.html" class="pc-link">Map →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SERIES ARCHITECTURE TABLE -->
+  <div style="margin-bottom:10px">
+    <div class="section-eyebrow">Series Architecture</div>
+    <h2 class="section-title">Document Hierarchy and Cross-Reference</h2>
+    <p class="section-desc">Each paper's role, upstream dependencies, and downstream reads within the WP-2026 series architecture.</p>
+  </div>
+  <div class="section-rule"></div>
+
+  <table class="arch-table">
+    <thead>
+      <tr>
+        <th style="width:12%">Paper</th>
+        <th style="width:28%">Role</th>
+        <th style="width:22%">Reads From</th>
+        <th style="width:22%">Reads Into</th>
+        <th style="width:8%">Format</th>
+        <th style="width:8%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="paper-id">MDO-01 v3.0</td><td>Multi-domain operations doctrine, three-track model, authorities, adversary context</td><td>FM 3-0 · JP 3-0 · ODNI ATA 2025</td><td>HORMUZ-01/02 · SHIELD-01 · PERSIST-01</td><td><a href="08-mdo-console/MDO-01-console-v2.html">Console</a> · <a href="#">PDF</a></td><td><span class="status-new">New</span></td></tr>
+      <tr><td class="paper-id">BRI-01 v4.1</td><td>Grand strategy capstone — BRI architecture, SENI enforcement, Nexus Protocol</td><td>SENI-01 · HORMUZ-02 · PERSIST-01</td><td>BRI-02</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">SHIELD-01 v7</td><td>PRC enforcement architecture, CCRP methodology, executive brief</td><td>CSE-01 · PERSIST-01</td><td>SENI-01 · MAXPRESS-01</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">EST-01</td><td>IC-style strategic estimate — China-Russia corridor architecture</td><td>All series papers</td><td>HORMUZ-02 · BRI-01</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">HORMUZ-01/02</td><td>Hormuz regional posture and integrated campaign architecture</td><td>MAXPRESS-01</td><td>BRI-01</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">PERSIST-01</td><td>Five-pillar strategic enforcement framework</td><td>ATTRIBUTION-01 · CSE-01</td><td>ANCHOR · CONTAIN-01 · MAXPRESS-01</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">NEXUS-01 / CSE-01</td><td>PRC commercial state-nexus attribution framework</td><td>ATTRIBUTION-01</td><td>SHIELD-01 · PERSIST-01 · BRI-01/02</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">SENI v4</td><td>374-node global enforcement targeting matrix + interactive map</td><td>SHIELD-01 · MAXPRESS-01</td><td>BRI-01 · All enforcement</td><td><a href="07-intelligence-map/SENI_v4_Global_Map_FINAL.html">Map</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">CI Assessment v3.0</td><td>Series-level counterintelligence exposure review</td><td>All papers</td><td>Repository management</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+      <tr><td class="paper-id">BW Assessment</td><td>State biological weapons IC-style public threat assessment</td><td>ODNI ATA 2025 · IRAN NUCLEAR</td><td>CPF-02</td><td><a href="#">PDF</a></td><td><span class="status-live">Live</span></td></tr>
+    </tbody>
+  </table>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-label">Series</div>
+      <div class="footer-text">WP-2026 is an open-source policy research series on U.S. legal-economic statecraft, sanctions enforcement architecture, competitive statecraft, and multi-domain operations doctrine. All content is unclassified and derived exclusively from public sources. Analysis is bounded by the public record and applies ODNI analytic standards.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-label">Interactive Tools</div>
+      <div class="footer-links">
+        <a href="08-mdo-console/MDO-01-console-v2.html">MDO-01 Analytic Console v3.0</a>
+        <a href="07-intelligence-map/SENI_v4_Global_Map_FINAL.html">SENI v4 Global Intelligence Map</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-label">Standards</div>
+      <div class="footer-links">
+        <a href="#">WP-2026 Style Guide v3.0</a>
+        <a href="#">WP-2026 Verbiage Guide v2.1</a>
+        <a href="https://github.com/collingeorge/WP-2026" target="_blank" rel="noopener">GitHub Repository</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-eod">
+    END OF SITE — WP-2026 SERIES — CENTER FOR COMPETITIVE STATECRAFT AND STRATEGIC POLICY — MARCH 2026 — UNCLASSIFIED // OPEN SOURCE
+  </div>
+</footer>
+
+</body>
+</html>
