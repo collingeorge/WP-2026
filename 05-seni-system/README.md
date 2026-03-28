@@ -1,121 +1,137 @@
-# WP-2026-SENI — Strategic Enforcement Node Index
+# 05-seni-system — SENI Analytical Sub-Series
 
-**Independent policy research · C. George · March 2026**
-**UNCLASSIFIED // OPEN SOURCE · CC BY 4.0**
+This folder contains the Strategic Enforcement Node Index (SENI) analytical sub-series — an 11-document layered intelligence, enforcement, and strategy architecture built on the SENI-01 master node index (in 04-applied-enforcement). The sub-series maps the Russian nuclear fuel cycle in depth across three analytical layers defined by SENI-ARCH-01.
 
----
-
-## What This Is
-
-The Strategic Enforcement Node Index (SENI) maps the Russian nuclear fuel cycle as a sanctions enforcement targeting framework. It identifies 47 nodes across the full fuel cycle — mining, conversion, enrichment, fabrication, transport, reprocessing, and research — scores each node for enforcement viability, traces financial pathways to the Western correspondent banking layer, and models the second-order consequences of enforcement action at 30, 90, and 180-day horizons.
-
-This is independent analytical policy research using exclusively open-source materials. It is not a government product, not a legal memorandum, and not a designation recommendation. All analytical recommendations reflect the author's independent assessment of available instruments; implementation decisions rest with relevant authorities.
+The SENI sub-series has its own internal reading order. Begin with SENI-ARCH-01 to understand the three-layer product architecture before reading any layer document. The named-entity methodology companion (SENI-02) is in 01-methodology.
 
 ---
 
-## Corpus Architecture
+## Folder Structure
 
-The SENI sub-series is organized as three analytical layers plus a meta layer:
-
-| Layer | Function | Documents |
-|---|---|---|
-| **Architecture** | Governing framework and CI assessment | ARCH-01, CI-01 |
-| **L1 — Intelligence Estimate** | Node profiles and analytical documents | Vol 1–3, Analytical |
-| **L2 — Enforcement Playbook** | Scoring model and financial pathway analysis | SCORE-01-v2, FPA-01-v3, FPA-02 |
-| **L3 — Strategic Model** | Consequence modeling, escalation, legal thresholds | Layer3 (SYS-01, CHN-01, AUTH-01) |
-
-Layer separation is deliberate and should be respected: L1 permits inference with labeling; L2 requires named entities; L3 models consequences and legal constraints. Treating any layer as a substitute for another produces analytical error.
-
----
-
-## Reading Order
-
-For a new reader, follow this sequence:
-
-1. **[EXEC-01](WP-2026-SENI-EXEC-01.pdf)** — Two-page executive synthesis. Start here.
-2. **[ARCH-01](00-architecture/WP-2026-SENI-ARCH-01.pdf)** — Series architecture and evidentiary standards.
-3. **Layer 1** — Node profiles (Vol 1–3) and analytical documents.
-4. **Layer 2** — Scoring model (SCORE-01-v2), then financial pathway analyses (FPA-01-v3, FPA-02).
-5. **Layer 3** — System resilience, China escalation ladder, sanctions authority annex.
-6. **[CI-01](00-architecture/WP-2026-SENI-CI-01.pdf)** — Counterintelligence exposure assessment of this corpus.
-7. **[Interactive Map](../07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** — Visual companion interface.
+```
+05-seni-system/
+├── 00-architecture/
+│   ├── WP-2026-SENI-ARCH-01.pdf     Series architecture — three-layer product design
+│   └── WP-2026-SENI-CI-01.pdf       SENI sub-series CI assessment
+├── layer-1-intelligence/
+│   ├── WP-2026-SENI-Analytical.pdf  Analytical framework — inference standards per layer
+│   ├── WP-2026-SENI-Vol1-N27-33.pdf Node intelligence estimates — nodes 27–33
+│   ├── WP-2026-SENI-Vol2-N34-44.pdf Node intelligence estimates — nodes 34–44
+│   └── WP-2026-SENI-Vol3-N45-47.pdf Node intelligence estimates — nodes 45–47
+├── layer-2-enforcement/
+│   ├── WP-2026-SENI-FPA-01-v3.pdf   Financial pressure assessment — primary targets
+│   ├── WP-2026-SENI-FPA-02.pdf      Financial pressure assessment — secondary targets
+│   └── WP-2026-SENI-SCORE-01-v2.pdf Node scoring model — designation priority ranking
+└── layer-3-strategy/
+│   └── WP-2026-SENI-Layer3.pdf      Strategic model — system-level disruption architecture
+└── WP-2026-SENI-EXEC-01.pdf         Executive synthesis — two-page bottom-line findings
+```
 
 ---
 
-## Document Index
+## Documents
 
-### Entry Point
+| Document | Layer | Function |
+|----------|-------|----------|
+| [00-architecture/WP-2026-SENI-ARCH-01.pdf](00-architecture/WP-2026-SENI-ARCH-01.pdf) | Architecture | Three-layer product design, D2 evidence tiering, OSINT ceiling |
+| [00-architecture/WP-2026-SENI-CI-01.pdf](00-architecture/WP-2026-SENI-CI-01.pdf) | Architecture | SENI sub-series counterintelligence exposure assessment |
+| [layer-1-intelligence/WP-2026-SENI-Analytical.pdf](layer-1-intelligence/WP-2026-SENI-Analytical.pdf) | L1 | Analytical framework — inference standards and evidentiary floors |
+| [layer-1-intelligence/WP-2026-SENI-Vol1-N27-33.pdf](layer-1-intelligence/WP-2026-SENI-Vol1-N27-33.pdf) | L1 | Node intelligence estimates — nodes 27–33 |
+| [layer-1-intelligence/WP-2026-SENI-Vol2-N34-44.pdf](layer-1-intelligence/WP-2026-SENI-Vol2-N34-44.pdf) | L1 | Node intelligence estimates — nodes 34–44 |
+| [layer-1-intelligence/WP-2026-SENI-Vol3-N45-47.pdf](layer-1-intelligence/WP-2026-SENI-Vol3-N45-47.pdf) | L1 | Node intelligence estimates — nodes 45–47 |
+| [layer-2-enforcement/WP-2026-SENI-FPA-01-v3.pdf](layer-2-enforcement/WP-2026-SENI-FPA-01-v3.pdf) | L2 | Financial pressure assessment — primary enforcement targets |
+| [layer-2-enforcement/WP-2026-SENI-FPA-02.pdf](layer-2-enforcement/WP-2026-SENI-FPA-02.pdf) | L2 | Financial pressure assessment — secondary targets |
+| [layer-2-enforcement/WP-2026-SENI-SCORE-01-v2.pdf](layer-2-enforcement/WP-2026-SENI-SCORE-01-v2.pdf) | L2 | Node scoring model — designation priority ranking |
+| [layer-3-strategy/WP-2026-SENI-Layer3.pdf](layer-3-strategy/WP-2026-SENI-Layer3.pdf) | L3 | Strategic model — system-level disruption architecture |
+| [WP-2026-SENI-EXEC-01.pdf](WP-2026-SENI-EXEC-01.pdf) | Executive | Two-page synthesis — priority enforcement options and bottom-line findings |
 
-| File | Purpose |
-|---|---|
-| [WP-2026-SENI-EXEC-01.pdf](WP-2026-SENI-EXEC-01.pdf) | Executive synthesis — bottom-line findings, priority enforcement options, scope and limitations |
+---
 
-### 00 — Architecture
+## SENI-ARCH-01 — Three-Layer Product Architecture
 
-| File | Purpose |
-|---|---|
-| [WP-2026-SENI-ARCH-01.pdf](00-architecture/WP-2026-SENI-ARCH-01.pdf) | Series architecture — layer definitions, evidentiary standards, inter-layer relationships, audience readiness matrix |
-| [WP-2026-SENI-CI-01.pdf](00-architecture/WP-2026-SENI-CI-01.pdf) | Counterintelligence exposure assessment — adversary utility ratings, legal analysis, recommendations |
+**Exclusive ownership domains (per SAM-01):**
+- The three-layer product architecture: L1 Intelligence Estimate, L2 Enforcement Playbook, L3 Strategic Model — including evidentiary standards, inference tolerance, and audience designations for each
+- D2 evidence tiering system: D2=[1] (primary OFAC/DOJ/UN record) through D2=[5-FININT/OSINT] (commercial and open-source analytical inference)
+- Hard-stop conditions: the evidentiary floors below which a node cannot advance to the enforcement playbook layer
+- OSINT ceiling doctrine: the boundary between what the sub-series can analytically support and where classified intelligence requirements begin
+- Inter-layer analytical flow governance: L1 feeds L2 feeds L3 in one direction only — findings do not travel backward
+- China Financial Escalation Ladder (CHN-01): seven-tier model; Tier 7 off-the-table designation; displacement exchange mechanism
 
-### Layer 1 — Intelligence Estimate
+**D2 Evidence Tiers:**
 
-| File | Purpose |
-|---|---|
-| [WP-2026-SENI-Vol1-N27-33.pdf](layer-1-intelligence/WP-2026-SENI-Vol1-N27-33.pdf) | Node profiles N27–N33: mining through fabrication (Krasnokamensk, UECC, Seversk, Zelenogorsk, Angarsk, Elektrostal, NCCP) |
-| [WP-2026-SENI-Vol2-N34-44.pdf](layer-1-intelligence/WP-2026-SENI-Vol2-N34-44.pdf) | Node profiles N34–N44: ChMP, transport nodes, weapons complex, reprocessing, research reactors |
-| [WP-2026-SENI-Vol3-N45-47.pdf](layer-1-intelligence/WP-2026-SENI-Vol3-N45-47.pdf) | Node profiles N45–N47: Vanino (monitoring priority), Manzhouli (system boundary), Bochvar VNIINM |
-| [WP-2026-SENI-Analytical.pdf](layer-1-intelligence/WP-2026-SENI-Analytical.pdf) | Five analytical documents: FIN-01 (financial network architecture), EVA-01 (evasion patterns), SEQ-01 (enforcement sequencing), CONF-01 (confidence framework), RST-01 (recipient state characterization) |
+| Tier | Source Type |
+|------|------------|
+| D2=[1] | Primary enforcement records — OFAC designations, DOJ indictments, UN Panel reports |
+| D2=[2] | Official government statements and congressional records |
+| D2=[3] | Peer-reviewed research and institutional reports with named attribution |
+| D2=[4] | Commercial intelligence and credible investigative reporting |
+| D2=[5-FININT/OSINT] | Financial intelligence inference and open-source analytical synthesis |
 
-### Layer 2 — Enforcement Playbook
+---
 
-| File | Purpose |
-|---|---|
-| [WP-2026-SENI-SCORE-01-v2.pdf](layer-2-enforcement/WP-2026-SENI-SCORE-01-v2.pdf) | Five-dimension quantitative scoring model with hard-stop conditions, dimension floors, confidence modifiers, sensitivity analysis, and all 47 nodes ranked |
-| [WP-2026-SENI-FPA-01-v3.pdf](layer-2-enforcement/WP-2026-SENI-FPA-01-v3.pdf) | Financial pathway analysis — Isotope JSC chain: NIIAR → Isotope JSC → Nordion → Lantheus → Wells Fargo. D2=[4+] OSINT ceiling. |
-| [WP-2026-SENI-FPA-02.pdf](layer-2-enforcement/WP-2026-SENI-FPA-02.pdf) | Financial pathway analysis — ChMP zirconium channel: named EU utility counterparties (ČEZ, Fortum, MVM Paks, Slovenské elektrárne). D2=[4] demonstration case. |
+## Three-Layer Architecture
+
+### Layer 1 — Intelligence Estimates
+
+Node-level intelligence profiles covering the Russian nuclear fuel cycle nodes 27–47. Each node profile documents: entity identification, D2 evidence tier, beneficial ownership analysis, financial exposure assessment, enforcement vulnerability rating, and hard-stop conditions.
+
+The intelligence estimate layer establishes the evidentiary floor. No node advances to Layer 2 unless it meets the L1 hard-stop conditions defined in SENI-ARCH-01.
+
+### Layer 2 — Enforcement Playbooks
+
+Three documents operationalize the L1 intelligence estimates into enforcement-ready frameworks:
+
+**SENI-SCORE-01-v2** — Node scoring model that ranks the Russian nuclear fuel cycle nodes by designation priority. Scoring dimensions: irreplaceability, enforcement leverage, coalition supportability, legal authority availability, and systemic disruption potential.
+
+**SENI-FPA-01-v3** — Financial pressure assessment for primary enforcement targets. Maps the financial exposure pathways, USD-correspondent dependencies, and enforcement instruments applicable to each primary target node.
+
+**SENI-FPA-02** — Financial pressure assessment for secondary targets — nodes that support primary targets and may become enforcement-relevant through cascading designation effects.
 
 ### Layer 3 — Strategic Model
 
-| File | Purpose |
-|---|---|
-| [WP-2026-SENI-Layer3.pdf](layer-3-strategy/WP-2026-SENI-Layer3.pdf) | Three strategic annexes: SYS-01 (30/90/180-day cascade modeling), CHN-01 (China seven-tier escalation ladder), AUTH-01 (OFAC evidentiary thresholds, EU Blocking Statute, D1 score validation) |
+**SENI-Layer3** applies SIEGE-01's mechanism framework to the Russian nuclear fuel cycle as a strategic system. Addresses: cascade scenarios for UECC, ChMP, and Isotope JSC disruption; reactor dependency quantification; Western capacity constraint mapping; and the China Financial Escalation Ladder application to Russian nuclear finance.
+
+The L3 strategic model is explicitly positioned as a Layer 3 Strategic Model document within the WP-2026 series product architecture per SENI-ARCH-01 Section II — compliant with SAM-01 series position requirements.
 
 ---
 
-## Key Findings
+## SENI-EXEC-01 — Executive Synthesis
 
-**Tier 1 nodes (immediate action available):**
-- N43 NIIAR Dimitrovgrad (ADJ 4.75) — Cf-252/ECCN 1C236; Isotope JSC financial chain; no reactor collateral
-- N33 NCCP Novosibirsk (ADJ 4.28) — Li-6/ECCN 1C233; independent proliferation predicate; BIS unilateral action available
-- N34 ChMP Glazov (ADJ 3.55) — Zirconium alloy; GL 115C expiry June 18, 2026 as enforcement trigger
+Two-page executive synthesis of the full SENI sub-series. Bottom-line findings on: priority enforcement options for the Russian nuclear fuel cycle, highest-leverage nodes by SCORE-01 ranking, key dependencies and cascade risks, and recommended sequencing for phased enforcement action.
 
-**Tier 2 node (conditional — correctly deferred):**
-- N28 UECC Novouralsk — ~20% global enrichment capacity; D3=1 hard stop; precondition: Western capacity ≥85% displacement (est. 2028–2030)
-
-**Primary financial pathway (D2=[4+]):**
-NIIAR/NCCP → Isotope JSC → Nordion Inc. (Ottawa) → Lantheus Medical Imaging (NYSE: LNTH) → Wells Fargo Bank N.A. All nodes confirmed at Tier 1 via SEC and press release documentation.
+Written for senior policy and decision-maker audiences. Does not require prior reading of the full sub-series.
 
 ---
 
-## Scope and Limitations
+## Relationship to SENI-02 (01-methodology)
 
-This corpus operates at the open-source intelligence (OSINT) ceiling. Financial pathway analysis has achieved D2=[4+] — named banks and transaction structures documented in public sources — but has not achieved D2=[5-FININT], which requires FinCEN, SWIFT, or classified customs data. Consequence modeling uses industry-average assumptions rather than utility-specific contract positions. All claims are sourced at point of use with explicit confidence tiering per CONF-01.
+SENI-02 is the named-entity companion to AML-01 and is housed in 01-methodology because its organizational logic is the AML-01 node category architecture, not the SENI sub-series layer architecture. SENI-02 covers 65+ entities across all illicit finance node categories — including but not limited to Russian nuclear fuel cycle entities.
 
-The remaining gap between this corpus and operational deployment is a collection problem, not an analytical design limitation. The analytical scaffold is complete; classified financial intelligence, interagency consequence analysis, and allied coordination are the steps required before enforcement action.
-
----
-
-## Companion Products
-
-- **[Interactive Map](https://collingeorge.github.io/WP-2026/07-intelligence-map/SENI_v4_Global_Map_FINAL.html)** — Visual interface to the node database. 27 nuclear fuel cycle nodes with satellite imagery export. Use as orientation and navigation tool alongside the written documents, not as a substitute for them.
-- **[Map CI Assessment](../07-intelligence-map/WP-2026-MAP-CI-01.pdf)** — Counterintelligence exposure assessment of the interactive map specifically.
+The SENI sub-series in this folder covers the Russian nuclear fuel cycle specifically, at much greater depth, using the SENI-ARCH-01 three-layer architecture. The two documents are complementary: SENI-02 provides the broad named-entity enforcement record; the sub-series provides the deep analytical architecture for the priority enforcement target set.
 
 ---
 
-## Citation
+## Internal Reading Order
 
-C. George, *Strategic Enforcement Node Index: Sanctions Targeting Framework for the Russian Nuclear Fuel Cycle*, WP-2026-SENI (March 2026). Independent policy research. UNCLASSIFIED // OPEN SOURCE. CC BY 4.0.
+1. [SENI-ARCH-01](00-architecture/WP-2026-SENI-ARCH-01.pdf) — architecture and evidence tiering (required first)
+2. [SENI-Analytical](layer-1-intelligence/WP-2026-SENI-Analytical.pdf) — analytical framework and inference standards
+3. [Vol1-N27-33](layer-1-intelligence/WP-2026-SENI-Vol1-N27-33.pdf) → [Vol2-N34-44](layer-1-intelligence/WP-2026-SENI-Vol2-N34-44.pdf) → [Vol3-N45-47](layer-1-intelligence/WP-2026-SENI-Vol3-N45-47.pdf) — node profiles in sequence
+4. [SCORE-01](layer-2-enforcement/WP-2026-SENI-SCORE-01-v2.pdf) — designation priority scoring
+5. [FPA-01](layer-2-enforcement/WP-2026-SENI-FPA-01-v3.pdf) → [FPA-02](layer-2-enforcement/WP-2026-SENI-FPA-02.pdf) — financial pressure assessments
+6. [Layer3](layer-3-strategy/WP-2026-SENI-Layer3.pdf) — strategic model
+7. [SENI-EXEC-01](WP-2026-SENI-EXEC-01.pdf) — executive synthesis (can be read first for orientation)
 
 ---
 
-*This document and the WP-2026-SENI corpus are independent policy research produced by C. George. They do not represent the position of Georgetown University, the Georgetown Security Studies Program, or any government agency. Nothing in this corpus constitutes a legal determination, sanctions designation recommendation, or classified intelligence product.*
+## Upstream / Downstream
+
+**Upstream:** 00-governance · 01-methodology (ATTRIBUTION-01, NEXUS-01, SENI-02) · 02-core-frameworks (SIEGE-01, PERSIST-01) · 04-applied-enforcement (SENI-01 master index)
+
+**Downstream:**
+- SENI-EXEC-01 → 07-visualization (SENI v4 Global Map node data)
+- Layer 3 → 07-visualization (MDO-01 console strategic model modules)
+
+---
+
+*UNCLASSIFIED // OPEN SOURCE // INDEPENDENT POLICY RESEARCH*
+*WP-2026 · Center for Competitive Statecraft and Strategic Policy · Collin George · March 2026*
