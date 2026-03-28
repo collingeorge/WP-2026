@@ -1,11 +1,13 @@
 # WP-2026 — Independent Policy Research Series
 
-**Author:** Collin George · Center for Competitive Statecraft and Strategic Policy
-**Contact:** cgeorge@collinbgeorge.com
-**Published:** March 2026
-**Status:** Unclassified // Open Source // Independent Policy Research
-**Repository:** https://github.com/collingeorge/WP-2026
-**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+| | |
+|---|---|
+| **Author** | Collin George · Center for Competitive Statecraft and Strategic Policy |
+| **Contact** | cgeorge@collinbgeorge.com |
+| **Published** | March 2026 |
+| **Status** | Unclassified // Open Source // Independent Policy Research |
+| **Repository** | https://github.com/collingeorge/WP-2026 |
+| **License** | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 ---
 
