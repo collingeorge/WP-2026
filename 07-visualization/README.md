@@ -8,10 +8,10 @@ Interactive visualization artifacts and decision-support interfaces for the WP-2
 
 | File | Function |
 |------|----------|
-| [SENI_v4_Global_Map_FINAL.html](SENI_v4_Global_Map_FINAL.html) | Interactive 374-node georeferenced enforcement map — open in browser |
-| [WP-2026-MDO-01-console.html](WP-2026-MDO-01-console.html) | MDO-01 interactive analytic console — open in browser |
+| [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | Interactive 374-node georeferenced enforcement map — open in browser |
+| [WP-2026-MDO-01-console.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html) | MDO-01 interactive analytic console — open in browser |
 | [WP-2026-MDO-01-v3.pdf](WP-2026-MDO-01-v3.pdf) | Multi-domain operations doctrine — full analytical paper |
-| [WP-2026-MDO-01-v3.html](WP-2026-MDO-01-v3.html) | MDO-01 web reader version |
+| [WP-2026-MDO-01-v3.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-v3.html) | MDO-01 web reader version |
 | [WP-2026-MDO-01-v3.docx](WP-2026-MDO-01-v3.docx) | MDO-01 editable source document |
 | [WP-2026-MAP-CI-01.pdf](WP-2026-MAP-CI-01.pdf) | SENI Global Map delivery architecture CI assessment |
 | [WP-2026-MAP-CI-01.docx](WP-2026-MAP-CI-01.docx) | MAP-CI-01 editable source |
@@ -20,7 +20,7 @@ Interactive visualization artifacts and decision-support interfaces for the WP-2
 
 ## SENI v4 Global Intelligence Map
 
-**[Open Map →](SENI_v4_Global_Map_FINAL.html)**
+**[Open Map →](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html)**
 
 374 georeferenced nodes across 25 threat networks:
 
@@ -43,7 +43,7 @@ Satellite imagery via Esri World Imagery. All nodes sourced from open-source pub
 
 ## MDO-01 Analytic Console
 
-**[Open Console →](WP-2026-MDO-01-console.html)**
+**[Open Console →](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html)**
 
 Interactive decision-support interface operationalizing MDO-01 v3.0. Ten modules:
 

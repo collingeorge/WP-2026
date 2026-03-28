@@ -51,7 +51,7 @@ A deployment-constrained, litigation-resilient analytic framework establishing w
 A litigation-resilient competitive statecraft framework with six authority rails, tiered escalation ladder, four-tier standards of proof, neutral designation-selection rule, guardrail index, and the Coalition Conflict Resolution Protocol (CCRP).
 
 **4. The Strategic Enforcement Node Index ([SENI-01](04-applied-enforcement/WP-2026-SENI-01.pdf) + [sub-series](05-seni-system/))**
-A 374-node global sanctions enforcement targeting register with an 11-document analytical sub-series mapping the Russian nuclear fuel cycle across three analytical layers — intelligence estimate, enforcement playbook, and strategic model — and a georeferenced [interactive map](07-visualization/SENI_v4_Global_Map_FINAL.html) covering 25 threat networks.
+A 374-node global sanctions enforcement targeting register with an 11-document analytical sub-series mapping the Russian nuclear fuel cycle across three analytical layers — intelligence estimate, enforcement playbook, and strategic model — and a georeferenced [interactive map](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) covering 25 threat networks.
 
 **5. The AML/CFT/CPF Control Matrix ([AML-01](01-methodology/WP-2026-AML-01.pdf) / [SENI-02](01-methodology/WP-2026-SENI-02.pdf))**
 A bank-grade, policy-grade control matrix mapping 20 node types across nine illicit finance categories with eight-column control structure, three-pass red-team statutory audit, and a named-entity enforcement index of 65+ institutions drawn from public enforcement record.
@@ -112,7 +112,7 @@ This path provides executive-level synthesis and strategy-layer documents struct
 | [WP-2026-SENI-EXEC-01.pdf](05-seni-system/WP-2026-SENI-EXEC-01.pdf) | Two-page executive synthesis — priority enforcement options |
 | [WP-2026-BRI-01.pdf](03-strategic-architecture/WP-2026-BRI-01.pdf) | Grand strategy capstone — Hormuz leverage and corridor architecture |
 | [WP-2026-EST-01.pdf](03-strategic-architecture/WP-2026-EST-01.pdf) | IC-style strategic estimate — six Key Judgments, five scenario pathways |
-| [SENI_v4_Global_Map_FINAL.html](07-visualization/SENI_v4_Global_Map_FINAL.html) | Interactive 374-node georeferenced enforcement map |
+| [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | Interactive 374-node georeferenced enforcement map |
 
 ### Think Tanks · CSIS · RAND · Carnegie · Atlantic Council
 
@@ -261,17 +261,17 @@ The following order reflects dependency requirements, not mandatory reading sequ
 | 30 | [WP-2026-IRAN-WMD-ASSESSMENT.pdf](06-threat-analysis/WP-2026-IRAN-WMD-ASSESSMENT.pdf) | 06-threat-analysis | Iran WMD program assessment |
 | 31 | [BW-Assessment-SUBMISSION-FINAL.pdf](06-threat-analysis/BW-Assessment-SUBMISSION-FINAL.pdf) | 06-threat-analysis | State BW risk assessment |
 | 32 | [WP-2026-MDO-01-v3.pdf](07-visualization/WP-2026-MDO-01-v3.pdf) | 07-visualization | Multi-domain operations doctrine |
-| 33 | [SENI_v4_Global_Map_FINAL.html](07-visualization/SENI_v4_Global_Map_FINAL.html) | 07-visualization | Interactive 374-node enforcement map |
-| 34 | [WP-2026-MDO-01-console.html](07-visualization/WP-2026-MDO-01-console.html) | 07-visualization | MDO-01 interactive decision console |
+| 33 | [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | 07-visualization | Interactive 374-node enforcement map |
+| 34 | [WP-2026-MDO-01-console.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html) | 07-visualization | MDO-01 interactive decision console |
 
 ---
 
 ## Interactive Interfaces
 
-**[SENI v4 Global Intelligence Map](07-visualization/SENI_v4_Global_Map_FINAL.html)**
+**[SENI v4 Global Intelligence Map](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html)**
 374 georeferenced nodes across 25 threat networks: Russia-China strategic infrastructure, Russian nuclear fuel cycle, Iran WMD program, Makran Coast industrial complex, Hormuz crisis architecture, DPRK nuclear and cyber networks, global cartel and terrorist finance networks, PRC and Russian overseas military basing, Wagner/Africa Corps, IRGC-QF external operations, and BRI strategic infrastructure. Satellite imagery via Esri World Imagery. OSINT basis only. Confidence levels, legal authorities, and enforcement theory carried through per node.
 
-**[MDO-01 Analytic Console](07-visualization/WP-2026-MDO-01-console.html)**
+**[MDO-01 Analytic Console](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html)**
 Interactive decision-support interface operationalizing MDO-01 v3.0. Ten modules: three-track comparator (Diplomatic / Overt Warfare / Clandestine), authorities and friction map, adversary stress test (PRC / Russia / DPRK), campaign workflow viewer, confidence matrix, F2T2EA targeting sequence, sanctions case validation, scenario builder, and export brief generator.
 
 ---
