@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WP-2026-SENI-02 — Named Entity Enforcement Index</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap');
+  :root {
+    --navy: #1B2A4A; --gold: #8B6914; --gold-light: #c49a28;
+    --red: #C00000; --lgray: #F2F4F7; --mgray: #D6DBE4;
+    --white: #ffffff; --amber: #b08000; --green: #22c55e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #0d1117; color: #e6edf3; }
+
+  .cover {
+    background: linear-gradient(160deg, #0d1117 0%, #1a0a0a 40%, #1B2A4A 100%);
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 80px; border-bottom: 3px solid var(--red); position: relative; overflow: hidden;
+  }
+  .cover::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 49px, rgba(192,0,0,0.04) 50px);
+    pointer-events: none;
+  }
+  .cover-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px;
+    color: var(--gold-light); text-transform: uppercase; margin-bottom: 32px;
+    border: 1px solid var(--gold); display: inline-block; padding: 4px 12px;
+  }
+  .cover h1 { font-size: clamp(28px, 4vw, 56px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+  .cover h1 span { color: var(--red); }
+  .cover-sub { font-size: 17px; color: var(--mgray); font-weight: 300; font-style: italic; margin-bottom: 48px; }
+  .disclaimer {
+    background: rgba(192,0,0,0.12); border: 1px solid rgba(192,0,0,0.4);
+    border-radius: 4px; padding: 16px 20px; margin-bottom: 32px;
+    font-size: 13px; color: #fca5a5; line-height: 1.7;
+  }
+  .disclaimer strong { color: var(--red); }
+  .cover-meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8b949e; border-top: 1px solid #30363d; padding-top: 24px; line-height: 2; }
+  .cover-meta strong { color: var(--gold-light); }
+
+  .section { padding: 48px 32px 0; }
+  .section-header {
+    background: var(--navy); border-left: 4px solid var(--red);
+    padding: 14px 20px; margin-bottom: 0;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;
+    color: #f87171; letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  .matrix-wrap { overflow-x: auto; margin-bottom: 48px; }
+  table { width: 100%; border-collapse: collapse; min-width: 1000px; font-size: 13px; }
+  thead tr { background: var(--navy); }
+  thead th {
+    padding: 10px 12px; text-align: left; font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 600; color: var(--white); letter-spacing: 1px;
+    text-transform: uppercase; border: 1px solid #2d3d5c; white-space: nowrap;
+  }
+  tbody tr:nth-child(odd) { background: #0d1117; }
+  tbody tr:nth-child(even) { background: #111827; }
+  tbody tr:hover { background: #1c2435; }
+  td { padding: 10px 12px; vertical-align: top; border: 1px solid #1e2733; line-height: 1.55; color: #c9d1d9; }
+  td:first-child { font-weight: 700; color: #93c5fd; font-size: 13px; min-width: 180px; }
+  td:nth-child(2) { color: #94a3b8; font-family: 'IBM Plex Mono', monospace; font-size: 11px; min-width: 100px; }
+  td:nth-child(3) { color: #fbbf24; font-size: 12px; min-width: 140px; }
+  td:nth-child(4) { color: #f87171; font-size: 12px; min-width: 160px; }
+  td:nth-child(5) { font-size: 13px; color: #e2e8f0; min-width: 260px; }
+  td:nth-child(6) { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--gold-light); min-width: 200px; }
+
+  .footer {
+    background: #0a0f18; border-top: 1px solid #1e2733; padding: 32px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #484f58; line-height: 1.8;
+  }
+  .footer strong { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-label">Unclassified // Open Source // Enforcement &amp; Designation Index</div>
+  <h1>Illicit Finance<br><span>Entity Targeting</span><br>Reference</h1>
+  <div class="cover-sub">Open-Source Enforcement &amp; Designation Index by AML/CFT/CPF Node Category</div>
+  <div class="disclaimer">
+    <strong>CRITICAL DISCLAIMER:</strong> Inclusion in this document reflects documented public enforcement action, designation, or credible investigative finding — not a finding of current ongoing criminal activity. Several listed institutions have resolved enforcement matters, paid penalties, implemented remediation, or ceased to exist. This document does not allege current illicit activity by any listed entity. It is intended solely as a policy analysis and AML/CFT compliance reference tool. All information is open-source public record.
+  </div>
+  <div class="cover-meta">
+    <strong>Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Date:</strong> March 2026 &nbsp;|&nbsp; <strong>Entities:</strong> 60+ across 11 node categories<br>
+    <strong>Sources:</strong> DOJ, FinCEN, OFAC, BIS, AUSTRAC, FCA, FINMA, FATF, UN Panel of Experts, ICIJ, OCCRP<br>
+    <strong>Columns:</strong> Entity · Jurisdiction · Node Category · Enforcement Basis · Key Exposure / Why Target · Authority / Case Reference
+  </div>
+</div>
+
+<div id="content">
+
+<!-- ── I. CORRESPONDENT BANKING ──────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">I. Correspondent &amp; Wholesale Banking</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>HSBC Holdings plc / HSBC Bank USA</td><td>UK / USA</td><td>Correspondent Banking; MSB</td><td>DOJ/FinCEN/OCC DPA 2012</td><td>Processed $881B in transactions for sanctioned entities (Mexico, Iran, Libya, Sudan, Burma, Cuba); inadequate BSA/AML controls; monitored cartel cash (Sinaloa, Norte del Valle); correspondent accounts used by Iranian banks to move USD through US system via HSBC affiliate stripping</td><td>US v. HSBC Bank USA NA, EDNY (2012); FinCEN $1.256B penalty; DPA terminated 2017</td></tr>
+    <tr><td>Standard Chartered Bank</td><td>UK / USA</td><td>Correspondent Banking; Sanctions Evasion</td><td>DOJ/NYDFS/FinCEN/OFAC settlements 2012, 2019</td><td>Stripped wire transfer identifiers to hide Iranian, Libyan, Burmese, Sudanese counterparties from OFAC screening over ~10 years; $265B in Iranian transactions; recidivist — second DPA 2019 for ongoing Iran/Syria/Sudan/Zimbabwe violations</td><td>OFAC $639M (2019); NYDFS $1.1B (2019); DOJ DPA $947M (2019)</td></tr>
+    <tr><td>Commerzbank AG</td><td>Germany / USA</td><td>Correspondent Banking; Sanctions Evasion</td><td>DOJ/FinCEN/NYDFS/OFAC settlement 2015</td><td>USD clearing for Iranian, Sudanese entities; stripped SWIFT field data to conceal sanctioned party identities; inadequate transaction monitoring across US correspondent relationships</td><td>DOJ $610M; OFAC $258M; NYDFS $610M (2015)</td></tr>
+    <tr><td>Deutsche Bank AG</td><td>Germany / USA</td><td>Correspondent Banking; ML; Mirror Trades</td><td>DOJ/FinCEN/NYDFS/FCA settlements 2017–2023</td><td>Russian mirror trade scheme ($10B+): simultaneous buy/sell of Russian blue-chip equities through Moscow and London desks to move roubles out of Russia as USD; correspondent banking for Jeffrey Epstein; inadequate transaction monitoring; $1.3B ML penalty 2023</td><td>NYDFS $425M (2017); DOJ $150M (2020); FCA £163M (2023)</td></tr>
+    <tr><td>Danske Bank A/S</td><td>Denmark / Estonia</td><td>Correspondent Banking; ML</td><td>DOJ investigation; Danish FSA; Estonian regulator</td><td>€200B+ in suspicious transactions through Tallinn branch 2007–2015, primarily from Russian/CIS non-resident clients; US correspondent (Deutsche Bank) terminated relationship; nominee BO structures; shell company accounts; no effective AML controls in Estonian branch for years</td><td>DOJ indictment (branch); Danish FSA revoked banking license; €2B whistleblower settlement fund</td></tr>
+    <tr><td>Westpac Banking Corporation</td><td>Australia</td><td>Correspondent Banking; TF-adjacent</td><td>AUSTRAC civil penalty 2020</td><td>23M+ violations of AML/CTF Act; failure to report international funds transfers; child exploitation payment patterns to Philippines not flagged; correspondent banking controls absent for high-risk Pacific corridors</td><td>AUSTRAC AUD 1.3B penalty (largest in Australian history at time)</td></tr>
+    <tr><td>Türkiye Halk Bankasi A.Ş. (Halkbank)</td><td>Turkey / USA</td><td>Correspondent Banking; Iran Sanctions Evasion</td><td>DOJ SDNY indictment 2019 (ongoing)</td><td>Bank-level participation in scheme to move $20B+ for Iranian government through US financial system; gold-for-oil scheme; front companies in Turkey, UAE, Iran; executives bribed; gold trader Hakan Atilla convicted; bank itself indicted (rare sovereign bank indictment)</td><td>US v. Halkbank, SDNY (S1 19 Cr. 366)</td></tr>
+    <tr><td>Banco Delta Asia (BDA)</td><td>Macau</td><td>Correspondent Banking; DPRK; ML</td><td>FinCEN Section 311 Primary ML Concern 2005</td><td>DPRK primary money laundering concern; processed counterfeit USD supernotes for North Korea; Kim Jong-Il slush fund accounts; enabled DPRK procurement of dual-use goods through US correspondent system; $25M in DPRK assets frozen</td><td>FinCEN 31 CFR §103.192 designation (2005); UNSCR 1718 nexus</td></tr>
+    <tr><td>ABLV Bank</td><td>Latvia / USA</td><td>Correspondent Banking; ML; Sanctions Evasion</td><td>FinCEN Section 311 designation 2018</td><td>Institutionalized ML for post-Soviet oligarchs, DPRK-linked actors, Ukrainian/Russian shell networks; processed transactions linked to DPRK missile procurement; FinCEN proposed cutting off US dollar access; bank self-liquidated</td><td>FinCEN Section 311 (2018); ECB revoked license</td></tr>
+    <tr><td>Trasta Komercbanka</td><td>Latvia</td><td>Correspondent Banking; ML</td><td>FCMC enforcement 2016</td><td>Shell company accounts for Russian/CIS clients; bulk cash transactions; inadequate BO verification; part of Baltic/CIS ML corridor feeding into EU banking system</td><td>FCMC revoked license 2016</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── II. PRIVATE BANKING ────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">II. Private Banking &amp; Wealth Management</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Credit Suisse AG (now UBS)</td><td>Switzerland / USA</td><td>Private Banking; ML; Grand Corruption; Tax Evasion</td><td>DOJ plea 2014; Senate PSI; FINMA enforcement</td><td>Concealed $10B+ in US client assets; opened accounts for drug traffickers and Balkan organized crime; FIFA bribery-linked accounts; Mozambique 'Tuna Bond' scandal ($2B sovereign fraud); FINMA found serious ML deficiencies 2023 before UBS acquisition</td><td>DOJ $2.6B plea (2014); Senate PSI Report 2014; FINMA enforcement orders 2023</td></tr>
+    <tr><td>Julius Baer Group</td><td>Switzerland</td><td>Private Banking; Grand Corruption; ML</td><td>DOJ/FINMA investigation 2016–2019</td><td>FIFA corruption accounts; Venezuelan PDVSA bribery proceeds; Petrobras/Lava Jato-linked accounts; relationship managers actively solicited corrupt officials; FINMA-ordered monitor; banker bribed Venezuelan officials directly</td><td>DOJ FIFA-related DPA; FINMA enforcement 2017, 2020; $79.7M DOJ disgorgement</td></tr>
+    <tr><td>Goldman Sachs International (1MDB)</td><td>USA / Malaysia / UAE</td><td>Private Banking; Grand Corruption; ML; Bribery</td><td>DOJ FCPA settlement 2020; Malaysian proceedings</td><td>Raised $6.5B for Malaysian sovereign wealth fund 1MDB; $4.5B diverted through shell companies; Goldman bankers received $600M+ in kickbacks; funds laundered through luxury real estate (NYC, Beverly Hills), art, superyacht (Equanimity), film production (Wolf of Wall Street)</td><td>DOJ FCPA $2.9B (2020); Malaysian plea $3.9B; US v. Leissner (2018)</td></tr>
+    <tr><td>Falcon Private Bank</td><td>Switzerland / UAE</td><td>Private Banking; ML; 1MDB</td><td>FINMA enforcement 2016; Singapore MAS revocation 2016</td><td>1MDB-linked accounts; Jho Low accounts; processed $2.7B in 1MDB-related transactions; inadequate PEP controls; Singapore branch had accounts used to move stolen sovereign funds</td><td>FINMA enforcement order Aug 2016; MAS license revocation Oct 2016</td></tr>
+    <tr><td>BSI Bank (Singapore/Switzerland)</td><td>Switzerland / Singapore</td><td>Private Banking; ML; 1MDB</td><td>MAS revocation 2016; FINMA enforcement 2015</td><td>1MDB-linked accounts; relationship managers facilitated movement of stolen funds; inadequate transaction monitoring; first Singapore bank to have license revoked in 32 years</td><td>MAS revocation May 2016; Swiss FINMA enforcement</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── III. RETAIL / COMMERCIAL ──────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">III. Retail &amp; Commercial Banking — ML Conduits</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Wachovia Bank (Wells Fargo successor)</td><td>USA</td><td>Retail/Commercial Banking; Narco ML</td><td>DOJ/FinCEN DPA 2010</td><td>Failed to apply adequate AML controls to $378.4B in transfers from Mexican currency exchanges (casas de cambio); proceeds from Sinaloa and other cartels moved through correspondent accounts; aircraft purchased with laundered funds used to import cocaine</td><td>DOJ DPA 2010; FinCEN $160M penalty; US v. Wachovia</td></tr>
+    <tr><td>Bank of Credit and Commerce International (BCCI)</td><td>UK / Luxembourg (collapsed 1991)</td><td>Retail/Commercial; TF; Narco; Corruption</td><td>DOJ/BoE regulatory seizure 1991</td><td>Operated as criminal enterprise: Manuel Noriega accounts; Medellin cartel accounts; Abu Nidal Organization TF; CIA covert operation accounts; bribed regulators globally; $9.5B in fraud; prototype for modern shell-bank typology</td><td>Clark Clifford/Robert Altman prosecution; Kerry Committee Report 1992; BoE enforcement</td></tr>
+    <tr><td>Banca Privada d'Andorra (BPA)</td><td>Andorra</td><td>Commercial Banking; ML; Russian Organized Crime</td><td>FinCEN Section 311 designation 2015</td><td>Primary ML concern; processed funds for Russian organized crime (Tamas Gulyas network); Chinese criminal organization proceeds; Venezuelan corruption proceeds (PDVSA); Andorran regulator took control post-designation</td><td>FinCEN Section 311 (March 2015); Andorran banking authority takeover</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── IV. SHELL NETWORKS ─────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">IV. Shell Company &amp; SPV Networks</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Mossack Fonseca &amp; Co.</td><td>Panama (global)</td><td>Shell Co. Formation; ML; Sanctions Evasion; Tax Evasion</td><td>Panama Papers ICIJ 2016; DOJ investigation; Panamanian prosecution</td><td>11.5M leaked documents; incorporated 214,000+ shell companies for drug traffickers, sanctions-designated individuals (Russia, Iran, Syria, DPRK-adjacent), kleptocrats, tax evaders; clients included 12 heads of state; registered in BVI, Seychelles, Panama, Nevada, Wyoming</td><td>Panamanian criminal charges against founders; multiple jurisdictional investigations; DOJ grand jury</td></tr>
+    <tr><td>Prevezon Holdings Ltd.</td><td>Cyprus / Russia / USA</td><td>Shell Co.; ML; Russian ML</td><td>DOJ civil forfeiture settlement 2017</td><td>Laundered proceeds of $230M Russian tax fraud (Sergei Magnitsky case) through Cypriot shell companies into Manhattan real estate; connected to Hermitage Capital/Browder fraud scheme</td><td>US v. Prevezon, SDNY; DOJ $5.9M settlement 2017; Magnitsky Act nexus</td></tr>
+    <tr><td>Troika Dialog / Troika Laundromat</td><td>Russia / Cyprus / Baltic</td><td>Shell Co.; Correspondent Banking; ML</td><td>OCCRP investigation; multiple FIU referrals</td><td>$4.6B moved through network of 75 shell companies via Moldovan bank and Latvian correspondent banking; used by Russian oligarchs, state officials, organized crime; mirror trade mechanism; OFAC-adjacent actors identified</td><td>OCCRP Troika Laundromat (2019); Latvian FCMC; Danish/Estonian investigations</td></tr>
+    <tr><td>Jebel Ali FZE entities (UAE FTZ)</td><td>UAE</td><td>FTZ Shell; Trade-Based ML; Sanctions Evasion</td><td>US/UN/OFAC advisories; FinCEN FTZ warnings</td><td>Jebel Ali FZE structure used by Iranian procurement networks, Russian export-control evasion networks post-2022; dual-use transshipment; UAE named FATF grey list 2022 (removed 2024) for FTZ AML deficiencies; specific FZE entities flagged in BIS export enforcement actions</td><td>BIS/OEE enforcement actions; FinCEN 2022 advisory; UN Panel of Experts reports (Iran/DPRK)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── V. VIRTUAL ASSETS ──────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">V. Virtual Asset Service Providers &amp; Crypto Infrastructure</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Binance Holdings Ltd.</td><td>Cayman Islands / UAE (nominal)</td><td>VASP; ML; Sanctions Evasion; Narco</td><td>DOJ/FinCEN/OFAC settlement November 2023</td><td>Largest crypto exchange globally; processed transactions for users in Iran, Cuba, Syria, Russia in violation of OFAC; served as critical node for ransomware attackers, darknet markets, fraud shops; inadequate KYC allowed Hamas, Al-Qaeda, ISIS-related accounts; CEO Changpeng Zhao pleaded guilty</td><td>DOJ $4.3B total penalties (2023); FinCEN $3.4B; OFAC $968M; US v. Zhao, WDWA</td></tr>
+    <tr><td>BitMEX (HDR Global Trading Ltd.)</td><td>Seychelles (nominal) / USA</td><td>VASP; ML; BSA violations</td><td>DOJ/FinCEN charges 2020</td><td>Operated unregistered derivatives exchange for US persons; willful failure to implement AML/KYC; processed transactions for sanctioned jurisdictions; founders convicted/pleaded guilty to BSA violations</td><td>DOJ charges Oct 2020; FinCEN $100M; founders Hayes, Delo, Reed pleaded guilty 2022</td></tr>
+    <tr><td>BTC-e / WEX (Alexander Vinnik)</td><td>Russia / Bulgaria / USA</td><td>VASP; ML; Ransomware; Narco</td><td>DOJ indictment 2017; OFAC designation</td><td>Received $4B+ in criminal proceeds; processed funds from Mt. Gox hack, ransomware (Locky, CryptoLocker), narcotics (Silk Road successor markets); Vinnik extradited, convicted in France for ML</td><td>DOJ indictment 2017; OFAC designation; Vinnik French conviction 2023</td></tr>
+    <tr><td>Tornado Cash (Roman Storm)</td><td>Decentralized / USA</td><td>Mixer; ML; Sanctions Evasion; DPRK</td><td>OFAC designation Aug 2022; DOJ indictment 2023</td><td>Mixer service processed $7B+ including $455M+ for DPRK Lazarus Group; $96M Harmony Bridge hack proceeds; $7.8M Nomad hack; developer Roman Storm indicted for ML conspiracy, sanctions violations, operating unlicensed MSB</td><td>OFAC SDN designation Aug 2022; US v. Storm, SDNY (2023)</td></tr>
+    <tr><td>Garantex (Russia-based exchange)</td><td>Russia</td><td>VASP; ML; Sanctions Evasion</td><td>OFAC designation April 2022; Europol action 2025</td><td>Processed $100M+ in transactions linked to darknet markets (Hydra); ransomware proceeds; Russian organized crime; operated despite FATF grey list status; servers seized in Europol Op. Destabilise 2025</td><td>OFAC SDN April 2022; Europol Op. Destabilise (March 2025)</td></tr>
+    <tr><td>Hydra Market (darknet)</td><td>Russia</td><td>Crypto OTC / Darknet; Narco; ML</td><td>DOJ/German BKA takedown 2022; OFAC designation</td><td>Largest darknet market in history by revenue ($5.2B in Bitcoin); cryptocurrency-for-narcotics; ML services sold as listed products; Russian users; OTC cash-out services via crypto kiosks; used Garantex for fiat conversion</td><td>OFAC SDN April 2022; German BKA seizure April 2022; DOJ charges</td></tr>
+    <tr><td>Lazarus Group (DPRK state actor)</td><td>North Korea</td><td>Crypto Theft; Sanctions Evasion; CPF</td><td>OFAC designation; FBI cyber alerts; UN Panel reports</td><td>State-sponsored cyber theft unit; stole $3B+ in cryptocurrency 2017–2023 per FBI; Ronin Network ($625M), Harmony Bridge ($100M), Bybit ($1.5B, 2025); laundered via Tornado Cash, OTC desks, chain-hopping; funds used for DPRK WMD/missile programs</td><td>OFAC SDN (2019); FBI alerts; UN Panel of Experts on DPRK (2023, 2024); Bybit attribution 2025</td></tr>
+    <tr><td>Tether Limited (USDT issuer)</td><td>BVI / Hong Kong</td><td>Stablecoin; ML-adjacent; Sanctions questions</td><td>DOJ/CFTC settlement 2021; ongoing scrutiny</td><td>USDT used as primary settlement currency on sanctioned exchanges (Garantex, Bitzlato); DOJ found Tether processed transactions for terrorist groups and drug traffickers without adequate controls; CFTC $41M for misrepresenting reserves; bipartisan Senate investigation 2024</td><td>CFTC $41M (2021); DOJ investigation (ongoing); Senate investigation 2024</td></tr>
+    <tr><td>Bitzlato Ltd. (Anatoly Legkodymov)</td><td>Hong Kong / Russia</td><td>Crypto OTC/VASP; ML; Narco</td><td>DOJ/FinCEN action January 2023</td><td>Processed $700M+ in illicit funds; primary fiat gateway for Hydra darknet market; inadequate KYC; Legkodymov arrested Miami; FinCEN designated as primary ML concern (first such designation of crypto firm)</td><td>DOJ arrest Jan 2023; FinCEN Section 311 designation Jan 2023</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VI. REAL ESTATE ────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VI. Real Estate — Key Identified Entities &amp; Cases</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Trump Organization / Trump Tower shell LLCs</td><td>USA (New York)</td><td>Real Estate; ML-adjacent; Shell LLC purchasers</td><td>FinCEN GTO; Senate Finance Committee; NY AG civil suit</td><td>Multiple all-cash shell company purchases of Trump-branded condos by Russian/FSU oligarchs and organized crime-adjacent buyers (Felix Sater / Bayrock Group); NY AG found Trump Org engaged in asset inflation/deflation fraud; FinCEN GTOs captured Trump Tower LLC purchasers</td><td>NY AG v. Trump Organization (2022); Senate Finance Committee report; FinCEN GTO data</td></tr>
+    <tr><td>Bayrock Group LLC</td><td>USA (New York)</td><td>Real Estate; ML; Russian Organized Crime</td><td>DOJ investigation; civil RICO suit</td><td>Trump SoHo and other deals funded by Russian/FSU investors with organized crime connections; Felix Sater (prior securities fraud/Mafia ties) as principal; Tevfik Arif (Bayrock founder) investigated for organized crime connections; money origin opaque</td><td>Civil RICO suit (Kriss v. Bayrock); DOJ investigation records; FinCEN SAR analysis</td></tr>
+    <tr><td>Jho Low / Good Star Limited (1MDB)</td><td>Malaysia / Cayman / USA</td><td>Real Estate; Luxury Assets; ML; Grand Corruption</td><td>DOJ civil forfeiture; MLARS action</td><td>Purchased Park Lane Hotel (NYC) $654M; Time Warner Center condos; 12 Manhattan properties; Beverly Hills mansion; Bombardier jet; superyacht Equanimity; all funded with 1MDB-diverted sovereign wealth; Good Star Ltd. (Cayman) as primary layering vehicle</td><td>DOJ MLARS civil forfeiture complaints 2016–2019; US v. Low (at large)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VII. TBML / CPF ────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VII. Trade Finance, TBML &amp; Proliferation Finance</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Mahan Air (Iran)</td><td>Iran</td><td>Trade Finance; CPF; Aviation Sanctions Evasion</td><td>OFAC SDN designation 2011; DOJ/OFAC enforcement</td><td>Iranian airline designated for providing financial services to IRGC-QF; used front companies in UAE, Germany, Turkey to procure aircraft parts; correspondent banking used to pay for parts in violation of aviation sanctions; flight crews transported weapons to Syria/Yemen</td><td>OFAC SDN (Oct 2011); DOJ enforcement actions against parts suppliers; UN Panel of Experts</td></tr>
+    <tr><td>Dandong Hongxiang Industrial Development Co.</td><td>China (Liaoning)</td><td>Trade Finance; DPRK CPF; Sanctions Evasion</td><td>DOJ indictment 2016; OFAC designation</td><td>Primary front company network for DPRK Korea Kwangson Banking Corp (KKBC); facilitated $700M+ in DPRK transactions through US financial system; obtained dual-use materials for DPRK WMD; Ma Xiaohong (CEO) indicted</td><td>DOJ SDNY indictment Sep 2016; OFAC designation; UN Panel DPRK report</td></tr>
+    <tr><td>Novatek / Gazprombank / VTB Bank</td><td>Russia</td><td>Correspondent Banking; Sanctions Evasion; Energy Trade</td><td>OFAC SDN / SSI / sectoral designations post-2022</td><td>Gazprombank maintained de facto USD clearing exemption for energy payments until 2024 (sanctioned Nov 2024); VTB designated SDN; Novatek Arctic LNG 2 project sanctioned; all three used to move energy revenue outside sanctions perimeter; third-country banks (China, India, Turkey) used as secondary clearing</td><td>OFAC SDN/SSI designations 2022–2024; E.O. 14024; FinCEN advisories on Russian sanctions evasion</td></tr>
+    <tr><td>Rusal / EN+ Group (Oleg Deripaska)</td><td>Russia</td><td>Correspondent Banking; Sanctions Evasion; Trade</td><td>OFAC SDN designation April 2018 (subsequently removed with conditions)</td><td>Aluminum/energy conglomerate; Deripaska designated under E.O. 13661; OFAC SDN designation caused global aluminum market disruption; removed after Deripaska reduced ownership below 50%; illustrates SOE-adjacent oligarch exposure and threshold game for sanctions relief</td><td>OFAC SDN April 2018; removed January 2019 with conditions; E.O. 13661</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VIII. HAWALA ───────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VIII. Informal Value Transfer &amp; Hawala Networks</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Al-Barakaat Network</td><td>Somalia / USA / UAE</td><td>Hawala / IVTS; TF</td><td>Executive Order 13224; OFAC designation post-9/11</td><td>Designated as TF network for Al-Qaeda; operated as hawala/remittance network across US Somali diaspora; $25M+ annually to Al-Qaeda through Al-Barakaat accounts; assets frozen by Executive Order post-9/11; landmark case establishing IVTS TF typology</td><td>E.O. 13224 (2001); OFAC SDN designation; 9/11 Commission references</td></tr>
+    <tr><td>Altaf Khanani / Khanani MLO (KMLO)</td><td>Pakistan / UAE / USA</td><td>Hawala; Narco ML; TF-adjacent</td><td>DOJ/DEA/FinCEN designation 2015; guilty plea 2017</td><td>One of the largest hawala operators globally; laundered $14B+ for Colombian and Mexican cartels, Taliban-adjacent networks, Pakistani political figures; operated through UAE and Pakistani exchange houses; FinCEN action against two UAE hawaladars linked to KMLO</td><td>DOJ guilty plea Oct 2017; FinCEN Section 311 designations of associated entities; DEA coordination</td></tr>
+    <tr><td>Lebanese Canadian Bank SAL (LCB)</td><td>Lebanon / USA</td><td>Hawala / Correspondent Banking; TF; Narco ML</td><td>FinCEN Section 311 designation 2011; DOJ civil forfeiture</td><td>Primary ML concern; Hezbollah-linked money laundering; used car trade and drug proceeds laundered through US correspondent accounts; $329M civil forfeiture; bank collapsed post-designation</td><td>FinCEN Section 311 Feb 2011; US v. $150M (SDNY civil forfeiture); bank liquidated</td></tr>
+    <tr><td>Black Market Peso Exchange (BMPE) networks</td><td>Colombia / Mexico / USA</td><td>Hawala-equivalent; Narco ML</td><td>DEA/FinCEN typology enforcement; multiple DOJ cases</td><td>Systematic mechanism for Colombian and Mexican DTO repatriation of USD narco proceeds without physical currency movement; pesos exchanged for USD consumer goods exported; no SWIFT, no banks — value transferred through trade; documented in hundreds of DOJ prosecutions</td><td>DEA BMPE enforcement program; FinCEN advisory FIN-2010-A001; multiple SDFL/SDCA prosecutions</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── IX. CASINOS ────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">IX. Casinos &amp; Gaming</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Crown Resorts (Australia)</td><td>Australia</td><td>Casino; ML; Organized Crime Facilitation</td><td>AUSTRAC civil penalty 2023; Royal Commission findings</td><td>Failed to prevent ML by criminal organizations including organized crime junket operators (Suncity Group); $2.17B AUD civil penalty; VIP junket program used by Triad-linked operators; chips washed through Crown Melbourne and Crown Perth; knowingly dealt with people linked to crime</td><td>AUSTRAC $2.17B AUD (2023); Victorian Royal Commission; Bergin Inquiry (NSW)</td></tr>
+    <tr><td>Star Entertainment Group</td><td>Australia</td><td>Casino; ML; Organized Crime</td><td>AUSTRAC enforcement 2023; NSW ILGA inquiry</td><td>Suncity VIP junket operations facilitated ML; failed to report suspicious transactions; China UnionPay cards used to disguise gambling transactions as hotel purchases; organized crime associates allowed on gaming floor</td><td>AUSTRAC $100M+ proceedings; NSW casino license suspension 2022</td></tr>
+    <tr><td>Suncity Group (Alvin Chau)</td><td>Macau / Australia</td><td>Casino VIP Junket; ML; Organized Crime</td><td>Macau prosecution 2022; Australian casino inquiries</td><td>Largest VIP junket operator in Macau; Alvin Chau convicted of running criminal syndicate, cross-border gambling, ML; operated through Crown, Star, and Macau casinos; $1B+ annually moved through system; Triad associations documented</td><td>Macau Court: Alvin Chau 18-year sentence (Jan 2023); Australian casino inquiries</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── X. INSURANCE ───────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">X. Insurance &amp; Financial Products</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>AIG (American International Group)</td><td>USA / Global</td><td>Insurance; ML-adjacent; Sanctions</td><td>OFAC/DOJ settlement 2010; SEC enforcement</td><td>Iran-linked reinsurance transactions through non-US subsidiaries; structured to avoid OFAC screening; $4.3M OFAC penalty; illustrates insurance sector sanctions exposure through subsidiary opacity</td><td>OFAC $4.3M settlement 2010; SEC enforcement 2004</td></tr>
+    <tr><td>Zurich Insurance Group subsidiaries</td><td>Switzerland / Global</td><td>Insurance; Sanctions Evasion</td><td>OFAC enforcement actions (subsidiary level)</td><td>Subsidiary transactions involving Iran, Sudan, Cuba without licenses; inadequate OFAC screening in non-US affiliates; voluntary self-disclosure resulted in settlements</td><td>OFAC settlements (various subsidiary actions 2010–2016)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── XI. MSBs ───────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">XI. Money Services Businesses &amp; Remittance</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Entity / Institution</th><th>Jurisdiction</th><th>Node Category</th><th>Enforcement Basis</th><th>Key Exposure / Why Target</th><th>Authority / Case Reference</th></tr></thead>
+    <tbody>
+    <tr><td>Western Union Financial Services</td><td>USA (Colorado)</td><td>MSB; Narco ML; TF-adjacent</td><td>DOJ/FinCEN DPA 2010; forfeiture agreement 2017</td><td>Failed to maintain effective AML program; processed transactions for DTOs including Sinaloa cartel through agent network; agents complicit in structuring; $586M forfeiture agreement 2017; admitted to willful failure to implement AML program</td><td>DOJ DPA 2010; $586M forfeiture agreement Jan 2017; FinCEN enforcement</td></tr>
+    <tr><td>MoneyGram International</td><td>USA (Texas)</td><td>MSB; Narco ML; Fraud</td><td>DOJ/FinCEN DPA 2012; recidivist action 2018</td><td>Failed to terminate complicit agents processing cartel proceeds; $100M forfeiture (2012); failed to comply with DPA — second action 2018 with $125M additional forfeiture; agents in US Southwest knowingly processed drug trafficking proceeds</td><td>DOJ DPA Nov 2012; $100M forfeiture; second action Nov 2018 $125M; FinCEN $1M</td></tr>
+    <tr><td>UAE exchange house networks (hawala-adjacent, unlicensed operators)</td><td>UAE</td><td>Hawala / MSB; Sanctions Evasion; Narco; Afghan Taliban</td><td>FinCEN advisories; OFAC designations of specific operators; FATF UAE grey listing 2022</td><td>Licensed UAE exchange houses used as cover for unlicensed hawala; Taliban opium proceeds transited UAE exchange system post-2021 withdrawal; Russian sanctions evasion via UAE hawaladars post-2022; FinCEN 2022 advisory on UAE illicit finance</td><td>FinCEN Advisory FIN-2022-A002 (UAE); OFAC designated specific UAE exchange operators; FATF UAE grey list 2022 (removed 2024)</td></tr>
+    <tr><td>GreenDot Corporation (prepaid cards)</td><td>USA (California)</td><td>Prepaid Card MSB; Fraud ML</td><td>FTC enforcement; FinCEN scrutiny</td><td>Prepaid debit cards used in IRS/SSA impersonation scams; fraud proceeds loaded and cashed out; inadequate AML controls for high-risk agent locations</td><td>FTC $44M settlement 2023; FinCEN SAR typology; OCC supervisory concern</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</div><!-- end content -->
+
+<div class="footer">
+  <strong>SOURCES:</strong> DOJ plea agreements and indictments; FinCEN civil money penalties, Section 311 designations, and advisories; OFAC SDN list and penalty releases; BIS Entity List and OEE enforcement; AUSTRAC, FCA, FINMA, ECB, MAS enforcement actions; UN Panels of Experts (Iran, DPRK, Russia); FATF Mutual Evaluations; ICIJ Panama Papers and Paradise Papers; OCCRP investigative reporting.<br>
+  <strong>DISCLAIMER:</strong> All information is open-source. This document does not constitute legal advice and does not allege current illicit activity by any listed entity. Version 1.0, March 2026.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WP-2026-AML-01 — AML/CFT/CPF Control Matrix</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap');
+  :root {
+    --navy: #1B2A4A;
+    --gold: #8B6914;
+    --gold-light: #c49a28;
+    --red: #C00000;
+    --lgray: #F2F4F7;
+    --mgray: #D6DBE4;
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --amber: #7F6000;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #0d1117; color: #e6edf3; }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, #0d1117 0%, #1B2A4A 50%, #0d1117 100%);
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 80px; border-bottom: 3px solid var(--gold);
+    position: relative; overflow: hidden;
+  }
+  .cover::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(139,105,20,0.06) 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(139,105,20,0.06) 40px);
+    pointer-events: none;
+  }
+  .cover-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px;
+    color: var(--red); text-transform: uppercase; margin-bottom: 32px;
+    border: 1px solid var(--red); display: inline-block; padding: 4px 12px;
+  }
+  .cover h1 {
+    font-size: clamp(32px, 5vw, 64px); font-weight: 700; color: var(--white);
+    line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px;
+  }
+  .cover h1 span { color: var(--gold-light); }
+  .cover-sub {
+    font-size: 18px; color: var(--mgray); font-weight: 300; font-style: italic;
+    margin-bottom: 48px;
+  }
+  .cover-meta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8b949e;
+    border-top: 1px solid #30363d; padding-top: 24px; line-height: 2;
+  }
+  .cover-meta strong { color: var(--gold-light); }
+
+  /* SECTION */
+  .section { padding: 48px 32px 0; }
+  .section-header {
+    background: var(--navy); border-left: 4px solid var(--gold);
+    padding: 14px 20px; margin-bottom: 0;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;
+    color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* TABLE */
+  .matrix-wrap { overflow-x: auto; margin-bottom: 48px; }
+  table { width: 100%; border-collapse: collapse; min-width: 1100px; font-size: 13px; }
+  thead tr { background: var(--navy); }
+  thead th {
+    padding: 10px 12px; text-align: left; font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 600; color: var(--white); letter-spacing: 1px;
+    text-transform: uppercase; border: 1px solid #2d3d5c; white-space: nowrap;
+  }
+  tbody tr:nth-child(odd) { background: #0d1117; }
+  tbody tr:nth-child(even) { background: #111827; }
+  tbody tr:hover { background: #1c2b45; }
+  td {
+    padding: 10px 12px; vertical-align: top; border: 1px solid #1e2733;
+    line-height: 1.5; color: #c9d1d9;
+  }
+  td:first-child { font-weight: 600; color: #93c5fd; font-size: 12px; }
+  td:nth-child(2) { color: #fbbf24; font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+  td:nth-child(4) { color: #f87171; font-size: 12px; }
+  td:nth-child(6) { color: var(--gold-light); font-size: 12px; }
+  td:nth-child(7) { color: #86efac; font-size: 12px; }
+  td:nth-child(8) { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #94a3b8; }
+
+  /* node list items */
+  .cell-list { list-style: none; padding: 0; }
+  .cell-list li { padding: 2px 0; }
+  .cell-list li::before { content: '› '; color: var(--gold-light); font-weight: 700; }
+
+  /* FOOTER */
+  .footer {
+    background: #0a0f18; border-top: 1px solid #1e2733; padding: 32px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #484f58;
+    line-height: 1.8;
+  }
+  .footer strong { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-label">Unclassified // Open Source // Policy &amp; Compliance Reference</div>
+  <h1>AML/CFT/<span>CPF</span><br>Control Matrix</h1>
+  <div class="cover-sub">Illicit Finance Node Risk Framework</div>
+  <div class="cover-meta">
+    <strong>Version:</strong> 1.1 (Red-Team Revised) &nbsp;|&nbsp; <strong>Date:</strong> March 2026<br>
+    <strong>Scope:</strong> Nine node categories, 20 node types, 8-column control structure<br>
+    <strong>Columns:</strong> Node Type · Threat Vector · Abuse Mode · Red Flags · Controls · Escalation Triggers · Reporting Pathway · Authority Basis<br>
+    <strong>Disclaimer:</strong> Does not constitute legal advice. All citations are open-source public record.
+  </div>
+</div>
+
+<div id="matrix-content">
+
+<!-- ── I. BANKING ─────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">I. Banking &amp; Correspondent Networks</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr>
+      <th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th>
+      <th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th>
+      <th>Reporting Pathway</th><th>Authority Basis</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td>Correspondent Banking / Nostro Accounts</td>
+      <td>ML / TF / Sanctions Evasion</td>
+      <td>Nested shell co. beneficiaries transit USD/EUR clearing; payable-through accounts obscure originator; bulk cash wire structuring below CTR thresholds</td>
+      <td><ul class="cell-list"><li>No end-beneficiary transparency</li><li>Respondent bank in FATF grey/black list jurisdiction</li><li>Rapid in/out same-day flows</li><li>Inconsistent LEI data</li><li>Volume increase materially exceeding established customer baseline, consistent with layering typology</li></ul></td>
+      <td><ul class="cell-list"><li>EDD on respondent</li><li>Automated wire screening vs. OFAC/UN/EU/FATF lists</li><li>CDD refresh ≤12 months for high-risk corridors</li><li>Payable-through account prohibition without sub-account mapping</li></ul></td>
+      <td><ul class="cell-list"><li>SDN/designated entity match</li><li>May prompt jurisdictional risk reassessment or de-risking review</li><li>SAR threshold met based on suspicion, not solely monetary amount (≥$5K indicative)</li><li>Pattern consistent with ML typology alert</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN (BSA/AML)</li><li>UN 1267 Committee via OFAC (ISIL/AQ); UNSCR 1373 for TF; UNSCR 2231 for Iran</li><li>Egmont FIU-to-FIU channel</li><li>Wolfsberg Group peer notification</li></ul></td>
+      <td>BSA 31 USC §5318 · OFAC SDN/CAPTA · UN SCRs 1267/1373/2231 (scenario-specific) · FATF Rec. 13</td>
+    </tr>
+    <tr>
+      <td>Private Banking / Wealth Management</td>
+      <td>ML / Grand Corruption / CPF</td>
+      <td>PEP-linked layering through numbered accounts, discretionary trusts, fiduciary nominee structures; asset concealment for sanctioned oligarchs; family-office opacity</td>
+      <td><ul class="cell-list"><li>PEP designation with unexplained wealth quantum</li><li>Nominee BO inconsistent with economic rationale</li><li>Booking center in high-secrecy jurisdiction</li><li>Refusal to disclose source of wealth</li><li>Trust/foundation structure with no clear purpose</li></ul></td>
+      <td><ul class="cell-list"><li>PEP-mandatory EDD including adverse media screening</li><li>Source-of-wealth verification (documentary)</li><li>Annual BO re-certification</li><li>RPEP screening</li><li>Triggers sanctions review and potential blocking obligations where applicable</li></ul></td>
+      <td><ul class="cell-list"><li>Match against HM Treasury/OFAC/EU designation list</li><li>Adverse media hit on corruption/bribery/WMD nexus</li><li>Incoming from recently sanctioned jurisdiction without apparent lawful purpose or licensing basis</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN/FCA/FINMA depending on booking center</li><li>FATF mutual evaluation referral</li><li>DOJ/FBI financial crimes task force referral</li></ul></td>
+      <td>BSA/USA PATRIOT Act §312 · FCPA 15 USC §78dd (corruption nexus only) · UK POCA 2002 §330 · EU AMLD6 Art. 3</td>
+    </tr>
+    <tr>
+      <td>Retail / Commercial Bank Accounts</td>
+      <td>Narco-trafficking / TF / ML</td>
+      <td>Structuring (smurfing) below $10K CTR; third-party deposits; cash-intensive business front accounts; funnel accounts; mule network deposits</td>
+      <td><ul class="cell-list"><li>Multiple sub-$10K deposits same branch/day</li><li>Rapid depletion after deposit (within 24–48h)</li><li>Account holder inconsistent with transaction volume</li><li>Multiple 3rd-party depositors</li><li>Geographic anomaly (deposits in distant states/cities)</li></ul></td>
+      <td><ul class="cell-list"><li>Automated structuring detection (velocity rules)</li><li>Cash-intensive business EDD</li><li>Beneficial ownership CDD (CDD Rule 2018)</li><li>Geographic clustering analysis</li><li>Account behavior baseline deviation alerts</li></ul></td>
+      <td><ul class="cell-list"><li>Repeated structuring patterns within a defined monitoring period</li><li>Funnel account signature detected</li><li>Nexus to known narco-trafficking corridor</li></ul></td>
+      <td><ul class="cell-list"><li>CTR → FinCEN (&gt;$10K cash)</li><li>SAR → FinCEN</li><li>DEA/FBI referral via law enforcement liaison, as appropriate based on nexus to narcotics or criminal investigation</li></ul></td>
+      <td>BSA 31 USC §5324 (structuring) · FinCEN CDD Rule 31 CFR §1010.230 · 18 USC §1956</td>
+    </tr>
+    <tr>
+      <td>Shell Company / SPV Bank Accounts</td>
+      <td>Sanctions Evasion / CPF / ML</td>
+      <td>Layering through multi-jurisdictional SPV chains; undisclosed beneficial owners using nominee directors; IEEPA evasion via non-US dollar clearing avoidance; round-trip financing</td>
+      <td><ul class="cell-list"><li>No identifiable economic purpose</li><li>BO resides in sanctioned jurisdiction</li><li>Incorporation in secrecy jurisdiction within 90 days of account opening</li><li>Professional nominee director for multiple unrelated entities</li><li>Inbound funds immediately disbursed to opaque counterparties</li></ul></td>
+      <td><ul class="cell-list"><li>BO verification to natural person level (≥25% threshold)</li><li>Negative-news screening on all linked entities</li><li>GLEIF LEI cross-check</li><li>Corporate registry verification vs. declared structure</li><li>Periodic dormancy review</li></ul></td>
+      <td><ul class="cell-list"><li>BO linked to SDN or sanctioned jurisdiction</li><li>Multi-layered ownership structure lacking economic or operational rationale</li><li>Pattern consistent with potential round-tripping typology</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>OFAC administrative subpoena cooperation</li><li>DOJ NSD referral for IEEPA potential violations</li></ul></td>
+      <td>IEEPA 50 USC §1701 · FinCEN CDD Rule · EU 5th AMLD BO register · FATF Rec. 24/25</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── II. CAPITAL MARKETS ────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">II. Capital Markets &amp; Securities</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Brokerage / Securities Accounts</td>
+      <td>ML / Sanctions Evasion / CPF</td>
+      <td>Wash trading between related accounts; nominee share parking for sanctioned persons; layering via bond purchases then secondary market sale for clean proceeds; short-selling ahead of sanctions designation</td>
+      <td><ul class="cell-list"><li>Circular trading with no net position change</li><li>BO inconsistency between custodian and issuer records</li><li>Account linked to sanctioned jurisdiction IP address</li><li>High-frequency in/out in low-liquidity instruments</li><li>Trades inconsistent with stated investment mandate</li></ul></td>
+      <td><ul class="cell-list"><li>SEC/FINRA AML program compliance</li><li>OFAC screening on account opening and periodic basis</li><li>Securities-specific SAR (SAR-SF)</li><li>Cross-account wash trade surveillance</li><li>DVP/RVP delivery anomaly monitoring</li></ul></td>
+      <td><ul class="cell-list"><li>SDN match on account holder or BO</li><li>Wash trade detection threshold exceeded, based on surveillance models calibrated to market norms</li><li>Coordinated account activity suggesting common control, absent legitimate trading strategy explanation</li></ul></td>
+      <td><ul class="cell-list"><li>SAR-SF → FinCEN</li><li>SEC Enforcement referral</li><li>FINRA regulatory referral</li><li>OFAC reporting per 31 CFR §501.604</li></ul></td>
+      <td>Securities Exchange Act §17(a) · FinCEN SAR rules 31 CFR §1023.320 · OFAC 31 CFR Parts 500-598 · FATF Rec. 26</td>
+    </tr>
+    <tr>
+      <td>OTC Derivatives / Structured Notes</td>
+      <td>CPF / Sanctions Evasion</td>
+      <td>Proliferation finance via structured note issuance in offshore jurisdiction for designated entity affiliate; swap counterparty opacity; CDS referencing sanctioned sovereign debt; offshore derivative booking to avoid SDN contact</td>
+      <td><ul class="cell-list"><li>Counterparty domicile in sanctioned jurisdiction or FATF non-cooperative territory</li><li>Notional value disproportionate to counterparty balance sheet without documented hedging or risk management rationale</li><li>Instrument appears designed to reduce exposure to U.S. financial system controls</li><li>Exotic structure with no apparent hedging rationale</li></ul></td>
+      <td><ul class="cell-list"><li>ISDA counterparty KYC with BO penetration</li><li>Derivative booking jurisdiction controls</li><li>CFTC swap data repository (SDR) reporting</li><li>Sanctions clause in ISDA Master Agreement</li></ul></td>
+      <td><ul class="cell-list"><li>Counterparty linked to OFAC/EU-designated entity</li><li>Instrument provides economic benefit to SDN</li><li>Instrument appears designed to reduce exposure to U.S. financial system controls</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>CFTC Division of Enforcement referral</li><li>OFAC ISDA-specific disclosure protocol</li></ul></td>
+      <td>CEA §4s(j) · OFAC GL/FAQ for derivatives · FATF Proliferation Finance Guidance (2021) · EU Dual-Use Reg. 2021/821 (CPF context only)</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── III. VIRTUAL ASSETS ────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">III. Virtual Assets &amp; Crypto Infrastructure</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Centralized VASP / Exchange</td>
+      <td>ML / TF / Sanctions Evasion / Narco</td>
+      <td>Layering through high-volume trades; peer-to-peer exchange to avoid KYC; chain-hopping across blockchains; exchanges in non-FATF-compliant jurisdictions; DPRK Lazarus Group typology (large-scale crypto theft → OTC liquidation)</td>
+      <td><ul class="cell-list"><li>Deposits from OFAC-designated wallet address</li><li>Transaction volume inconsistent with stated income/purpose</li><li>Rapid conversion to privacy coin or bridge</li><li>IP address from sanctioned jurisdiction</li><li>Cluster analysis links to darknet marketplace</li></ul></td>
+      <td><ul class="cell-list"><li>Travel Rule compliance (FATF Rec. 16 for VASPs)</li><li>On-chain blockchain analytics (Chainalysis, Elliptic, TRM Labs)</li><li>OFAC virtual currency compliance framework</li><li>Address screening against OFAC SDN VA list</li><li>KYC at onboarding and enhanced for high-value withdrawals</li></ul></td>
+      <td><ul class="cell-list"><li>Direct exposure to designated wallet cluster</li><li>Darknet marketplace funds received</li><li>Blockchain analytics indicators consistent with typologies publicly attributed to DPRK-linked actors</li><li>Rapid chain-hop pattern post-deposit, in combination with other risk indicators</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN (VASPs are MSBs under BSA)</li><li>OFAC reporting obligation 31 CFR §501.604</li><li>FBI/CISA referral for state-actor cyber-enabled theft</li><li>DOJ CCIPS referral</li></ul></td>
+      <td>BSA 31 USC §5330 (VASP as MSB) · OFAC VA Sanctions Compliance Guidance (2021) · FATF Updated Guidance on VAs (2021) · 18 USC §1960</td>
+    </tr>
+    <tr>
+      <td>Privacy Coins / Mixers / Tumblers</td>
+      <td>TF / Narco / ML / CPF</td>
+      <td>Obfuscation of transaction graph via Monero, Zcash shielded pools, or Bitcoin mixers (Tornado Cash typology); DPRK uses Monero for sanctions evasion post-crypto theft; darknet market settlement; NFT wash trading as laundering vehicle</td>
+      <td><ul class="cell-list"><li>Inbound from exchange then immediate mixer deposit</li><li>Monero receipt address on KYC onboarding</li><li>NFT self-purchase at inflated value</li><li>Mixer service deposit without business explanation</li><li>Output wallet address linked to ransomware cluster</li></ul></td>
+      <td><ul class="cell-list"><li>Mixer/tumbler service exposure triggers automatic EDD</li><li>Reject Monero deposits where blockchain tracing not possible per policy</li><li>NFT platform KYC and transaction monitoring</li><li>Tornado Cash OFAC designation compliance (Aug 2022)</li></ul></td>
+      <td><ul class="cell-list"><li>Interaction with OFAC-designated mixer where designation applies (e.g., Tornado Cash, Blender.io)</li><li>Privacy coin receipt inconsistent with customer profile — elevated risk requiring enhanced review</li><li>Ransomware cluster linkage</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>OFAC mandatory blocking and reporting</li><li>FBI Cyber Division referral</li><li>CISA ransomware reporting portal</li></ul></td>
+      <td>OFAC Tornado Cash designation (OFAC-2022-0831) · BSA 31 USC §5318(g) · 18 USC §1956(a)(1) · FATF Recommendation 15</td>
+    </tr>
+    <tr>
+      <td>Crypto OTC Desk (Unregistered)</td>
+      <td>ML / Sanctions Evasion / Narco</td>
+      <td>High-volume cash-to-crypto or crypto-to-fiat conversion without MSB registration; used by narco organizations and sanctions-designated entities to liquidate illicitly obtained crypto; facilitated by operators functionally analogous to informal value transfer systems (UAE, HK, Southeast Asia)</td>
+      <td><ul class="cell-list"><li>No FinCEN MSB registration</li><li>Transaction volume incompatible with declared business</li><li>Counterparties in Iran/Russia/DPRK nexus</li><li>Cash-to-crypto without KYC</li><li>Operating through messaging platforms (Telegram, WeChat)</li></ul></td>
+      <td><ul class="cell-list"><li>MSB registration verification at onboarding for institutional OTC counterparties</li><li>Correspondent crypto-bank due diligence on OTC desk clients</li><li>On-chain analytics for settlement addresses</li><li>Travel Rule enforcement at settlement leg</li></ul></td>
+      <td><ul class="cell-list"><li>Unregistered MSB confirmed</li><li>Sanctions-nexus counterparty identified</li><li>Transaction &gt;$25K with no KYC documentation, or otherwise inconsistent with risk-based KYC expectations</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>FinCEN enforcement referral for unlicensed MSB</li><li>DOJ MLARS referral</li><li>OFAC penalty process</li></ul></td>
+      <td>18 USC §1960 · BSA 31 USC §5330 · OFAC 31 CFR §501 · DOJ Crypto Enforcement Framework (2020)</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── IV. REAL ESTATE ────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">IV. Real Estate &amp; High-Value Assets</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Residential / Commercial Real Estate</td>
+      <td>ML / Grand Corruption / Sanctions Evasion</td>
+      <td>All-cash purchases through LLC veil; beneficial owner is sanctioned PEP or narco principal; title held via multi-tier corporate chain; property used as collateral to extract clean debt; FinCEN GTO-covered markets</td>
+      <td><ul class="cell-list"><li>All-cash LLC purchaser with no identifiable BO</li><li>Property value significantly above market / no negotiation</li><li>BO in high-corruption / sanctioned-state jurisdiction</li><li>Serial purchases in FinCEN GTO markets (NYC, Miami, LA, SF, Boston, Seattle, San Antonio, Las Vegas, Dallas, Honolulu)</li><li>Rapid re-sale at same or lower price</li></ul></td>
+      <td><ul class="cell-list"><li>FinCEN GTO compliance — mandatory BO disclosure for all-cash purchases ≥$300K in covered markets</li><li>Title company AML program</li><li>Deed-of-trust / mortgage lender BSA compliance</li><li>Real estate attorney/agent SAR filing obligation (proposed FinCEN rule 2024)</li></ul></td>
+      <td><ul class="cell-list"><li>BO matches or is associated with a designated individual</li><li>GTO threshold met with LLC purchaser and no BO disclosure (applies in FinCEN GTO-covered markets; see current GTO for applicable jurisdictions)</li><li>Linked to known narco or corruption proceeds investigation</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN (covered institutions)</li><li>FinCEN GTO mandatory reporting</li><li>DOJ/FBI task force referral</li><li>IRS-CI referral for tax evasion nexus</li></ul></td>
+      <td>BSA / FinCEN GTO (31 USC §5326) · IEEPA / OFAC for sanctioned BO · 18 USC §1956 · Proposed FinCEN real estate AML rule (2024 ANPRM)</td>
+    </tr>
+    <tr>
+      <td>Luxury Goods / Art / Collectibles</td>
+      <td>ML / Sanctions Evasion / CPF</td>
+      <td>High-value art used as anonymous store of value; anonymous auction sales; shell company purchases of paintings, sculpture, watches, jewelry; DPRK art export proceeds; freeport storage (Geneva, Singapore, Luxembourg) as indefinite layering vehicle; antiquities trafficking for TF</td>
+      <td><ul class="cell-list"><li>Freeport-domiciled sale/purchase with no title chain — may present elevated opacity risk</li><li>Auction purchase by anonymous shell bidder</li><li>Rapid re-sale post-acquisition without market-based justification</li><li>Consignor linked to sanctioned jurisdiction</li><li>Artwork origin documentation absent or falsified</li></ul></td>
+      <td><ul class="cell-list"><li>Art dealer/auction house AML program (AMLA 2020 coverage)</li><li>BO disclosure for purchases &gt;$10K (pending FinCEN rulemaking)</li><li>Provenance verification requirement</li><li>Freeport operator due diligence protocols</li></ul></td>
+      <td><ul class="cell-list"><li>Sanctioned consignor/buyer identified</li><li>CITES violation (antiquities)</li><li>Freeport-stored asset linked to active forfeiture investigation</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN (post-AMLA 2020 coverage of art market)</li><li>OFAC voluntary self-disclosure for sanctions exposure</li><li>HSI referral for cultural property / antiquities trafficking</li></ul></td>
+      <td>AMLA 2020 (31 USC §5312 expanded) · IEEPA / OFAC SDN list · National Stolen Property Act 18 USC §2314 · UNESCO 1970 Convention / CPIA</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── V. TBML ────────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">V. Trade-Based Money Laundering (TBML) &amp; Proliferation Finance</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Trade Finance / Letters of Credit</td>
+      <td>TBML / CPF / Sanctions Evasion</td>
+      <td>Over/under-invoicing to transfer value across borders; phantom shipments; multiple invoicing for single shipment; commodity diversion (oil, dual-use goods) to sanctioned end-user; Iran/Russia/DPRK procurement networks using front companies; AECA/ITAR violations via commodity smuggling</td>
+      <td><ul class="cell-list"><li>Material deviation from established commodity pricing benchmarks (cross-referenced against Panjiva, UN Comtrade)</li><li>Country of origin inconsistent with commodity type or routing</li><li>Consignee is known front company or newly established entity</li><li>Payment terms unusually favorable (advance payment to high-risk jurisdiction)</li><li>Dual-use goods with civil stated end-use but military-grade specifications</li></ul></td>
+      <td><ul class="cell-list"><li>Trade-Based ML Risk Assessment per FATF Guidance</li><li>Dual invoice cross-check (shipping docs vs. L/C vs. buyer invoice)</li><li>Commodity pricing database verification</li><li>End-User Certificate (EUC) verification for dual-use exports</li><li>SWIFT MT700 screening for sanctioned entity / jurisdiction</li></ul></td>
+      <td><ul class="cell-list"><li>Shipment routed through Iran/Russia/DPRK-nexus transshipment hub as identified through public reporting or screening indicators</li><li>Dual-use goods detected without export license</li><li>Invoice manipulation — material variance from pricing benchmark confirmed, consistent with potential diversion typology</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>BIS Office of Export Enforcement (OEE) referral</li><li>OFAC referral for sanctions nexus</li><li>DOJ NSD Counterproliferation Section referral</li></ul></td>
+      <td>AECA 22 USC §2778 · EAR 15 CFR §730-774 · IEEPA 50 USC §1705 · FATF TBML Guidance (2020) · UN SC Resolution 2094 (DPRK)</td>
+    </tr>
+    <tr>
+      <td>Free Trade Zones (FTZs)</td>
+      <td>Sanctions Evasion / TBML / CPF</td>
+      <td>Re-export and transshipment to sanctioned jurisdictions without origin disclosure; dual-use goods transit under civil commercial cover; commingling of sanctioned and licit cargo; document falsification; DPRK coal/oil transshipment typology; Russia technology procurement via UAE/Turkey FTZs post-2022</td>
+      <td><ul class="cell-list"><li>Consignee is FTZ-based trading company with no operational history</li><li>Final destination country not disclosed or differs from shipping manifest</li><li>Cargo type inconsistent with declared end-user industry</li><li>Rapid re-export within 48–72 hours of arrival in FTZ without commercial justification</li></ul></td>
+      <td><ul class="cell-list"><li>FTZ operator AML/CFT controls (FATF Rec. 25 for FTZs)</li><li>Customs authority AIS/AES data analytics for transshipment anomalies</li><li>Financial institution refusal to finance FTZ-based transactions without full supply chain transparency</li><li>Coordinated Customs-FIU information sharing</li></ul></td>
+      <td><ul class="cell-list"><li>Cargo destined for Russia/Iran/DPRK as identified through public reporting or screening indicators</li><li>Dual-use goods without export license transiting FTZ</li><li>FTZ operator linked to prior enforcement action</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN for financial institutions financing the trade</li><li>BIS/OEE referral</li><li>CBP / HSI referral</li><li>FinCEN FTZ advisory engagement</li></ul></td>
+      <td>EAR 15 CFR Part 736 · IEEPA · 19 USC §1595a (CBP seizure authority) · FATF Guidance on FTZ risks</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VI. HAWALA ─────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VI. Informal Value Transfer &amp; Hawala</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Hawala / IVTS / Hundi</td>
+      <td>TF / Narco / ML</td>
+      <td>Offsetting settlement across jurisdictions without physical currency movement; TF via hawala to avoid SWIFT-monitored channels; diaspora remittance networks exploited by designated groups (Hamas, Hezbollah, Al-Shabaab); narco proceeds repatriation via peso exchange / black market equivalent</td>
+      <td><ul class="cell-list"><li>Customer receiving large hawala transfers with no documented income source</li><li>Correspondent MSB lacks FinCEN registration</li><li>Transactions to/from jurisdictions commonly associated with IVTS activity</li><li>No paper trail beyond informal ledger</li><li>Settlement via gold, real property, or commodity</li></ul></td>
+      <td><ul class="cell-list"><li>MSB KYC and registration verification</li><li>Geographic destination risk tiering</li><li>Cross-border wire monitoring for hawala-equivalent patterns</li><li>CTR and SAR obligations for hawala operators registered as MSBs</li><li>FinCEN Guidance FIN-2010-G004 on IVTS compliance</li></ul></td>
+      <td><ul class="cell-list"><li>Hawaldar linked to TF nexus</li><li>Transfers to OFAC-designated jurisdiction without license</li><li>Pattern consistent with narco repatriation typology</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN</li><li>FBI JTTF / TFOS referral for TF nexus</li><li>DEA referral for narco proceeds repatriation</li><li>OFAC referral if designated-entity funding suspected</li></ul></td>
+      <td>BSA 31 USC §5330 (MSB registration) · 18 USC §1960 (unlicensed MSB) · 18 USC §2339B (material support to FTO) · FATF Recommendation 14</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VII. CASINOS ───────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VII. Casinos &amp; Gaming</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Land-Based Casino</td>
+      <td>ML / Narco / Corruption</td>
+      <td>Chip-washing (buy chips with cash, gamble minimally relative to buy-in size, cash out check); currency exchange manipulation; VIP junket programs used for capital flight and organized criminal typologies reported in public enforcement actions; casino cage used as quasi-bank for narco principals; structured cash transactions</td>
+      <td><ul class="cell-list"><li>Large cash buy-in followed by minimal play relative to buy-in size then cash-out</li><li>Third-party chip purchase on behalf of undisclosed principal</li><li>Customer travels internationally specifically for single casino visit</li><li>Multiple cash transactions just below $10K threshold</li><li>VIP junket operator with opaque BO structure</li></ul></td>
+      <td><ul class="cell-list"><li>Casino BSA AML program (31 CFR §1021)</li><li>CTR for cash transactions &gt;$10K</li><li>SAR for suspicious transactions ≥$5K</li><li>Player due diligence (PDC) for high-value players</li><li>Junket operator EDD with BO penetration</li></ul></td>
+      <td><ul class="cell-list"><li>Chip-washing pattern confirmed by surveillance/play analysis</li><li>Structuring below CTR threshold detected</li><li>Customer linked to organized crime or narco network</li></ul></td>
+      <td><ul class="cell-list"><li>CTR → FinCEN</li><li>SAR → FinCEN</li><li>FBI/DEA referral</li><li>State gaming commission referral</li></ul></td>
+      <td>BSA 31 CFR §1021 · 18 USC §1956 · FinCEN Casino Advisory FIN-2014-A002</td>
+    </tr>
+    <tr>
+      <td>Online Gaming / iGaming Platform</td>
+      <td>ML / TF</td>
+      <td>Account-to-account transfer of gambling credits for value transfer; bonus abuse for ML cycling; use of gaming currency as informal exchange medium; unlicensed offshore platform as conduit for TF without AML controls; skin betting markets for ML</td>
+      <td><ul class="cell-list"><li>Account funded then immediately withdrawn without meaningful play</li><li>Multiple accounts linked to same BO with cross-account transfers</li><li>Jurisdictional anomaly: player IP vs. payment method origin</li><li>High-value items sold outside platform for fiat</li><li>No KYC at onboarding on offshore platform</li></ul></td>
+      <td><ul class="cell-list"><li>KYC at onboarding and for withdrawals &gt;$2K</li><li>Payment method verification matching</li><li>Play pattern behavioral analytics</li><li>Licensing jurisdiction AML requirement compliance</li><li>Correspondent banking restrictions on unlicensed gambling platforms</li></ul></td>
+      <td><ul class="cell-list"><li>Platform unregistered in any FATF-compliant jurisdiction</li><li>Transfer pattern inconsistent with gaming behavior</li><li>Player linked to TF investigation</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN for US-licensed platforms</li><li>FBI Cyber Division for offshore unlicensed platforms</li><li>FinCEN referral for unlicensed gaming MSB</li></ul></td>
+      <td>UIGEA 31 USC §5362 · 18 USC §1955 (illegal gambling) · BSA for licensed platforms · FATF Recommendation 22</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── VIII. INSURANCE ────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">VIII. Insurance &amp; Financial Products</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Life Insurance / Annuities</td>
+      <td>ML / Sanctions Evasion</td>
+      <td>Premium financing with illicit funds then early surrender for clean payout; policy assignment to third party for value transfer; variable annuity churning; use of life insurance proceeds by sanctioned PEPs; bearer policy instruments in non-FATF-compliant jurisdictions</td>
+      <td><ul class="cell-list"><li>Single large premium payment followed by early surrender within 12 months</li><li>Premium funded by third party with no insurable interest</li><li>Policy assigned to undisclosed third party shortly after issue</li><li>Beneficiary domiciled in sanctioned jurisdiction</li><li>Customer resistance to source-of-funds disclosure</li></ul></td>
+      <td><ul class="cell-list"><li>BSA AML program for insurance companies (proposed/evolving regulatory framework — FinCEN rule proposed 2014, re-proposed 2024; not yet final)</li><li>SAR filing obligation for suspicious transactions</li><li>Beneficiary screening vs. OFAC SDN</li><li>Source-of-funds verification for single premium &gt;$10K</li><li>Early surrender red flag monitoring</li></ul></td>
+      <td><ul class="cell-list"><li>Beneficiary SDN match</li><li>Early surrender within 6 months of single premium without legitimate financial explanation</li><li>Policy assignment to unknown third party without explanation</li></ul></td>
+      <td><ul class="cell-list"><li>SAR → FinCEN (mandatory for covered insurance companies)</li><li>OFAC blocking and reporting for SDN beneficiary</li><li>State insurance regulator referral</li></ul></td>
+      <td>BSA (proposed insurance AML rule) · OFAC 31 CFR §501 · 18 USC §1956 · FATF Recommendation 26</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ── IX. MSBs ───────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-header">IX. Money Services Businesses &amp; Remittance</div>
+  <div class="matrix-wrap">
+  <table>
+    <thead><tr><th>Node Type</th><th>Threat Vector(s)</th><th>Abuse Mode</th><th>Red Flags / Indicators</th><th>Controls</th><th>Escalation Triggers</th><th>Reporting Pathway</th><th>Authority Basis</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>MSB / Currency Exchange / Remittance</td>
+      <td>Narco / TF / ML / Sanctions Evasion</td>
+      <td>Bulk cash remittance for narco proceeds repatriation; structured transactions across MSB network; MSB used as layering node for drug trafficking organizations (DTOs); unlicensed remittance to sanctioned jurisdictions (Cuba, Iran, North Korea); currency exchange manipulation for capital flight</td>
+      <td><ul class="cell-list"><li>High-volume remittance to single high-risk destination</li><li>Multiple senders, single recipient — inconsistent with expected remittance behavior</li><li>MSB agent operating without state license</li><li>Exchange rate offered significantly outside market rate</li><li>Customer conducting multiple transactions in single day across multiple agents</li></ul></td>
+      <td><ul class="cell-list"><li>FinCEN MSB registration and state licensing verification</li><li>Agent monitoring program</li><li>CTR for cash &gt;$10K</li><li>SAR for transactions ≥$2K (31 CFR §1022.320)</li><li>Destination country risk-tiering with enhanced monitoring</li></ul></td>
+      <td><ul class="cell-list"><li>Remittance to OFAC-sanctioned jurisdiction</li><li>Structuring pattern across agent network detected</li><li>MSB agent unlicensed in operating state</li></ul></td>
+      <td><ul class="cell-list"><li>CTR and SAR → FinCEN</li><li>FinCEN enforcement for unlicensed MSB</li><li>DEA referral for remittance patterns associated with jurisdictions presenting higher narcotics trafficking risk</li><li>OFAC for sanctioned-destination transactions</li></ul></td>
+      <td>BSA 31 USC §5330 · 18 USC §1960 · 31 CFR §1022 · OFAC MSB Guidance · FATF Recommendation 14</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</div><!-- end matrix-content -->
+
+<div class="footer">
+  <strong>SOURCE BASIS:</strong> BSA/FinCEN regulations; FATF Recommendations (2012, updated 2023); OFAC compliance frameworks; BIS/EAR export control guidance; AMLA 2020; EU AMLD6; UN Security Council Resolutions; DOJ Crypto Enforcement Framework.<br>
+  <strong>DISCLAIMER:</strong> This document is an unclassified open-source policy reference. It does not constitute legal advice. Version 1.1 (Red-Team Revised), March 2026.
+</div>
+
+</body>
+</html>
