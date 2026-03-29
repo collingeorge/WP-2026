@@ -1,0 +1,109 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it as below."
+type: dataset
+
+title: "WP-2026: Independent Policy Research Series"
+abstract: >
+  A 62-document open-source policy research corpus covering sanctions
+  enforcement law, financial intelligence, competitive statecraft,
+  proliferation finance, counter-narcotics, terrorism financing,
+  multi-domain operations doctrine, fiscal sustainability architecture,
+  and threat analysis. Organized as a modular analytical system governed
+  by a series architecture memo (SAM-01 Rev 3.0) defining exclusive
+  ownership domains, overlap classification thresholds, and series
+  compliance standards. All analysis is based exclusively on publicly
+  available, open-source information following ODNI analytic standards.
+
+authors:
+  - family-names: George
+    given-names: Collin
+    orcid: "https://orcid.org/0009-0007-8162-6839"
+    affiliation: "Center for Competitive Statecraft and Strategic Policy"
+    email: cgeorge@collinbgeorge.com
+
+repository-code: "https://github.com/collingeorge/WP-2026"
+url: "https://collingeorge.github.io/WP-2026"
+license: CC-BY-4.0
+version: "3.0"
+date-released: "2026-03-29"
+
+keywords:
+  - sanctions enforcement
+  - financial intelligence
+  - AML/CFT/CPF
+  - competitive statecraft
+  - economic coercion
+  - proliferation finance
+  - counter-narcotics
+  - terrorism financing
+  - multi-domain operations
+  - fiscal sustainability
+  - IEEPA
+  - OFAC
+  - FinCEN
+  - BIS
+  - open-source policy analysis
+  - ODNI analytic standards
+
+references:
+  - type: software
+    title: "WP-2026-SAM-01: Series Architecture Memo, Revision 3.0"
+    authors:
+      - family-names: George
+        given-names: Collin
+    date-released: "2026-03-29"
+    notes: >
+      Governing architecture document. Defines exclusive ownership domains,
+      overlap classification thresholds, series failure conditions, and
+      compliance standards for all 62 documents in the WP-2026 series.
+      Revision 3.0 adds ownership registrations for TARIFF-01 v9.5,
+      FISCAL-01, and SCORES-01.
+
+  - type: article
+    title: "WP-2026-SIEGE-01: Multi-Channel Financial Denial and Adaptive Illicit Networks"
+    authors:
+      - family-names: George
+        given-names: Collin
+    date-released: "2026-03-29"
+    notes: >
+      Core mechanism paper. Seven-channel financial access disruption
+      framework; Tier A/B/C network classification; cumulative
+      cost-escalation logic; fragmentation governing finding; falsifiable
+      observable indicators. Empirically validated against Lazarus Group
+      in CI-PLATFORM-01.
+
+  - type: article
+    title: "WP-2026-AML-01: AML/CFT/CPF Control Matrix"
+    authors:
+      - family-names: George
+        given-names: Collin
+    date-released: "2026-03-29"
+    notes: >
+      Bank-grade and policy-grade illicit finance node control architecture.
+      9 node categories, 20 node types, 8-column control structure.
+      Three-pass red-team statutory audit completed.
+
+  - type: article
+    title: "WP-2026-FISCAL-01: US Fiscal Sustainability — Baseline, Instruments, and Consolidation Architecture"
+    authors:
+      - family-names: George
+        given-names: Collin
+    date-released: "2026-03-29"
+    notes: >
+      Independent fiscal policy analysis. CBO debt trajectory to 156% GDP
+      by 2055; consolidation requirement of approximately 4.5-5.0% of GDP;
+      multi-instrument analysis with scoring taxonomy. Fiscal capacity
+      prerequisite layer for multi-year enforcement campaign credibility.
+
+  - type: article
+    title: "WP-2026-TARIFF-01: US Tariff Architecture Post-Learning Resources v. Trump"
+    version: "9.5"
+    authors:
+      - family-names: George
+        given-names: Collin
+    date-released: "2026-03-29"
+    notes: >
+      Post-SCOTUS (Feb. 20, 2026) tariff legal authority architecture.
+      Revenue capacity analysis under remaining authorities (AD/CVD,
+      Section 232, Section 301, Section 122). Trade-policy alternatives.
+      Welfare-maximizing tariff calibration per Itskhoki-Mukhin (2025).
