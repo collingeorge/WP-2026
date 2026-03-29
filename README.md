@@ -17,7 +17,7 @@
 
 ## What This Repository Is
 
-WP-2026 is a 59-document open-source policy research corpus covering sanctions enforcement law, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, and threat analysis. It is organized as a modular analytical system: each document owns a defined analytical domain, imports conclusions from other documents by cross-reference rather than restatement, and is governed by a series architecture memo (SAM-01) that defines ownership boundaries, series failure conditions, and analytic compliance standards.
+WP-2026 is a 62-document open-source policy research corpus covering sanctions enforcement law, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, and threat analysis. It is organized as a modular analytical system: each document owns a defined analytical domain, imports conclusions from other documents by cross-reference rather than restatement, and is governed by a series architecture memo (SAM-01) that defines ownership boundaries, series failure conditions, and analytic compliance standards.
 
 The series was produced between January 15 and March 28, 2026. All sources are Tier 1 (U.S. Government, UN bodies, primary legal texts) or Tier 2 (credible policy institutions and commercial data providers) as defined in the series source tier framework. No classified intelligence was used or implied. The OSINT ceiling doctrine, defined in WP-2026-SENI-ARCH-01, governs the boundary between open-source analysis and classified intelligence requirements throughout.
 
@@ -48,7 +48,7 @@ A five-rung state nexus attribution framework with explicit disconfirmation crit
 A deployment-constrained, litigation-resilient analytic framework establishing why sequential designation fails and simultaneous seven-channel pressure is analytically different. Defines Tier A/B/C network classification, cumulative cost-escalation logic, the fragmentation governing finding, and falsifiable observable indicators. Validated against the Lazarus Group as the hardest boundary condition in [CI-PLATFORM-01](02-core-frameworks/WP-2026-CI-PLATFORM-01.pdf).
 
 **3. The PERSIST Architecture ([PERSIST-01](02-core-frameworks/WP-2026-PERSIST-01.pdf) / [TARIFF-01](03-strategic-architecture/WP-2026-TARIFF-01.pdf) / [CONTAIN-01](03-strategic-architecture/WP-2026-CONTAIN-01.pdf) / [MAXPRESS-01](03-strategic-architecture/WP-2026-MAXPRESS-01.pdf))**
-A litigation-resilient competitive statecraft framework with six authority rails, tiered escalation ladder, four-tier standards of proof, neutral designation-selection rule, guardrail index, and the Coalition Conflict Resolution Protocol (CCRP).
+A litigation-resilient competitive statecraft framework with six authority rails, tiered escalation ladder, four-tier standards of proof, neutral designation-selection rule, guardrail index, and the Coalition Conflict Resolution Protocol (CCRP). TARIFF-01 v9.5 addresses the post-*Learning Resources v. Trump* (Feb. 20, 2026) authority architecture; see also FISCAL-01 for the fiscal sustainability architecture that governs enforcement campaign credibility over multi-year timelines.
 
 **4. The Strategic Enforcement Node Index ([SENI-01](04-applied-enforcement/WP-2026-SENI-01.pdf) + [sub-series](05-seni-system/))**
 A 374-node global sanctions enforcement targeting register with an 11-document analytical sub-series mapping the Russian nuclear fuel cycle across three analytical layers — intelligence estimate, enforcement playbook, and strategic model — and a georeferenced [interactive map](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) covering 25 threat networks.
@@ -88,6 +88,7 @@ This path provides a complete node-level control architecture aligned with BSA, 
 |----------|----------|
 | [WP-2026-AML-01.pdf](01-methodology/WP-2026-AML-01.pdf) | Node risk framework — 9 categories, 20 node types, 8-column control matrix |
 | [WP-2026-SENI-02.pdf](01-methodology/WP-2026-SENI-02.pdf) | Named-entity enforcement index — 65+ institutions, public enforcement record |
+| [WP-2026-SCORES-01.pdf](01-methodology/WP-2026-SCORES-01.pdf) | Official fiscal score compilation — ★/◆/◇ classification taxonomy |
 | [WP-2026-SENI-01.pdf](04-applied-enforcement/WP-2026-SENI-01.pdf) | 374-node global enforcement targeting register |
 | [WP-2026-ESCALATE-01.pdf](04-applied-enforcement/WP-2026-ESCALATE-01.pdf) | Graduated enforcement decision architecture — 15 parts |
 
@@ -128,7 +129,7 @@ This path supports peer assessment of methodological rigor, original contributio
 
 ### PhD Admissions · Academic Reviewers
 
-This path demonstrates sustained systematic analytical production: 59 documents across 10 analytical domains, produced between January 15 and March 28, 2026, governed by an explicit series architecture memo, compliant with ODNI analytic standards, and validated through three documented red-team audit passes. GitHub commit history provides timestamped provenance for the entire production chain.
+This path demonstrates sustained systematic analytical production: 62 documents across 10 analytical domains, produced between January 15 and March 28, 2026, governed by an explicit series architecture memo, compliant with ODNI analytic standards, and validated through three documented red-team audit passes. GitHub commit history provides timestamped provenance for the entire production chain.
 
 | Document | Function |
 |----------|----------|
@@ -139,7 +140,7 @@ This path demonstrates sustained systematic analytical production: 59 documents 
 
 ### Government Employers · Recruiters
 
-This repository was produced by a single independent researcher between January 15 and March 28, 2026 — 59 documents across sanctions enforcement, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, and threat analysis. The work is unclassified, open-source, and institutionally independent. It reflects analytical capability consistent with senior policy research positions at Treasury, State, ODNI, and equivalent allied institutions.
+This repository was produced by a single independent researcher between January 15 and March 28, 2026 — 62 documents across sanctions enforcement, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, and threat analysis. The work is unclassified, open-source, and institutionally independent. It reflects analytical capability consistent with senior policy research positions at Treasury, State, ODNI, and equivalent allied institutions.
 
 GitHub commit history provides full timestamped provenance: https://github.com/collingeorge/WP-2026/commits/main
 
@@ -150,9 +151,9 @@ GitHub commit history provides full timestamped provenance: https://github.com/c
 ```
 WP-2026/
 ├── 00-governance/              SAM-01, StyleGuide v3.0, Verbiage Guide v2.2, Authority Index, CI Assessments
-├── 01-methodology/             ATTRIBUTION-01, NEXUS-01, AML-01, SENI-02
+├── 01-methodology/             ATTRIBUTION-01, NEXUS-01, AML-01, SENI-02, SCORES-01
 ├── 02-core-frameworks/         PERSIST-01, SIEGE-01, UNIFIED-01, EVASION-01, COUNTERINTEL-01, CI-PLATFORM-01
-├── 03-strategic-architecture/  CONTAIN-01, MAXPRESS-01, TARIFF-01, BRI-01, EST-01, MAXPRESS-IMMIG-01
+├── 03-strategic-architecture/  CONTAIN-01, MAXPRESS-01, TARIFF-01 v9.5, BRI-01, EST-01, FISCAL-01, MAXPRESS-IMMIG-01
 ├── 04-applied-enforcement/     ESCALATE-01, SHIELD-01, SENI-01, AXIS-01, INFRA-01
 ├── 05-seni-system/             SENI sub-series — 11 documents across L1/L2/L3 architecture
 ├── 06-threat-analysis/         HORMUZ-01/02, Iran Nuclear, Iran WMD, BW Assessment
@@ -213,6 +214,12 @@ SAM-01 (governs all — ownership domains, failure conditions, compliance standa
     ├── HORMUZ-01 ──► HORMUZ-02 (integrated Hormuz campaign architecture)
     │       └── Iran Nuclear Assessment ──► Iran WMD Assessment ──► BW Assessment
     │
+    ├── TARIFF-01 v9.5 (post-Learning Resources authority architecture; revenue capacity)
+    │       └── FISCAL-01 (US fiscal sustainability — baseline, consolidation architecture)
+    │               └── [reads into ESCALATE-01 throughput constraints and RESILIENCE-01]
+    │
+    ├── SCORES-01 (official fiscal score compilation — reference foundation for TARIFF-01 and FISCAL-01)
+    │
     ├── BRI-01 v4.1 (grand strategy capstone)
     │       └── EST-01 (IC-style strategic estimate derivative)
     │
@@ -248,21 +255,23 @@ The following order reflects dependency requirements, not mandatory reading sequ
 | 17 | [WP-2026-TARIFF-01.pdf](03-strategic-architecture/WP-2026-TARIFF-01.pdf) | 03-strategic-architecture | Tariff enforcement architecture |
 | 18 | [WP-2026-BRI-01.pdf](03-strategic-architecture/WP-2026-BRI-01.pdf) | 03-strategic-architecture | Grand strategy capstone |
 | 19 | [WP-2026-EST-01.pdf](03-strategic-architecture/WP-2026-EST-01.pdf) | 03-strategic-architecture | IC-style strategic estimate |
-| 20 | [WP-2026-RESILIENCE-01.pdf](08-resilience-foundation/WP-2026-RESILIENCE-01.pdf) | 08-resilience-foundation | Domestic capacity prerequisite layer |
-| 21 | [WP-2026-ESCALATE-01.pdf](04-applied-enforcement/WP-2026-ESCALATE-01.pdf) | 04-applied-enforcement | Graduated enforcement decision architecture |
-| 22 | [WP-2026-SHIELD-01-V7-PUBLISH.pdf](04-applied-enforcement/WP-2026-SHIELD-01-V7-PUBLISH.pdf) | 04-applied-enforcement | PRC-facilitated network enforcement |
-| 23 | [WP-2026-SENI-01.pdf](04-applied-enforcement/WP-2026-SENI-01.pdf) | 04-applied-enforcement | 374-node enforcement targeting register |
-| 24 | [WP-2026-AXIS-01.pdf](04-applied-enforcement/WP-2026-AXIS-01.pdf) | 04-applied-enforcement | Russia-China axis assessment |
-| 25 | [WP-2026-INFRA-01.pdf](04-applied-enforcement/WP-2026-INFRA-01.pdf) | 04-applied-enforcement | Infrastructure enforcement framework |
-| 26 | [05-seni-system/](05-seni-system/) | 05-seni-system | SENI sub-series — see folder README |
-| 27 | [WP-2026-HORMUZ-01.pdf](06-threat-analysis/WP-2026-HORMUZ-01.pdf) | 06-threat-analysis | Hormuz regional posture assessment |
-| 28 | [WP-2026-HORMUZ-02.pdf](06-threat-analysis/WP-2026-HORMUZ-02.pdf) | 06-threat-analysis | Integrated Hormuz campaign architecture |
-| 29 | [WP-2026-IRAN-NUCLEAR-ASSESSMENT.pdf](06-threat-analysis/WP-2026-IRAN-NUCLEAR-ASSESSMENT.pdf) | 06-threat-analysis | Post-strike nuclear assessment |
-| 30 | [WP-2026-IRAN-WMD-ASSESSMENT.pdf](06-threat-analysis/WP-2026-IRAN-WMD-ASSESSMENT.pdf) | 06-threat-analysis | Iran WMD program assessment |
-| 31 | [BW-Assessment-SUBMISSION-FINAL.pdf](06-threat-analysis/BW-Assessment-SUBMISSION-FINAL.pdf) | 06-threat-analysis | State BW risk assessment |
-| 32 | [WP-2026-MDO-01-v3.pdf](07-visualization/WP-2026-MDO-01-v3.pdf) | 07-visualization | Multi-domain operations doctrine |
-| 33 | [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | 07-visualization | Interactive 374-node enforcement map |
-| 34 | [WP-2026-MDO-01-console.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html) | 07-visualization | MDO-01 interactive decision console |
+| 20 | [WP-2026-SCORES-01.pdf](01-methodology/WP-2026-SCORES-01.pdf) | 01-methodology | Official fiscal score compilation — reference foundation for FISCAL-01 and TARIFF-01 |
+| 21 | [WP-2026-FISCAL-01.pdf](03-strategic-architecture/WP-2026-FISCAL-01.pdf) | 03-strategic-architecture | US fiscal sustainability — baseline, consolidation architecture, instrument analysis |
+| 22 | [WP-2026-RESILIENCE-01.pdf](08-resilience-foundation/WP-2026-RESILIENCE-01.pdf) | 08-resilience-foundation | Domestic capacity prerequisite layer |
+| 23 | [WP-2026-ESCALATE-01.pdf](04-applied-enforcement/WP-2026-ESCALATE-01.pdf) | 04-applied-enforcement | Graduated enforcement decision architecture |
+| 24 | [WP-2026-SHIELD-01-V7-PUBLISH.pdf](04-applied-enforcement/WP-2026-SHIELD-01-V7-PUBLISH.pdf) | 04-applied-enforcement | PRC-facilitated network enforcement |
+| 25 | [WP-2026-SENI-01.pdf](04-applied-enforcement/WP-2026-SENI-01.pdf) | 04-applied-enforcement | 374-node enforcement targeting register |
+| 26 | [WP-2026-AXIS-01.pdf](04-applied-enforcement/WP-2026-AXIS-01.pdf) | 04-applied-enforcement | Russia-China axis assessment |
+| 27 | [WP-2026-INFRA-01.pdf](04-applied-enforcement/WP-2026-INFRA-01.pdf) | 04-applied-enforcement | Infrastructure enforcement framework |
+| 28 | [05-seni-system/](05-seni-system/) | 05-seni-system | SENI sub-series — see folder README |
+| 29 | [WP-2026-HORMUZ-01.pdf](06-threat-analysis/WP-2026-HORMUZ-01.pdf) | 06-threat-analysis | Hormuz regional posture assessment |
+| 30 | [WP-2026-HORMUZ-02.pdf](06-threat-analysis/WP-2026-HORMUZ-02.pdf) | 06-threat-analysis | Integrated Hormuz campaign architecture |
+| 31 | [WP-2026-IRAN-NUCLEAR-ASSESSMENT.pdf](06-threat-analysis/WP-2026-IRAN-NUCLEAR-ASSESSMENT.pdf) | 06-threat-analysis | Post-strike nuclear assessment |
+| 32 | [WP-2026-IRAN-WMD-ASSESSMENT.pdf](06-threat-analysis/WP-2026-IRAN-WMD-ASSESSMENT.pdf) | 06-threat-analysis | Iran WMD program assessment |
+| 33 | [BW-Assessment-SUBMISSION-FINAL.pdf](06-threat-analysis/BW-Assessment-SUBMISSION-FINAL.pdf) | 06-threat-analysis | State BW risk assessment |
+| 34 | [WP-2026-MDO-01-v3.pdf](07-visualization/WP-2026-MDO-01-v3.pdf) | 07-visualization | Multi-domain operations doctrine |
+| 35 | [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | 07-visualization | Interactive 374-node enforcement map |
+| 36 | [WP-2026-MDO-01-console.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html) | 07-visualization | MDO-01 interactive decision console |
 
 ---
 

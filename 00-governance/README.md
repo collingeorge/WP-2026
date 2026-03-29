@@ -1,6 +1,6 @@
-# 00-governance — Series Architecture and Analytic Standards
+# 00-governance
 
-This folder contains the governing documents for the WP-2026 series. Every paper in the repository is subordinate to the documents here. Reading order for the series begins in this folder.
+Governing documents for the WP-2026 series. Documents in this folder define the analytical standards, ownership architecture, and compliance requirements that apply to all series papers. Reading these documents first is required for correct interpretation of the series.
 
 ---
 
@@ -8,78 +8,58 @@ This folder contains the governing documents for the WP-2026 series. Every paper
 
 | Document | Function |
 |----------|----------|
-| [WP-2026-SAM-01.pdf](WP-2026-SAM-01.pdf) | Series Architecture Memo — governing document for all WP-2026 papers |
-| [WP-2026-SAM-01.docx](WP-2026-SAM-01.docx) | Editable source |
-| [WP-2026-StyleGuide-v3.pdf](WP-2026-StyleGuide-v3.pdf) | Analytic register, typography, confidence labeling, prohibited language |
-| [WP-2026-StyleGuide-v3.docx](WP-2026-StyleGuide-v3.docx) | Editable source |
-| [WP-2026-Verbiage-Guide-v2.2.pdf](WP-2026-Verbiage-Guide-v2.2.pdf) | Approved verb taxonomy, drafting doctrine, confidence lexicon |
-| [WP-2026-Verbiage-Guide-v2.2.docx](WP-2026-Verbiage-Guide-v2.2.docx) | Editable source |
-| [WP-2026-Authority-Index.pdf](WP-2026-Authority-Index.pdf) | Master cross-reference index of all legal authorities cited across the series |
-| [WP-2026-CI-Assessment-v3.pdf](WP-2026-CI-Assessment-v3.pdf) | Series-level counterintelligence exposure assessment |
-| [WP-2026-CI-Assessment-v3.docx](WP-2026-CI-Assessment-v3.docx) | Editable source |
-| [WP-2026-CI-Assessment-02-final.pdf](WP-2026-CI-Assessment-02-final.pdf) | CI assessment for ESCALATE-01 and RESILIENCE-01 enforcement architecture layer |
-| [WP-2026-CI-Assessment-02-final.docx](WP-2026-CI-Assessment-02-final.docx) | Editable source |
-| [README-standards.md](README-standards.md) | Production standards reference for series contributors |
+| [WP-2026-SAM-01.pdf](WP-2026-SAM-01.pdf) | Series Architecture Memo Rev 3.0 — governing architecture document; ownership domains, failure conditions, compliance standard |
+| [WP-2026-SAM-01.docx](WP-2026-SAM-01.docx) | SAM-01 editable source |
+| [WP-2026-StyleGuide-v3.pdf](WP-2026-StyleGuide-v3.pdf) | Style Guide v3.0 — typography, palette, analytic register, confidence labeling |
+| [WP-2026-StyleGuide-v3.docx](WP-2026-StyleGuide-v3.docx) | Style Guide editable source |
+| [WP-2026-Verbiage-Guide-v2.2.pdf](WP-2026-Verbiage-Guide-v2.2.pdf) | Verbiage Guide v2.2 — governing analytic drafting doctrine; approved and prohibited language |
+| [WP-2026-Verbiage-Guide-v2.2.docx](WP-2026-Verbiage-Guide-v2.2.docx) | Verbiage Guide editable source |
+| [WP-2026-Authority-Index.pdf](WP-2026-Authority-Index.pdf) | Complete index of statutory and regulatory authorities cited across the series |
+| [WP-2026-CI-Assessment-v3.pdf](WP-2026-CI-Assessment-v3.pdf) | Series-level CI assessment v3.0 |
+| [WP-2026-CI-Assessment-v3.docx](WP-2026-CI-Assessment-v3.docx) | CI Assessment v3.0 editable source |
+| [WP-2026-CI-Assessment-02-final.pdf](WP-2026-CI-Assessment-02-final.pdf) | CI Assessment 02 — ESCALATE-01 and RESILIENCE-01 adversary utility ratings and system-level interaction effects |
+| [WP-2026-CI-Assessment-02-final.docx](WP-2026-CI-Assessment-02-final.docx) | CI Assessment 02 editable source |
 
 ---
 
-## SAM-01 — Series Architecture Memo (Rev 2.0)
+## Document Summaries
 
-SAM-01 is not a policy analysis paper. It is the architectural enforcement document that defines how the series functions as a system. Compliance with SAM-01 is required for all WP-2026 papers.
+### SAM-01 Rev 3.0 — Series Architecture Memo
+**Current version: Revision 3.0 — supersedes Rev 2.0 (March 2026).**
+
+The governing architecture document for the WP-2026 series. Not a policy analysis paper. Its claims are architectural, not empirical. Compliance is mandatory for all series documents.
 
 SAM-01 defines:
+- **Part II** — Architecture enforcement rule and compliance standard
+- **Part III** — Overlap classification (Category 1 Healthy / Category 2 Redundant / Category 3 Boundary Risk) with resolution thresholds
+- **Part IV** — Exclusive ownership domains for all series documents
+- **Part V** — UNIFIED-01 boundary restrictions and prohibited content list
+- **Part VI** — Series failure conditions
+- **Part VII** — SIEGE-01 ↔ UNIFIED-01 boundary rule
+- **Part VIII** — Overlap matrix by document pair
+- **Part X** — Required edits with specific insertions
 
-- **Exclusive ownership domains** for every series document — the analytical questions each paper owns and is the authoritative source for
-- **The architecture enforcement rule** — a paper that introduces analytical claims within another document's ownership domain without explicit cross-reference is non-compliant and requires revision
-- **Prohibited content lists** — explicit per-document lists of what each paper may not independently develop
-- **Series failure conditions** — the four conditions under which the series loses internal coherence and external credibility as a system
-- **Overlap resolution categories** — Category 1 (healthy differentiation), Category 2 (redundant overlap requiring deference), Category 3 (boundary risk requiring immediate resolution)
-- **Cross-reference architecture** — how conclusions flow between documents without duplication
+**Rev 3.0 additions** (March 2026): Three new ownership domain registrations — TARIFF-01 v9.5, FISCAL-01, and SCORES-01. Three new overlap matrix entries (TARIFF-01 ↔ PERSIST-01; FISCAL-01 ↔ RESILIENCE-01; FISCAL-01 ↔ ESCALATE-01). TARIFF-01 supersession note. Document count update: 59 → 62.
 
-Rev 2.0 adds: architecture enforcement rule with compliance standard; strengthened UNIFIED-01 boundary with prohibited content list; series failure conditions section; elevated NEXUS-01 dependency requirement for Tier B/C networks with PRC exposure; and overlap resolution threshold definition.
+### Style Guide v3.0
+Governs typography, color palette (NAVY/GOLD/SLATE/LTNAVY/WARM), KJ block formatting, confidence label conventions, notice block standards, and table architecture for all series papers. All documents must be compliant before publication.
 
----
+### Verbiage Guide v2.2
+21-item pre-submission sweep checklist. Defines approved probability terms (ODNI convention), prohibited language (prosecutorial certainty, emotive inflation, advocacy language), required hedging patterns, and analytic register standards. All documents must pass a Verbiage Guide sweep before publication.
 
-## Style Guide v3.0
+### Authority Index
+Master cross-reference of all statutory and regulatory authorities cited across the series — U.S. statutes, executive orders, regulations, UN Security Council resolutions, FATF recommendations, and case law.
 
-Governs analytic register, typography, palette, confidence labeling, and prohibited language for all series papers. Key elements:
-
-- **NAVY/GOLD/SLATE/LTNAVY/WARM palette** — consistent visual identity across all documents
-- **Dual-axis confidence labels** — probability assessment (HIGH/MODERATE/LOW) paired with confidence rating, per ODNI standards
-- **KJ blocks** — Key Judgment formatting with GOLD confidence labels
-- **Prohibited language list** — removes prosecutorial certainty, emotive inflation, and advocacy language from all papers
-
----
-
-## Verbiage Guide v2.2
-
-Governing analytic drafting doctrine covering approved and prohibited verb taxonomy, confidence lexicon, attribution language standards, and hedging requirements. All series papers are compliant with v2.2.
+### CI Assessments
+Series-level and document-specific counterintelligence assessments evaluating adversary utility of series analytical products. CI Assessment v3.0 covers the full series. CI Assessment 02 covers ESCALATE-01 and RESILIENCE-01 specifically, including adversary utility ratings and system-level interaction effects.
 
 ---
 
-## Authority Index
+## Series Position
 
-Master cross-reference index of all legal authorities cited across the WP-2026 series, organized by authority type: U.S. Executive Orders, U.S. Statutes, U.S. Regulations, U.S. Case Law, International Standards, and UN Security Council Resolutions. The index maps each authority to the series documents that cite it and the analytical context in which it appears.
-
----
-
-## CI Assessments
-
-Two counterintelligence exposure assessments are maintained at the series level:
-
-**CI Assessment v3.0** covers the series as a whole — adversary utility analysis, legal exposure assessment, OSINT ceiling validation, and series-wide risk posture.
-
-**CI Assessment-02** covers the enforcement architecture and resilience foundation layer specifically — ESCALATE-01 and RESILIENCE-01 adversary utility ratings, legal analysis, and system-level interaction effects.
-
----
-
-## Upstream / Downstream
-
-**Upstream:** None. This folder governs everything.
-
-**Downstream:** All folders and all documents in the repository. SAM-01 must be read before any series paper. StyleGuide v3.0 and Verbiage Guide v2.2 govern analytic register in every document produced under this series.
+This folder governs the entire series. SAM-01 must be read before any other series document. StyleGuide v3.0 and Verbiage Guide v2.2 must be consulted before producing or revising any series document.
 
 ---
 
 *UNCLASSIFIED // OPEN SOURCE // INDEPENDENT POLICY RESEARCH*
-*WP-2026 · Center for Competitive Statecraft and Strategic Policy · Collin George · March 2026*
+*WP-2026 · Center for Competitive Statecraft and Strategic Policy · CC BY 4.0*
