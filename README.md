@@ -17,7 +17,7 @@
 
 ## What This Repository Is
 
-WP-2026 is a 62-document open-source policy research corpus covering sanctions enforcement law, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, and threat analysis. It is organized as a modular analytical system: each document owns a defined analytical domain, imports conclusions from other documents by cross-reference rather than restatement, and is governed by a series architecture memo (SAM-01) that defines ownership boundaries, series failure conditions, and analytic compliance standards.
+WP-2026 is a 62-document open-source policy research corpus covering sanctions enforcement law, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, threat analysis, and CMMC compliance risk assessment. It is organized as a modular analytical system: each document owns a defined analytical domain, imports conclusions from other documents by cross-reference rather than restatement, and is governed by a series architecture memo (SAM-01) that defines ownership boundaries, series failure conditions, and analytic compliance standards.
 
 The series was produced between January 15 and March 28, 2026. All sources are Tier 1 (U.S. Government, UN bodies, primary legal texts) or Tier 2 (credible policy institutions and commercial data providers) as defined in the series source tier framework. No classified intelligence was used or implied. The OSINT ceiling doctrine, defined in WP-2026-SENI-ARCH-01, governs the boundary between open-source analysis and classified intelligence requirements throughout.
 
@@ -79,6 +79,16 @@ All other documents extend or operationalize this core.
 ## Audience Entry Points
 
 Different readers will find different entry points most productive. The following guidance reflects the analytical function of each document cluster.
+
+### Defense Contractors · Compliance Officers · MSPs
+
+This path provides a direct assessment of CMMC Level 2 readiness risk in the Defense Industrial Base, including failure conditions, a structured 90-day remediation model, and evidence requirements for C3PAO assessment. The analytical methodology applied in this paper is the same structured evidence standard governing the full WP-2026 series.
+
+| Document | Function |
+|----------|----------|
+| [WP-2026-CMMC-READINESS-RISK-01.pdf](12-cmmc-compliance/WP-2026-CMMC-READINESS-RISK-01.pdf) | CMMC Level 2 readiness risk assessment — failure drivers, assessment failure conditions, 90-day remediation model, evidence requirements |
+
+For structured readiness diagnostics: [collinbgeorge.com](https://collinbgeorge.com)
 
 ### FinCEN · Treasury · OFAC
 
@@ -162,6 +172,7 @@ WP-2026/
 ├── 09-isr-annexes/             ISR Decision Support Annex, ISR WMD Intelligence Briefing
 ├── 10-under-revision/          CTF-01, CPF-02, ARCH-03 (active — language update in progress)
 ├── 11-archive/                 SIEGE-01 v1, UNIFIED-01 v1 (superseded)
+├── 12-cmmc-compliance/         CMMC Level 2 readiness risk assessment — commercial compliance domain
 └── 99-source-docx/             Working DOCX files — not primary publication artifacts
 ```
 
@@ -225,6 +236,8 @@ SAM-01 (governs all — ownership domains, failure conditions, compliance standa
     │
     ├── MDO-01 v3 + Console (multi-domain operations doctrine — three-track model)
     │
+    ├── CMMC-READINESS-RISK-01 (CMMC Level 2 readiness risk — independent domain, shared methodology)
+    │
     └── 10-under-revision/ (CTF-01 · CPF-02 · ARCH-03 — active, revision in progress)
 ```
 
@@ -272,6 +285,7 @@ The following order reflects dependency requirements, not mandatory reading sequ
 | 34 | [WP-2026-MDO-01-v3.pdf](07-visualization/WP-2026-MDO-01-v3.pdf) | 07-visualization | Multi-domain operations doctrine |
 | 35 | [SENI_v4_Global_Map_FINAL.html](https://collingeorge.github.io/WP-2026/07-visualization/SENI_v4_Global_Map_FINAL.html) | 07-visualization | Interactive 374-node enforcement map |
 | 36 | [WP-2026-MDO-01-console.html](https://collingeorge.github.io/WP-2026/07-visualization/WP-2026-MDO-01-console.html) | 07-visualization | MDO-01 interactive decision console |
+| 37 | [WP-2026-CMMC-READINESS-RISK-01.pdf](12-cmmc-compliance/WP-2026-CMMC-READINESS-RISK-01.pdf) | 12-cmmc-compliance | CMMC Level 2 readiness risk in the U.S. Defense Industrial Base |
 
 ---
 
