@@ -324,13 +324,30 @@ A representative selection. Full index: [WP-2026-Authority-Index.pdf](00-governa
 | EO 14024 (as amended by EO 14114) | U.S. Executive Order | Russia sanctions; foreign financial institution exposure tied to Russia’s military-industrial base |
 | EO 13382 | U.S. Executive Order | WMD proliferators and their supporters; proliferation-finance targeting |
 | EO 13224 | U.S. Executive Order | SDGT blocking; terrorist financing |
+| EO 13818 | U.S. Executive Order | Global Magnitsky sanctions for corruption and serious human rights abuse |
 | IEEPA (50 U.S.C. §§ 1701–1707) | U.S. Statute | Core emergency economic powers / blocking authority |
-| CAATSA §§ 226, 231, 232 | U.S. Statute | Russia-related sanctions architecture; support to Russian defense/intelligence sectors; certain Russia energy export pipeline activity |
-| 31 U.S.C. § 5318A (Section 311) | U.S. Statute | “Primary money laundering concern” special measures |
+| IEEPA § 1705 (50 U.S.C. § 1705) | U.S. Statute | Civil and criminal penalties for sanctions violations |
+| CAATSA §§ 226, 231, 232 | U.S. Statute | Russia-related sanctions architecture; Russian defense / intelligence sector exposure; certain Russia energy export pipeline activity |
+| 31 U.S.C. § 5318A (Section 311) | U.S. Statute | Special measures for jurisdictions, financial institutions, or transactions of primary money laundering concern |
+| 31 U.S.C. § 5318(h) | U.S. Statute | AML program requirements for financial institutions |
+| 31 U.S.C. § 5318(g) | U.S. Statute | Suspicious Activity Report (SAR) obligations |
 | 18 U.S.C. § 1956 | U.S. Statute | Money laundering |
 | 18 U.S.C. § 1960 | U.S. Statute | Unlicensed money transmitting business |
+| 18 U.S.C. § 2339B | U.S. Statute | Material support to designated foreign terrorist organizations |
+| 31 C.F.R. Part 501 | U.S. Regulation | OFAC reporting, recordkeeping, and enforcement procedures |
+| 31 C.F.R. Chapter V | U.S. Regulation | OFAC sanctions program implementation framework |
 | AECA, 22 U.S.C. § 2778 | U.S. Statute | Arms export controls |
 | EAR, 15 C.F.R. pts. 730–774 | U.S. Regulation | Export controls; BIS Entity List; FDPR |
+| Atomic Energy Act of 1954 (42 U.S.C. §§ 2011 et seq.) | U.S. Statute | Civilian nuclear regulation; licensing; nuclear materials control |
+| Atomic Energy Act § 123 | U.S. Statute | Civil nuclear cooperation agreements with foreign states |
+| Nuclear Non-Proliferation Act of 1978 | U.S. Statute | Nuclear export controls; safeguards; nonproliferation conditions |
+| 10 C.F.R. Part 50 | U.S. Regulation | Domestic licensing of production and utilization facilities |
+| 10 C.F.R. Part 52 | U.S. Regulation | Early site permits, standard design approvals, and combined licenses for nuclear plants |
+| 10 C.F.R. Part 810 | U.S. Regulation | Assistance to foreign atomic energy activities |
+| Federal Power Act (16 U.S.C. §§ 791a et seq.) | U.S. Statute | FERC authority over wholesale electricity markets and transmission |
+| Energy Policy Act of 2005 | U.S. Statute | Nuclear loan guarantees, tax incentives, and licensing-related reforms |
+| Infrastructure Investment and Jobs Act of 2021 | U.S. Statute | Grid funding, resilience investments, and civil nuclear support programs |
+| Inflation Reduction Act of 2022 | U.S. Statute | Clean energy tax credits; nuclear production and investment support |
 | AMLA 2020 (Pub. L. 116-283, Div. F) | U.S. Statute | AML modernization; antiquities coverage; beneficial ownership reporting; art-market study / follow-on rulemaking context |
 | GENIUS Act (Pub. L. 119-27) | U.S. Statute | Payment stablecoin federal framework; AML/BSA-related treatment in the stablecoin regime |
 | FATF Recommendations (2012, as amended Oct. 2025) | International Standard | AML/CFT/CPF framework; not self-executing absent domestic implementation |
