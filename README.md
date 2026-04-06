@@ -321,22 +321,22 @@ A representative selection. Full index: [WP-2026-Authority-Index.pdf](00-governa
 
 | Authority | Type | Primary Application |
 |-----------|------|---------------------|
-| EO 14024 (as amended by EO 14114) | U.S. Executive Order | Primary Russia sanctions; FFI secondary sanctions |
-| EO 13382 | U.S. Executive Order | WMD proliferators; Rosatom/TVEL targeting |
+| EO 14024 (as amended by EO 14114) | U.S. Executive Order | Russia sanctions; foreign financial institution exposure tied to Russia’s military-industrial base |
+| EO 13382 | U.S. Executive Order | WMD proliferators and their supporters; proliferation-finance targeting |
 | EO 13224 | U.S. Executive Order | SDGT blocking; terrorist financing |
-| IEEPA §1702 (50 U.S.C. §§ 1701–1707) | U.S. Statute | Blocking authority |
-| CAATSA §226/231/232 | U.S. Statute | FFI secondary sanctions; Russian defense |
-| 31 U.S.C. §5318A (Section 311) | U.S. Statute | Primary money laundering concern designations |
-| 18 U.S.C. §1956 | U.S. Statute | Money laundering |
-| 18 U.S.C. §1960 | U.S. Statute | Unlicensed money transmitting business |
-| AECA 22 U.S.C. §2778 | U.S. Statute | Arms export controls |
-| EAR 15 C.F.R. §730–774 | U.S. Regulation | Export controls; BIS Entity List; FDPR |
-| AMLA 2020 (Pub. L. 116-283) | U.S. Statute | AML Act 2020; art market coverage; BO registry |
-| GENIUS Act (Pub. L. 119-27) | U.S. Statute | Stablecoin BSA treatment |
-| FATF Recommendations (2012, updated 2023) | International Standard | AML/CFT/CPF — not legally binding unless domestically implemented |
-| UN SCRs 1267/1373/2231/2094 | UN Security Council | ISIL/AQ, TF, Iran, DPRK — scenario-specific application |
-| West Virginia v. EPA, 597 U.S. 697 (2022) | U.S. Case Law | Major questions doctrine; IEEPA judicial risk |
-| Loper Bright Enterprises v. Raimondo, 603 U.S. 369 (2024) | U.S. Case Law | Chevron overrule; agency statutory interpretation |
+| IEEPA (50 U.S.C. §§ 1701–1707) | U.S. Statute | Core emergency economic powers / blocking authority |
+| CAATSA §§ 226, 231, 232 | U.S. Statute | Russia-related sanctions architecture; support to Russian defense/intelligence sectors; certain Russia energy export pipeline activity |
+| 31 U.S.C. § 5318A (Section 311) | U.S. Statute | “Primary money laundering concern” special measures |
+| 18 U.S.C. § 1956 | U.S. Statute | Money laundering |
+| 18 U.S.C. § 1960 | U.S. Statute | Unlicensed money transmitting business |
+| AECA, 22 U.S.C. § 2778 | U.S. Statute | Arms export controls |
+| EAR, 15 C.F.R. pts. 730–774 | U.S. Regulation | Export controls; BIS Entity List; FDPR |
+| AMLA 2020 (Pub. L. 116-283, Div. F) | U.S. Statute | AML modernization; antiquities coverage; beneficial ownership reporting; art-market study / follow-on rulemaking context |
+| GENIUS Act (Pub. L. 119-27) | U.S. Statute | Payment stablecoin federal framework; AML/BSA-related treatment in the stablecoin regime |
+| FATF Recommendations (2012, as amended Oct. 2025) | International Standard | AML/CFT/CPF framework; not self-executing absent domestic implementation |
+| UN SCRs 1267 / 1373 / 2094 / 2231 | UN Security Council | ISIL/Al-Qaida sanctions; counterterrorism obligations; DPRK sanctions; Iran / 2231 historical or scenario-specific application |
+| West Virginia v. EPA, 597 U.S. 697 (2022) | U.S. Case Law | Major questions doctrine; caution for aggressive agency interpretations in high-consequence regulatory actions |
+| Loper Bright Enters. v. Raimondo, 603 U.S. 369 (2024) | U.S. Case Law | Chevron overrule; de novo judicial review of agency statutory interpretation |
 
 ---
 
