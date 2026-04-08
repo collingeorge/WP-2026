@@ -19,6 +19,8 @@ Governing documents for the WP-2026 series. Documents in this folder define the 
 | [WP-2026-CI-Assessment-v3.docx](WP-2026-CI-Assessment-v3.docx) | CI Assessment v3.0 editable source |
 | [WP-2026-CI-Assessment-02-final.pdf](WP-2026-CI-Assessment-02-final.pdf) | CI Assessment 02 — ESCALATE-01 and RESILIENCE-01 adversary utility ratings and system-level interaction effects |
 | [WP-2026-CI-Assessment-02-final.docx](WP-2026-CI-Assessment-02-final.docx) | CI Assessment 02 editable source |
+| [WP-2026-CI-ENFORCE-01.pdf](WP-2026-CI-ENFORCE-01.pdf) | CI Assessment — enforcement architecture series (UNIFIED-01, CTF-01, CPF-02, ARCH-03) and infrastructure papers (NUC-01, CYBER-01) |
+| [WP-2026-CI-ENFORCE-01.docx](WP-2026-CI-ENFORCE-01.docx) | CI-ENFORCE-01 editable source |
 
 ---
 
@@ -51,7 +53,11 @@ Governs typography, color palette (NAVY/GOLD/SLATE/LTNAVY/WARM), KJ block format
 Master cross-reference of all statutory and regulatory authorities cited across the series — U.S. statutes, executive orders, regulations, UN Security Council resolutions, FATF recommendations, and case law.
 
 ### CI Assessments
-Series-level and document-specific counterintelligence assessments evaluating adversary utility of series analytical products. CI Assessment v3.0 covers the full series. CI Assessment 02 covers ESCALATE-01 and RESILIENCE-01 specifically, including adversary utility ratings and system-level interaction effects.
+Series-level and document-specific counterintelligence assessments evaluating adversary utility of series analytical products:
+
+- **CI Assessment v3.0** covers the full series architecture and document corpus.
+- **CI Assessment 02** covers ESCALATE-01 and RESILIENCE-01 specifically, including adversary utility ratings and system-level interaction effects.
+- **CI-ENFORCE-01** covers the enforcement architecture series (UNIFIED-01, CTF-01, CPF-02, ARCH-03) and infrastructure policy papers (NUC-01, CYBER-01). Applies five-dimension CI exposure methodology: enforcement logic disclosure, evidentiary gap disclosure, litigation vulnerability mapping, institutional capacity constraint disclosure, and GitHub hosting exposure. Assesses adversary-specific utility for Russia, PRC, Iran, and Mexican cartels. Legal exposure determination: very low (no statute applicable; First Amendment fully protective).
 
 ---
 
