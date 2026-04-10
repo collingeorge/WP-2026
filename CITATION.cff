@@ -4,7 +4,7 @@ type: dataset
 
 title: "WP-2026: Independent Policy Research Series"
 abstract: >
-  A 67-document open-source policy research corpus covering sanctions
+  A 60+ document open-source policy research corpus covering sanctions
   enforcement law, financial intelligence, competitive statecraft,
   proliferation finance, counter-narcotics, terrorism financing,
   multi-domain operations doctrine, fiscal sustainability architecture,
@@ -55,7 +55,7 @@ references:
     notes: >
       Governing architecture document. Defines exclusive ownership domains,
       overlap classification thresholds, series failure conditions, and
-      compliance standards for all 62 documents in the WP-2026 series.
+      compliance standards for all 60+ documents in the WP-2026 series.
       Revision 3.0 adds ownership registrations for TARIFF-01 v9.5,
       FISCAL-01, and SCORES-01.
 
