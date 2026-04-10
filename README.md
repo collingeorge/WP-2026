@@ -170,7 +170,7 @@ This path demonstrates sustained systematic analytical production: 67 documents 
 
 ### Government Employers · Recruiters
 
-This repository was produced by a single independent researcher between January 15 and April 6, 2026 — 67 documents across sanctions enforcement, financial intelligence, competitive statecraft, proliferation finance, counter-narcotics, terrorism financing, multi-domain operations doctrine, threat analysis, U.S. energy infrastructure policy, U.S. cybersecurity policy, and CMMC compliance. The work is unclassified, open-source, and institutionally independent. It reflects analytical capability consistent with senior policy research positions at Treasury, State, ODNI, DOE, and equivalent allied institutions.
+The work is unclassified, open-source, and institutionally independent. It is structured using interagency policy analysis conventions and reflects familiarity with U.S. enforcement authorities, export control frameworks, and multilateral coordination mechanisms
 
 GitHub commit history provides full timestamped provenance: https://github.com/collingeorge/WP-2026/commits/main
 
