@@ -1,6 +1,6 @@
 # 03-strategic-architecture
 
-Strategic architecture papers translating the PERSIST-01 authority framework into domain-specific enforcement and policy strategies. Documents in this folder address long-term competitive statecraft, maximum pressure execution, tariff architecture, grand strategy, fiscal sustainability, and — as of April 2026 — U.S. nuclear energy capacity expansion and grid modernization as reliability and industrial policy.
+Strategic architecture papers translating the PERSIST-01 authority framework into domain-specific enforcement and policy strategies. Documents in this folder address long-term competitive statecraft, maximum pressure execution, tariff architecture, grand strategy, fiscal sustainability, and event-driven enforcement calibration responding to PRC defense-industrial intelligence.
 
 ---
 
@@ -18,8 +18,12 @@ Strategic architecture papers translating the PERSIST-01 authority framework int
 | [WP-2026-FISCAL-01.pdf](WP-2026-FISCAL-01.pdf) | US fiscal sustainability — baseline, consolidation architecture, multi-instrument analysis |
 | [WP-2026-FISCAL-01.docx](WP-2026-FISCAL-01.docx) | FISCAL-01 editable source |
 | [WP-2026-MAXPRESS-IMMIG-01.pdf](WP-2026-MAXPRESS-IMMIG-01.pdf) | Maximum pressure immigration enforcement architecture |
-| [WP-2026-NUC-01.pdf](WP-2026-NUC-01.pdf) | U.S. nuclear capacity expansion and grid modernization — near-term reliability, industrial, and grid security strategy |
+| [WP-2026-NUC-01.pdf](WP-2026-NUC-01.pdf) | U.S. nuclear capacity expansion and grid modernization |
 | [WP-2026-NUC-01.docx](WP-2026-NUC-01.docx) | NUC-01 editable source |
+| [WP-2026-CYBER-01.pdf](WP-2026-CYBER-01.pdf) | U.S. cybersecurity execution gap — infrastructure defense, institutional capacity, operational posture |
+| [WP-2026-CYBER-01.docx](WP-2026-CYBER-01.docx) | CYBER-01 editable source |
+| [WP-2026-STRAT-NSCC-01.pdf](WP-2026-STRAT-NSCC-01.pdf) | PRC defense-industrial enforcement calibration — Section 311, export controls, multilateral coordination |
+| [WP-2026-STRAT-NSCC-01.docx](WP-2026-STRAT-NSCC-01.docx) | STRAT-NSCC-01 editable source |
 
 ---
 
@@ -61,26 +65,24 @@ Independent fiscal policy analysis based on CBO, JCT, SSA, Treasury, IMF, GAO, a
 
 Reads upstream from SCORES-01 (evidentiary foundation) and TARIFF-01 (tariff revenue capacity as input). Reads into ESCALATE-01 (`04-applied-enforcement`) — fiscal constraints on OFAC resourcing, DOJ forfeiture funding, and BIS enforcement appropriations are upstream of ESCALATE-01's institutional throughput constraint layer. Reads into RESILIENCE-01 (`08-resilience-foundation`) as companion prerequisite-layer document. Reads into PERSIST-01 (`02-core-frameworks`) — fiscal sustainability as a guardrail condition.
 
-### NUC-01 — U.S. Nuclear Capacity Expansion and Grid Modernization
-**A U.S. Policy Framework for Nuclear Capacity Expansion and Grid Modernization: Near-Term Reliability, Industrial, and Grid Security Strategy.**
+### STRAT-NSCC-01 — PRC Defense-Industrial Enforcement Calibration
+**Exploitation of PRC Defense-Industrial Intelligence and Calibration of U.S. Enforcement Architecture.**
 
-Standalone energy policy paper arguing for a three-tier U.S. nuclear strategy: preserve and extend the existing fleet (~93 reactors, ~97 GW); prioritize restarts and brownfield deployment at existing sites; and advance SMRs and advanced reactors selectively where fuel, licensing, financing, and industrial conditions support near-term execution.
+Event-driven operational strategy memorandum responding to the publicly reported FlamingChina breach of China's National Supercomputing Center (NSCC) in Tianjin (February–April 2026). Structured to align with ODNI analytic standards. Eight Key Judgments with confidence labeling and TIER source tags. Three Lines of Effort: Financial Intelligence Targeting (Treasury/FinCEN/OFAC), Export Control Recalibration (Commerce/BIS), and Diplomatic Multilateralization (State/ISN/T). Twelve recommended enforcement actions mapped to specific statutory authorities, with eleven executable under existing delegated authorities and one requiring presidential direction. Decision matrix distinguishes delegated, rulemaking, multilateral, and presidential-decision authority types across 90/180/360-day timelines.
 
-**Key framing:** Nuclear is positioned as additive within a gas-dominant grid, not as a replacement for natural gas. The paper explicitly rejects rapid nuclear scaling narratives, enforces a Tier 1 (proven) / Tier 2 (near-term executable) / Tier 3 (execution-dependent) deployment hierarchy, and identifies HALEU fuel-supply dependence on adversary-controlled enrichment as the most acute near-term constraint. Natural gas is acknowledged as the dominant marginal generation source for the foreseeable future.
+Includes: synchronization framework (FinCEN→BIS→State feedback loops), risk register (APA exposure, market stability, coalition durability, adversary autarky acceleration, counterintelligence risk), and Source Reliability and Bibliography appendix (Annex C) transparently disclosing 21 unique sources across four tiers with explicit reliability ratings. Annex B provides illustrative force posture implications pending independent SME validation.
 
-**Structure:** Executive Summary with seven Key Judgments → U.S. power constraint diagnosis (demand, reliability, transmission) → nuclear deployment capability by tier → explicit "What Nuclear Cannot Deliver" section → nuclear's system role in a gas-dominant grid → six-domain constraint analysis (fuel, regulatory, industrial base, workforce, transmission, financing) → federal policy architecture (NRC, DOE, FERC/RTOs, Congress, DOD, States) with problem/action/implication format → implementation timeline (0–3, 3–7, 7–10 years) → scope limitations and explicit non-claims → safety/emissions appendix → strategic competition appendix → conclusion as policy judgment.
+**Key authorities cited:** IEEPA, USA PATRIOT Act Section 311, EAR (15 CFR §764.3), E.O. 13959/14032, E.O. 14105, FAR 9.4, Wassenaar Arrangement.
 
-**Source discipline:** 53 endnotes anchored to EIA, NERC, DOE/LBNL, NRC, FERC, Federal Register, IPCC, UNECE, IAEA PRIS, OECD-NEA, Joule, The Lancet, INL, and NRC docket filings. Non-primary sources (NEI, Lazard, company press releases, WNA) explicitly flagged with quality annotations.
-
-**Series connection:** NUC-01 operates as a parallel strategic architecture document addressing energy infrastructure reliability and industrial policy. It connects to RESILIENCE-01 (`08-resilience-foundation`) as a complementary infrastructure resilience analysis and to FISCAL-01 as a downstream consumer of federal financing and tax-credit policy. The HALEU fuel-supply and Rosatom export-competition analysis connects to the broader competitive statecraft themes of the WP-2026 series.
+Reads upstream from UNIFIED-01 (`02-core-frameworks`) for enforcement integration logic and CYBER-01 for cybersecurity context. Cross-references CTF-01, CPF-02, and ARCH-03 (`04-applied-enforcement`) enforcement authorities. CI exposure assessed in CI-ENFORCE-01 (`00-governance`) — Moderate rating.
 
 ---
 
 ## Series Position
 
-Documents in this folder translate PERSIST-01's authority framework and SIEGE-01's mechanism into domain-specific strategic architectures. They sit between the core frameworks layer (`02-core-frameworks`) and the applied enforcement layer (`04-applied-enforcement`). NUC-01 extends this layer into energy infrastructure and grid reliability policy.
+Documents in this folder translate PERSIST-01's authority framework and SIEGE-01's mechanism into domain-specific strategic architectures. They sit between the core frameworks layer (`02-core-frameworks`) and the applied enforcement layer (`04-applied-enforcement`).
 
-Reading order within this folder: CONTAIN-01 → MAXPRESS-01 → TARIFF-01 → FISCAL-01 → BRI-01 → EST-01. FISCAL-01 should be read after TARIFF-01 (which provides tariff revenue capacity as an input) and before ESCALATE-01 in `04-applied-enforcement`. NUC-01 can be read independently or after FISCAL-01 and RESILIENCE-01.
+Reading order within this folder: CONTAIN-01 → MAXPRESS-01 → TARIFF-01 → FISCAL-01 → STRAT-NSCC-01 → BRI-01 → EST-01. FISCAL-01 should be read after TARIFF-01 (which provides tariff revenue capacity as an input) and before ESCALATE-01 in `04-applied-enforcement`. STRAT-NSCC-01 can be read independently but benefits from prior familiarity with UNIFIED-01 (`02-core-frameworks`) and CYBER-01.
 
 ---
 
