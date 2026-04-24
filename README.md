@@ -7,7 +7,7 @@
 | **Published** | March–April 2026 |
 | **Status** | Unclassified // Open Source // Independent Policy Research |
 | **Repository** | https://github.com/collingeorge/WP-2026 |
-| **License** | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.txt)) |
+| **License** | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.txt) |
 
 ---
 
