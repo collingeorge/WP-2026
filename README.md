@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| **Author** | Collin George · Independent Research (Center for Competitive Statecraft and Strategic Policy — informal designation) |
-| **Contact** | cgeorge@collinbgeorge.com |
+| **Author** | Collin George · Independent Research |
+| **Contact** | cgeorge@sanctir.com |
 | **Published** | March–April 2026 |
 | **Status** | Unclassified // Open Source // Independent Policy Research |
 | **Repository** | https://github.com/collingeorge/WP-2026 |
