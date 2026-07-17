@@ -11,7 +11,7 @@
 
 ---
 
-> All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of the University of Washington, UW Medical Center, or any other institution. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used or implied. This repository does not constitute legal advice or operational guidance. This work is analytical in nature and does not propose or direct specific government action.
+> All papers in this series are independent academic and policy research produced solely by the author in a personal capacity. Nothing in this repository reflects the views or positions of any current or former employer, government agency, academic institution, or client. All analysis is based entirely on open-source, publicly available information. No classified or controlled information was used or implied. This repository does not constitute legal advice or operational guidance. This work is analytical in nature and does not propose or direct specific government action.
 
 ---
 
